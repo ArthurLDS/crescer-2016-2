@@ -3,20 +3,28 @@ public class Dwarf {
     private int vida;
     private DataTerceiraEra dataNascimento;
     private int experiencia;
+    private Status status;
     
     public Dwarf(){
         this.nome = nome;
+        status = Status.VIVO;
         this.dataNascimento = new DataTerceiraEra(1,1,1);
         vida = 110;
     }
     
     public Dwarf(String nome, DataTerceiraEra data){
+        status = Status.VIVO;
         this.nome = nome;
         this.dataNascimento = data;
         vida = 110;
     }
 
     public void perderVida() {
+        if(vida<=0){
+            status = Status.MORTO;
+            vida = 0;
+            return;
+        }   
         vida -= 10;
     }
     public void receberFlecha(){
@@ -26,7 +34,9 @@ public class Dwarf {
         if (sorte<=100)
             perderVida();
     }
-
+    public Status getStatus(){
+        return status;
+    }
     public int getVida() {
         return vida;
     }
