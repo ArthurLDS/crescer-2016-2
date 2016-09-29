@@ -90,4 +90,22 @@ public class ElfoTest
         Elfo elrond = new Elfo("Elrond", -56);
         assertEquals(42, elrond.getFlecha().getQuantidade());
     }
+    @Test 
+    public void fraseElfo(){
+        Elfo elfoDoTeste = new Elfo("Legolas");
+        String frase = "Legolas possui 42 flechas e 0 nível de experiência."; 
+        assertEquals(frase, elfoDoTeste.toString());
+    }
+    @Test 
+    public void construtorElfoCom1flecha(){
+        Elfo elfoDoTeste = new Elfo("Elfo do Bem", 1);
+        assertEquals(1, elfoDoTeste.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void construtorElfocom100flechas(){
+        Elfo elfoDoTeste = new Elfo("Elfo do Bem", 100);
+        assertEquals(100, elfoDoTeste.getFlecha().getQuantidade());
+    }
+    
 }
