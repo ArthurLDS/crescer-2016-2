@@ -10,6 +10,10 @@ public class DataTerceiraEra
        this.ano = ano;
    }
    
+   public boolean ehBissexto(){
+       return ano%4==0 ? true : false; 
+   }
+   
    public int getDia(){
        return dia;
    }
