@@ -1,5 +1,6 @@
 public class Dwarf {
     private int vida;
+    private DataTerceiraEra dataNascimento;
     
     // java type initializer
     // vai ser replicado para cada construtor
