@@ -107,5 +107,9 @@ public class ElfoTest
         Elfo elfoDoTeste = new Elfo("Elfo do Bem", 100);
         assertEquals(100, elfoDoTeste.getFlecha().getQuantidade());
     }
-    
+    @Test
+    public void elfoNasceVivo(){
+        Elfo elfo = new Elfo("Alfredo");
+        assertEquals(Status.VIVO, elfo.getStatus());
+    }
 }
