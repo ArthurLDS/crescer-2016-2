@@ -22,8 +22,8 @@ public class Dwarf {
     public void receberFlecha(){
         double sorte = getNumeroSorte();
         if(sorte<0)
-            experiencia+=2;
-        else if (sorte<=100)
+            experiencia += 2;
+        if (sorte<=100)
             perderVida();
     }
 
@@ -34,12 +34,12 @@ public class Dwarf {
         return experiencia;
     }
     public double getNumeroSorte(){
-        double n = 101.0;
+        double result = 101.0;
         if(dataNascimento.ehBissexto() && (vida>=80 || vida<=90))
-            return n* -33;
-        else if (!(dataNascimento.ehBissexto()) && (nome.equals("Seixas")||nome.equals("Meireles")))
-            return (n*33)%100;
-        return n;    
+            return result* -33;
+        else if (!(dataNascimento.ehBissexto()) && (nome != null && nome.equals("Seixas")||nome.equals("Meireles")))
+            return result*33 % 100;
+        return result;    
         
     }
 }

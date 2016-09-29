@@ -12,6 +12,12 @@ public class DataTerceiraEraTest
         assertTrue(anoBissexto.ehBissexto());
     }
     @Test
+    public void DataTerceiraEraTesteComMilENovessentos(){
+        DataTerceiraEra anoBissexto = new DataTerceiraEra(1,2,1900);
+        anoBissexto.ehBissexto();
+        assertFalse(anoBissexto.ehBissexto());
+    }
+    @Test
     public void DataTerceiraEraTesteComAnoBissexto(){
         DataTerceiraEra anoBissexto = new DataTerceiraEra(1,2,2014);
         anoBissexto.ehBissexto();

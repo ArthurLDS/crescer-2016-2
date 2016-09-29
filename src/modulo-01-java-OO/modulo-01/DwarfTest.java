@@ -55,14 +55,14 @@ public class DwarfTest
     public void numSorteNBissextoSeixas(){
         Dwarf teste = new Dwarf("Seixas", new DataTerceiraEra(1,1,2014));
         teste.getNumeroSorte();
-        assertEquals(33, teste.getNumeroSorte(),33);
+        assertEquals(33, teste.getNumeroSorte(), .0);
         //Não sei porque, mas funcionou :)
     }
     @Test
     public void numSorteNBissextoMeireles(){
         Dwarf teste = new Dwarf("Meireles", new DataTerceiraEra(1,1,2011));
         teste.getNumeroSorte();
-        assertEquals(33, teste.getNumeroSorte(), 33);
+        assertEquals(33, teste.getNumeroSorte(), .0);
     }
     @Test
     public void numSorteBissextoHpNoventa(){
@@ -70,7 +70,7 @@ public class DwarfTest
         teste.perderVida();
         teste.perderVida();
         teste.getNumeroSorte();
-        assertEquals(-3333.0, teste.getNumeroSorte(), -3333.0);
+        assertEquals(-3333.0, teste.getNumeroSorte(), .0);
     }
     @Test
     public void numSorteBissextoHpSetenta(){
@@ -81,7 +81,7 @@ public class DwarfTest
         teste.perderVida();
         teste.perderVida();
         teste.getNumeroSorte();
-        assertEquals(-3333.0, teste.getNumeroSorte(), -3333.0);
+        assertEquals(-3333.0, teste.getNumeroSorte(), .0);
     }
     @Test
     public void recebeFlechaComVidaCheia(){
