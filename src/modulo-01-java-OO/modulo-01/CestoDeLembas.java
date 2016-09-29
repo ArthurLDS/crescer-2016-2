@@ -6,10 +6,7 @@ public class CestoDeLembas
    public CestoDeLembas(int quant){
        quantidade = quant;
     }
-   public boolean podeDividirEmPares(){
-       if(quantidade>4 && quantidade<=100)
-          return true;
-       else
-          return false;  
-   }
+   public boolean podeDividirEmPares() {
+        return quantidade > 2 && quantidade % 2 == 0 && quantidade <= 100;
+    }
 }

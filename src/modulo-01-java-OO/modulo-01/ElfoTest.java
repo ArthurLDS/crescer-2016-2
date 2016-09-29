@@ -32,9 +32,20 @@ public class ElfoTest
     }
     //Teste metodo atirarFlecha()
     @Test
-    public void elfoAtiraFlecha(){
-        Elfo elfoDeTeste = new Elfo("Doug10");
-        assertEquals(41, elfoDeTeste.getFlechaDpsAtirar().getQuantidade());
+    public void elfoAtiraFlechaEmUmDwarf() {
+        Elfo elfo = new Elfo("Batman");
+        Dwarf balin = new Dwarf();
+        elfo.atirarFlecha(balin);
+        assertEquals(100, balin.getVida());
+    }
+
+    @Test
+    public void elfoAtiraDuasFlechaEmUmDwarf() {
+        Elfo elfo = new Elfo("Batman");
+        Dwarf balin = new Dwarf();
+        elfo.atirarFlecha(balin);
+        elfo.atirarFlecha(balin);
+        assertEquals(90, balin.getVida());
     }
     
     @Test //Teste Classe Cesto de Lembas
@@ -45,10 +56,38 @@ public class ElfoTest
         assertEquals(true, seisSemGluten.podeDividirEmPares());
     }
     
-    @Test //Teste Classe Adversario
-    public void AcertaFlechaNoDwarves(){
-        Elfo elfoDoTeste = new Elfo("Elfo do Bem");
-        assertEquals(110, elfoDoTeste.getAdversario().getHp());
-        assertEquals(10, elfoDoTeste.getDpsAdversarioLevar().getHp());
+   
+     @Test
+    public void elfoToStringComInformacoesIniciais() {
+        Elfo legolas = new Elfo("Legolas");
+        assertEquals("Legolas possui 42 flechas e 0 nível de experiência.",
+            legolas.toString());
+
+    }
+
+    @Test
+    public void elfoAtiraFlechaEToString() {
+        Elfo legolas = new Elfo("Legolas");
+        legolas.atirarFlecha(new Dwarf());
+        assertEquals("Legolas possui 41 flechas e 1 nível de experiência.",
+            legolas.toString());
+
+    }
+    @Test
+    public void criarElfoInformandoFlechas() {
+        Elfo elrond = new Elfo("Elrond", 56);
+        assertEquals(56, elrond.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void criarElfoInformandoZeroFlechas() {
+        Elfo elrond = new Elfo("Elrond", 0);
+        assertEquals(0, elrond.getFlecha().getQuantidade());
+    }
+    
+    @Test
+    public void criarElfoInformandoFlechasNegativas() {
+        Elfo elrond = new Elfo("Elrond", -56);
+        assertEquals(42, elrond.getFlecha().getQuantidade());
     }
 }
