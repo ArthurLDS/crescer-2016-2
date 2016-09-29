@@ -83,6 +83,19 @@ public class DwarfTest
         teste.getNumeroSorte();
         assertEquals(-3333.0, teste.getNumeroSorte(), -3333.0);
     }
+    @Test
+    public void recebeFlechaComVidaCheia(){
+        Dwarf teste = new Dwarf("nada", new DataTerceiraEra(1,1,2016));
+        teste.receberFlecha();
+        assertEquals(2, teste.getXp()); 
+    }
+    @Test
+    public void recebeFlechaEmSeixasENaoBissexto(){
+        Dwarf teste = new Dwarf("Seixas", new DataTerceiraEra(1,1,2013));
+        teste.receberFlecha();
+        assertEquals(0, teste.getXp());
+        assertEquals(100, teste.getVida());
+    }
     
     
 }
