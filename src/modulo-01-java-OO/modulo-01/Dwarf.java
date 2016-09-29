@@ -2,6 +2,7 @@ public class Dwarf {
     private String nome;
     private int vida;
     private DataTerceiraEra dataNascimento;
+    private int experiencia;
     
     public Dwarf(){
         this.nome = nome;
@@ -18,9 +19,19 @@ public class Dwarf {
     public void perderVida() {
         vida -= 10;
     }
+    public void receberFlecha(){
+        double sorte = getNumeroSorte();
+        if(sorte<0)
+            experiencia+=2;
+        else if (sorte>=0 && sorte<=100)
+            perderVida();
+    }
 
     public int getVida() {
         return vida;
+    }
+    public int getXp() {
+        return experiencia;
     }
     public double getNumeroSorte(){
         double n = 101.0;
