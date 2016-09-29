@@ -3,8 +3,12 @@ public class Dwarf {
     private int vida;
     private DataTerceiraEra dataNascimento;
     
-    // java type initializer
-    // vai ser replicado para cada construtor
+    public Dwarf(){
+        this.nome = nome;
+        this.dataNascimento = new DataTerceiraEra(1,1,1);
+        vida = 110;
+    }
+    
     public Dwarf(String nome, DataTerceiraEra data){
         this.nome = nome;
         this.dataNascimento = data;
@@ -18,5 +22,13 @@ public class Dwarf {
     public int getVida() {
         return vida;
     }
+    public double getNumeroSorte(){
+        double n = 101.0;
+        if(dataNascimento.ehBissexto() && (vida>=80 || vida<=90))
+            return n* -33;
+        else if (!(dataNascimento.ehBissexto()) && (nome == "Seixas"||nome == "Meireles"))
+            return (n*33)%100;
+        return n;    
+        
+    }
 }
-// Dwarf gimli;
