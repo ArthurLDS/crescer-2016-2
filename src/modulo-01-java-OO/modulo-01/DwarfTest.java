@@ -26,8 +26,8 @@ public class DwarfTest
         assertEquals(90, gimli.getVida());
     }
 
-    /*@Test
-    public void dwarfPerdeVidaVinteVezes() {
+    @Test
+    public void dwarfPerdeVidaVinteVezesZeraVidaEMorre() {
         Dwarf gimli = new Dwarf();
         gimli.perderVida();
         gimli.perderVida();
@@ -49,8 +49,8 @@ public class DwarfTest
         gimli.perderVida();
         gimli.perderVida();
         gimli.perderVida();
-        assertEquals(-90, gimli.getVida());
-    }*/
+        assertEquals(0, gimli.getVida());
+    }
     @Test
     public void numSorteNBissextoSeixas(){
         Dwarf teste = new Dwarf("Seixas", new DataTerceiraEra(1,1,2014));
@@ -99,12 +99,17 @@ public class DwarfTest
     @Test
     public void dwarfMorre(){
         Dwarf teste = new Dwarf();
-        for(int i=0; i<=12; i++)
+        for(int i=0; i<=11; i++)
             teste.perderVida();
         assertEquals(Status.MORTO, teste.getStatus());    
     }
     @Test
-     public void dwarfMPerdeMuitaVidaEMorre(){
+     public void dwarfNasceVivo(){
+        Dwarf teste = new Dwarf();
+        assertEquals(Status.VIVO, teste.getStatus());    
+    }
+    @Test
+     public void dwarfMPerde13VidasEMorre(){
         Dwarf teste = new Dwarf();
         for(int i=0; i<=13; i++)
             teste.perderVida();
@@ -118,7 +123,7 @@ public class DwarfTest
         assertEquals(Status.VIVO, teste.getStatus());    
     }
     @Test
-     public void dwarfMPerdeMuitaVida(){
+     public void dwarfMPerde13Vidas(){
         Dwarf teste = new Dwarf();
         for(int i=0; i<=13; i++)
             teste.perderVida();
