@@ -13,5 +13,13 @@ public class InventarioTest
         String allItens = elfo.getInventario().getDescricaoItens();
         assertEquals("Arco, Flechas", allItens);
     }
-    
+    //@Test
+    /*public void ordenaItemDoElfo(){
+        Elfo elfo = new Elfo("Doug",6);
+        elfo.getInventario().ordenaItens();
+        for(int i=0; i< getItens().size(); i++){
+            String itensEmOrdem = getItens().getQuantidade();
+        }
+             
+    }*/
 }
