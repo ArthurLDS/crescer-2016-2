@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Inventario
 {
     ArrayList<Item> itens = new ArrayList<>();
+    ArrayList<Item> vetOrdem = new ArrayList<>();
     public ArrayList<Item> getItens(){
         return itens;
     } 
@@ -13,9 +14,9 @@ public class Inventario
 
     public void removeItem(Item item){
         /*for(int i=0; i< itens.size(); i++){
-            Item itemAtual = itens.get(i);
-            if(itemAtual.getDescricao().equals(item.getDescricao())){*/
-          itens.remove(item);
+        Item itemAtual = itens.get(i);
+        if(itemAtual.getDescricao().equals(item.getDescricao())){*/
+        itens.remove(item);
         //    }
         //}
     }
@@ -44,10 +45,27 @@ public class Inventario
         }
         return maiorItem;
     }
+
     public void aumentar1000unidadesDosItens(){
         for(int i=0; i<itens.size(); i++){
-                int quantAtual = itens.get(i).getQuantidade();
-                itens.get(i).setQuantidade(1000+quantAtual);
-           }
+            int quantAtual = itens.get(i).getQuantidade();
+            itens.get(i).setQuantidade(1000+quantAtual);
+        }
+    }
+
+    public void ordenaItens(){
+        int maior = 0;
+        int cont  = 0;
+        
+        Item aux;
+        //for(int j=0; j<itens.size(); j++){
+            for(int i=0; i<itens.size(); i++){
+                if(itens.get(i).getQuantidade() > itens.get(i+1).getQuantidade()){
+                    vetOrdem.add(itens.get(i));
+                   
+                }
+            }
+       // }
+
     }
 }
