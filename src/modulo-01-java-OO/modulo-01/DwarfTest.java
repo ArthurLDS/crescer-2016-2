@@ -152,6 +152,13 @@ public class DwarfTest
         int quantAtual = dwarf.getInventario().getItens().get(0).getQuantidade();
         assertEquals(1002, quantAtual);
     }
+    public void dwarfNaoTemSorte(){
+        Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2016));
+        dwarf.adicionarItem(new Item("Armadura de Diamante", 2));
+        dwarf.tentarSorte();
+        int quantAtual = dwarf.getInventario().getItens().get(0).getQuantidade();
+        assertEquals(2, quantAtual);
+    }
     public void dwarfAdicionaUmItem(){
         Dwarf teste = new Dwarf();
         Item item = new Item("Escudo", 4);
@@ -159,7 +166,6 @@ public class DwarfTest
         Item fd= teste.getInventario().getItens().get(0);
         for(int i=0; i<teste.getInventario().getItens().size(); i++){
             Item itemAtual = teste.getInventario().getItens().get(i);
-            
             if(itemAtual.getDescricao().equals(item.getDescricao())){
                 assertEquals(itemAtual.getDescricao(), item.getDescricao());
             }
