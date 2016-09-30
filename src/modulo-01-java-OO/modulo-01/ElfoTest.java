@@ -112,4 +112,17 @@ public class ElfoTest
         Elfo elfo = new Elfo("Alfredo");
         assertEquals(Status.VIVO, elfo.getStatus());
     }
+    @Test
+    public void elfoDescricaoDosItens(){
+        Elfo elfo = new Elfo("Neymidia", 60);
+        String allItens = elfo.getInventario().getDescricaoItens();
+        assertEquals("Arco, Flechas, ", allItens);
+    }
+    @Test
+    public void elfoMaiorItemPossuidoFlecha(){
+        Elfo elfo = new Elfo("Neymidia", 60);
+        elfo.getInventario().adicionaItem(new Item("Armadura", 5));
+        Item maiorItem = elfo.getInventario().itemMaisPossuido();
+        assertEquals(60, maiorItem.getQuantidade());
+    }
 }

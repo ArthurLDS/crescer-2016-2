@@ -136,12 +136,7 @@ public class DwarfTest
             teste.perderVida();
         assertEquals(0, teste.getVida());    
     }
-    @Test
-    public void elfoDescricaoDosItens(){
-        Elfo elfo = new Elfo("Neymidia", 60);
-        String allItens = elfo.getInventario().getDescricaoItens();
-        assertEquals("Arco, Flechas, ", allItens);
-    }
+    
     @Test
     public void dwarfTemSorte(){
         Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2016));
@@ -152,13 +147,15 @@ public class DwarfTest
         int quantAtual = dwarf.getInventario().getItens().get(0).getQuantidade();
         assertEquals(1002, quantAtual);
     }
+    @Test
     public void dwarfNaoTemSorte(){
-        Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2016));
+        Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2013));
         dwarf.adicionarItem(new Item("Armadura de Diamante", 2));
         dwarf.tentarSorte();
         int quantAtual = dwarf.getInventario().getItens().get(0).getQuantidade();
         assertEquals(2, quantAtual);
     }
+    @Test
     public void dwarfAdicionaUmItem(){
         Dwarf teste = new Dwarf();
         Item item = new Item("Escudo", 4);
@@ -171,6 +168,6 @@ public class DwarfTest
             }
         
         }
-    
     }
+    
 }
