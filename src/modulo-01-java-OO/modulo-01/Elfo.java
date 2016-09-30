@@ -4,6 +4,7 @@ public class Elfo {
     private Item flecha;
     private int experiencia;
     private Status status;
+    private Inventario inventario;
     
     public Elfo(String n) {
         // Chamando construtor debaixo
@@ -15,7 +16,9 @@ public class Elfo {
         this.nome = nome;
         arco = new Item("Arco", 1);
         flecha = new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42);
-        
+        inventario = new Inventario();
+        inventario.adicionaItem(arco);
+        inventario.adicionaItem(flecha);
     }
 
     public void setNome(String n) {
@@ -65,7 +68,9 @@ public class Elfo {
             experienciaNoSingular ? "nível" : "níveis"
         );
     }
-
+    public Inventario getInventario(){
+        return inventario;
+    }
     /*public void atirarFlechaRefactory() {
     experiencia++;
     flecha.setQuantidade(flecha.getQuantidade()-1);
