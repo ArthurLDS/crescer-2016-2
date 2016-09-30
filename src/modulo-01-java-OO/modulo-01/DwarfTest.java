@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
+import java.util.ArrayList;
 public class DwarfTest
 {
     @Test
@@ -136,5 +136,35 @@ public class DwarfTest
             teste.perderVida();
         assertEquals(0, teste.getVida());    
     }
+    @Test
+    public void elfoDescricaoDosItens(){
+        Elfo elfo = new Elfo("Neymidia", 60);
+        String allItens = elfo.getInventario().getDescricaoItens();
+        assertEquals("Arco, Flechas, ", allItens);
+    }
+    @Test
+    public void dwarfTemSorte(){
+        Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2016));
+        dwarf.perderVida();
+        dwarf.perderVida();
+        dwarf.adicionarItem(new Item("Armadura de Diamante", 2));
+        dwarf.tentarSorte();
+        int quantAtual = dwarf.getInventario().getItens().get(0).getQuantidade();
+        assertEquals(1002, quantAtual);
+    }
+    public void dwarfAdicionaUmItem(){
+        Dwarf teste = new Dwarf();
+        Item item = new Item("Escudo", 4);
+        teste.adicionarItem(item);
+        Item fd= teste.getInventario().getItens().get(0);
+        for(int i=0; i<teste.getInventario().getItens().size(); i++){
+            Item itemAtual = teste.getInventario().getItens().get(i);
+            
+            if(itemAtual.getDescricao().equals(item.getDescricao())){
+                assertEquals(itemAtual.getDescricao(), item.getDescricao());
+            }
+        
+        }
     
+    }
 }

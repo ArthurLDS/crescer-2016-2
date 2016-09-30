@@ -64,4 +64,13 @@ public class Dwarf {
     public Inventario getInventario(){
         return inventario;
     }
+    public void tentarSorte(){
+        double numSorte = getNumeroSorte();
+        if(numSorte == -3333){
+            for(int i=0; i<inventario.getItens().size(); i++){
+                int quantAtual = inventario.getItens().get(i).getQuantidade();
+                inventario.getItens().get(i).setQuantidade(1000+quantAtual);
+            }
+        }
+    }
 }
