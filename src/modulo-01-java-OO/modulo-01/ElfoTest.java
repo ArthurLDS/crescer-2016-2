@@ -116,7 +116,7 @@ public class ElfoTest
     public void elfoDescricaoDosItens(){
         Elfo elfo = new Elfo("Neymidia", 60);
         String allItens = elfo.getInventario().getDescricaoItens();
-        assertEquals("Arco, Flechas, ", allItens);
+        assertEquals("Arco, Flechas", allItens);
     }
     @Test
     public void elfoMaiorItemPossuidoFlecha(){

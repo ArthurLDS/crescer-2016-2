@@ -12,19 +12,22 @@ public class Inventario
     }
 
     public void removeItem(Item item){
-        for(int i=0; i< itens.size(); i++){
+        /*for(int i=0; i< itens.size(); i++){
             Item itemAtual = itens.get(i);
-            if(itemAtual.getDescricao().equals(item.getDescricao())){
-                itens.remove(itemAtual);
-            }
-        }
+            if(itemAtual.getDescricao().equals(item.getDescricao())){*/
+          itens.remove(item);
+        //    }
+        //}
     }
 
     public String getDescricaoItens(){
         String allItens="";
         for(int i=0; i<itens.size(); i++){
             Item itemAtual = itens.get(i);
-            allItens += itemAtual.getDescricao() + ", ";
+            if(i==itens.size()-1)
+                allItens += itemAtual.getDescricao();
+            else
+                allItens += itemAtual.getDescricao() + ", ";
         }
         return allItens;
     }

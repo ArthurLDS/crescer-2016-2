@@ -1,7 +1,5 @@
 public class Elfo {
     private String nome;
-    private Item arco;
-    private Item flecha;
     private int experiencia;
     private Status status;
     private Inventario inventario;
@@ -14,11 +12,9 @@ public class Elfo {
     public Elfo(String nome, int quantidadeFlechas) {
         status = Status.VIVO;
         this.nome = nome;
-        arco = new Item("Arco", 1);
-        flecha = new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42);
         inventario = new Inventario();
-        inventario.adicionaItem(arco);
-        inventario.adicionaItem(flecha);
+        inventario.adicionaItem(new Item("Arco", 1));
+        inventario.adicionaItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
 
     public void setNome(String n) {
@@ -33,7 +29,7 @@ public class Elfo {
     }
 
     public Item getArco() {
-        return arco;
+        return inventario.getItens().get(0);
     }
 
     public int getExperiencia() {
@@ -41,13 +37,13 @@ public class Elfo {
     }
 
     public Item getFlecha() {
-        return flecha;
+        return inventario.getItens().get(1);
     }
 
     public void atirarFlecha(Dwarf dwarf) {
-        boolean temFlecha = flecha.getQuantidade() > 0;
+        boolean temFlecha = getFlecha().getQuantidade() > 0;
         if (temFlecha) {
-            flecha.setQuantidade(flecha.getQuantidade() - 1);
+            getFlecha().setQuantidade(getFlecha().getQuantidade() - 1);
             experiencia++;
             dwarf.perderVida();
         }
@@ -56,12 +52,12 @@ public class Elfo {
     public String toString() {
         //return "<nome> possui <flechas> flechas e <exp> níveis de experiência.";
 
-        boolean flechaNoSingular = this.flecha.getQuantidade() == 1;
+        boolean flechaNoSingular = this.getFlecha().getQuantidade() == 1;
         boolean experienciaNoSingular = this.experiencia == 0 || this.experiencia == 1;
 
         return String.format("%s possui %d %s e %d %s de experiência.",
             this.nome,
-            this.flecha.getQuantidade(),
+            getFlecha().getQuantidade(),
             // ?:
             flechaNoSingular ? "flecha" : "flechas",
             this.experiencia,

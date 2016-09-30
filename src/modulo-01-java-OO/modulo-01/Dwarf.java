@@ -7,11 +7,7 @@ public class Dwarf {
     private Inventario inventario;
     
     public Dwarf(){
-        this.nome = nome;
-        status = Status.VIVO;
-        this.dataNascimento = new DataTerceiraEra(1,1,1);
-        vida = 110;
-        inventario = new Inventario();
+        this(null, new DataTerceiraEra(1,1,1));
     }
     
     public Dwarf(String nome, DataTerceiraEra data){
