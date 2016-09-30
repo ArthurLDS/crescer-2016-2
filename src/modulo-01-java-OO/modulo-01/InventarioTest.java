@@ -13,4 +13,5 @@ public class InventarioTest
         String allItens = elfo.getInventario().getDescricaoItens();
         assertEquals("Arco, Flechas", allItens);
     }
+    
 }

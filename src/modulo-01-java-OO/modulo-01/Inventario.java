@@ -44,4 +44,10 @@ public class Inventario
         }
         return maiorItem;
     }
+    public void aumentar1000unidadesDosItens(){
+        for(int i=0; i<itens.size(); i++){
+                int quantAtual = itens.get(i).getQuantidade();
+                itens.get(i).setQuantidade(1000+quantAtual);
+           }
+    }
 }

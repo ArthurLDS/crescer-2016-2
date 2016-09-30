@@ -148,6 +148,15 @@ public class DwarfTest
         assertEquals(1002, quantAtual);
     }
     @Test
+    public void dwarfTemSorteCom3Itens(){
+        Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2016));
+        dwarf.adicionarItem(new Item("Armadura de Diamante", 2));
+        dwarf.adicionarItem(new Item("Lury", 5));
+        dwarf.tentarSorte();
+        int quantAtual = dwarf.getInventario().getItens().get(1).getQuantidade();
+        assertEquals(1005, quantAtual);
+    }
+    @Test
     public void dwarfNaoTemSorte(){
         Dwarf dwarf = new Dwarf("Anao", new DataTerceiraEra(1,1,2013));
         dwarf.adicionarItem(new Item("Armadura de Diamante", 2));
