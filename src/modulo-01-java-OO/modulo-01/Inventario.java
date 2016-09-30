@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Inventario
 {
     ArrayList<Item> itens = new ArrayList<>();
-    public ArrayList getItens(){
+    public ArrayList<Item> getItens(){
         return itens;
     } 
     public void adicionaItem(Item item){
@@ -16,5 +16,13 @@ public class Inventario
                 itens.remove(itemAtual);
             }
         }
+    }
+    public String getDescricaoItens(){
+        String allItens="";
+        for(int i=0; i<itens.size(); i++){
+            Item itemAtual = itens.get(i);
+            allItens += itemAtual.getDescricao() + ", ";
+        }
+        return allItens;
     }
 }
