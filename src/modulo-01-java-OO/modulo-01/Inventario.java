@@ -3,7 +3,8 @@ import java.util.ArrayList;
 public class Inventario
 {
     ArrayList<Item> itens = new ArrayList<>();
-    ArrayList<Item> vetOrdem = new ArrayList<>();
+    ArrayList<Item> itensOrdem = new ArrayList<>();
+
     public ArrayList<Item> getItens(){
         return itens;
     } 
@@ -32,18 +33,22 @@ public class Inventario
         }
         return allItens;
     }
-
+    
     public Item itemMaisPossuido(){
         int maior = 0;
         Item maiorItem = itens.get(0);
-        for(int i=0; i<itens.size(); i++){
-            Item itemAtual = itens.get(i);
-            if(itemAtual.getQuantidade()>maior){
-                maior = itemAtual.getQuantidade();
-                maiorItem = itemAtual; 
+        if(itens.size()>0){
+
+            for(int i=0; i<itens.size(); i++){
+                Item itemAtual = itens.get(i);
+                if(itemAtual.getQuantidade()>maior){
+                    maior = itemAtual.getQuantidade();
+                    maiorItem = itemAtual; 
+                }
             }
         }
-        return maiorItem;
+        boolean temItem = !itens.isEmpty();   
+        return temItem ? maiorItem : null;
     }
 
     public void aumentar1000unidadesDosItens(){
@@ -54,18 +59,16 @@ public class Inventario
     }
 
     public void ordenaItens(){
-        int maior = 0;
-        int cont  = 0;
-        
-        Item aux;
-        //for(int j=0; j<itens.size(); j++){
-            for(int i=0; i<itens.size(); i++){
-                if(itens.get(i).getQuantidade() > itens.get(i+1).getQuantidade()){
-                    vetOrdem.add(itens.get(i));
-                   
+        Item aux = null;
+        for(int i=itens.size()-1; i>= 1; i--){  
+            for(int j=0; j<i ; j++){
+                if(itens.get(j).getQuantidade()>itens.get(j+1).getQuantidade()){
+                    aux = itens.get(j);
+                    itens.set(j, itens.get(j+1));
+                    itens.set(j+1, aux);
                 }
             }
-       // }
+        }
 
     }
 }
