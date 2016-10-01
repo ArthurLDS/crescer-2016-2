@@ -65,14 +65,14 @@ public class IrishDwarf{
         if(temSorte){
             for(int i=0; i<getInventario().getItens().size(); i++){
                 Item  itemAtual = getInventario().getItens().get(i);
-                multiMilSomaQuant(itemAtual);
+                calculaSorte(itemAtual);
             } 
         }   
     }
     
-    private void multiMilSomaQuant(Item item){
-        int quantItem = item.getQuantidade()<0 ? item.getQuantidade()*(-1):item.getQuantidade();   
-        int novaQuant = 0;
+    private void calculaSorte(Item item){
+        int novaQuant = 0, quantItem = item.getQuantidade()<0 ? item.getQuantidade()*(-1):item.getQuantidade();   
+    
         for(int i=0; i<=quantItem; i++){
             novaQuant+=i;
         }
