@@ -14,12 +14,7 @@ public class Inventario
     }
 
     public void removeItem(Item item){
-        /*for(int i=0; i< itens.size(); i++){
-        Item itemAtual = itens.get(i);
-        if(itemAtual.getDescricao().equals(item.getDescricao())){*/
-        itens.remove(item);
-        //    }
-        //}
+        itens.remove(item);    
     }
 
     public String getDescricaoItens(){
