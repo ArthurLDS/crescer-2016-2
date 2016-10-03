@@ -54,21 +54,17 @@ public class Inventario
     }
 
     public void ordenaItens(TipoOrdenacao tipo){
-        Item aux = null;
-        if(tipo == TipoOrdenacao.ASCENDENTE){
-            for(int i=itens.size()-1; i>= 1; i--){  
-                for(int j=0; j<i ; j++){
+        Item aux;
+        for(int i=itens.size()-1; i>= 1; i--){  
+            for(int j=0; j<i ; j++){
+                if(tipo == TipoOrdenacao.ASCENDENTE){
                     if(itens.get(j).getQuantidade()>itens.get(j+1).getQuantidade()){
                         aux = itens.get(j);
                         itens.set(j, itens.get(j+1));
                         itens.set(j+1, aux);
                     }
                 }
-            }
-        }
-        else{
-            for(int i=itens.size()-1; i>= 1; i--){  
-                for(int j=0; j<i ; j++){
+                else if(tipo == TipoOrdenacao.DESCENDENTE){
                     if(itens.get(j).getQuantidade()<itens.get(j+1).getQuantidade()){
                         aux = itens.get(j);
                         itens.set(j, itens.get(j+1));
@@ -77,5 +73,6 @@ public class Inventario
                 }
             }
         }
+
     }
 }

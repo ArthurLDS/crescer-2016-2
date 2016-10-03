@@ -72,7 +72,8 @@ public class IrishDwarf{
     
     private void calculaSorte(Item item){
         int novaQuant = 0, quantItem = item.getQuantidade()<0 ? item.getQuantidade()*(-1):item.getQuantidade();   
-    
+        
+        //Refazer usando PA
         for(int i=0; i<=quantItem; i++){
             novaQuant+=i;
         }

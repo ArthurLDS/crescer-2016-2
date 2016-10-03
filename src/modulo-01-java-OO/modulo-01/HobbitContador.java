@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class HobbitContador
 {
+    
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> lista){
         int[] prodDosPares = new int [lista.size()];
         int[] mmcDosPares = new int[lista.size()];    
@@ -44,7 +45,6 @@ public class HobbitContador
             a = b;
             b = resto;
         }while(resto!=0);
-
         return (nodoAtual * nodoPost)/a;
     }
 }

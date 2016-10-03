@@ -1,8 +1,8 @@
-public class Elfo {
-    private String nome;
-    private int experiencia;
-    private Status status;
-    private Inventario inventario;
+public class Elfo extends Personagem{
+    
+    
+    
+    
     
     public Elfo(String n) {
         // Chamando construtor debaixo
@@ -17,24 +17,13 @@ public class Elfo {
         inventario.adicionaItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
 
-    public void setNome(String n) {
-        nome = n;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-    public Status getStatus() {
-        return status;
-    }
+   
 
     public Item getArco() {
         return inventario.getItens().get(0);
     }
 
-    public int getExperiencia() {
-        return experiencia;
-    }
+    
 
     public Item getFlecha() {
         return inventario.getItens().get(1);
@@ -64,9 +53,7 @@ public class Elfo {
             experienciaNoSingular ? "nível" : "níveis"
         );
     }
-    public Inventario getInventario(){
-        return inventario;
-    }
+    
     /*public void atirarFlechaRefactory() {
     experiencia++;
     flecha.setQuantidade(flecha.getQuantidade()-1);
