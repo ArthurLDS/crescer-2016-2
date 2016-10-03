@@ -28,7 +28,7 @@ public class Inventario
         }
         return allItens;
     }
-    
+
     public Item itemMaisPossuido(){
         int maior = 0;
         Item maiorItem = itens.get(0);
@@ -53,14 +53,27 @@ public class Inventario
         }
     }
 
-    public void ordenaItens(){
+    public void ordenaItens(TipoOrdenacao tipo){
         Item aux = null;
-        for(int i=itens.size()-1; i>= 1; i--){  
-            for(int j=0; j<i ; j++){
-                if(itens.get(j).getQuantidade()>itens.get(j+1).getQuantidade()){
-                    aux = itens.get(j);
-                    itens.set(j, itens.get(j+1));
-                    itens.set(j+1, aux);
+        if(tipo == TipoOrdenacao.ASCENDENTE){
+            for(int i=itens.size()-1; i>= 1; i--){  
+                for(int j=0; j<i ; j++){
+                    if(itens.get(j).getQuantidade()>itens.get(j+1).getQuantidade()){
+                        aux = itens.get(j);
+                        itens.set(j, itens.get(j+1));
+                        itens.set(j+1, aux);
+                    }
+                }
+            }
+        }
+        else{
+            for(int i=itens.size()-1; i>= 1; i--){  
+                for(int j=0; j<i ; j++){
+                    if(itens.get(j).getQuantidade()<itens.get(j+1).getQuantidade()){
+                        aux = itens.get(j);
+                        itens.set(j, itens.get(j+1));
+                        itens.set(j+1, aux);
+                    }
                 }
             }
         }

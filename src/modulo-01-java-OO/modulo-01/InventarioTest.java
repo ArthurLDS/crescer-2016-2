@@ -1,5 +1,4 @@
 
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -13,6 +12,7 @@ public class InventarioTest
         String allItens = elfo.getInventario().getDescricaoItens();
         assertEquals("Arco, Flechas", allItens);
     }
+
     @Test
     public void adicionarItemNoInventario() {
         Inventario inventario = new Inventario();
@@ -113,14 +113,14 @@ public class InventarioTest
         assertEquals(1045, inventario.getItens().get(1).getQuantidade());
         assertEquals(1003, inventario.getItens().get(2).getQuantidade());
     }
-    
+
     @Test
     public void aumentarUnidadeSemItens() {
         Inventario inventario = new Inventario();
         inventario.aumentar1000unidadesDosItens();
         assertEquals(0, inventario.getItens().size());
     }
-    
+
     @Test
     public void itemComMaiorQuantidadeCom3Itens() {
         Inventario inventario = criarInventarioCom3Itens();
@@ -128,7 +128,7 @@ public class InventarioTest
         assertEquals("Poção polissuco", item.getDescricao());
         assertEquals(45, item.getQuantidade());
     }
-    
+
     @Test
     public void itemComMaiorQuantidadeCom3ItensDeQuantidadesIguais() {
         Inventario inventario = new Inventario();
@@ -139,45 +139,81 @@ public class InventarioTest
         assertEquals("Espada de aço", item.getDescricao());
         assertEquals(2, item.getQuantidade());
     }
+
     @Test
-    public void itensOrdenadosSimplesCom4Nodos(){
+    public void itensOrdenadosAscendenteSimplesCom4Nodos(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("Espada de diamante", 5));
         inventario.adicionaItem(new Item("Poção polissuco", 2));
         inventario.adicionaItem(new Item("Lucky egg", 3));
         inventario.adicionaItem(new Item("Espada de aço", 4));
-        inventario.ordenaItens();
+        inventario.ordenaItens(TipoOrdenacao.ASCENDENTE);
         assertEquals("Poção polissuco, Lucky egg, Espada de aço, Espada de diamante", inventario.getDescricaoItens());
     }
+
     @Test
-    public void itensOrdenadosCom4NodosIguais(){
+    public void itensOrdenadosAscendenteCom4NodosIguais(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("Espada de diamante", 5));
         inventario.adicionaItem(new Item("Poção polissuco", 5));
         inventario.adicionaItem(new Item("Lucky egg", 5));
         inventario.adicionaItem(new Item("Espada de aço", 5));
-        inventario.ordenaItens();
+        inventario.ordenaItens(TipoOrdenacao.ASCENDENTE);
         assertEquals("Espada de diamante, Poção polissuco, Lucky egg, Espada de aço", inventario.getDescricaoItens());
     }
+
     @Test
-    public void itensOrdenadosCom5Nodos(){
+    public void itensOrdenadosAscendenteCom5Nodos(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("UltraBall", 1));
+        inventario.adicionaItem(new Item("Espada de diamante", 5));
+        inventario.adicionaItem(new Item("Poção polissuco", 2));
+        inventario.adicionaItem(new Item("Lucky egg", 3));
+        inventario.adicionaItem(new Item("Espada de aço", 4));
+
+        inventario.ordenaItens(TipoOrdenacao.ASCENDENTE);
+        assertEquals("UltraBall, Poção polissuco, Lucky egg, Espada de aço, Espada de diamante", inventario.getDescricaoItens());
+    }
+
+    @Test
+    public void itensOrdenadosDescendenteSimplesCom4Nodos(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("Espada de diamante", 5));
         inventario.adicionaItem(new Item("Poção polissuco", 2));
         inventario.adicionaItem(new Item("Lucky egg", 3));
         inventario.adicionaItem(new Item("Espada de aço", 4));
-        inventario.adicionaItem(new Item("Ultra Ball", 1));
-        inventario.ordenaItens();
-        assertEquals("Ultra Ball, Poção polissuco, Lucky egg, Espada de aço, Espada de diamante", inventario.getDescricaoItens());
+        inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
+        assertEquals("Espada de diamante, Espada de aço, Lucky egg, Poção polissuco", inventario.getDescricaoItens());
     }
     
+    @Test
+    public void itensOrdenadosDescendenteCom5Nodos(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Ultra Ball", 1));
+        inventario.adicionaItem(new Item("Espada de diamante", 5));
+        inventario.adicionaItem(new Item("Poção polissuco", 2));
+        inventario.adicionaItem(new Item("Lucky egg", 3));
+        inventario.adicionaItem(new Item("Espada de aço", 4));
+        inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
+        assertEquals("Espada de diamante, Espada de aço, Lucky egg, Poção polissuco, Ultra Ball", inventario.getDescricaoItens());
+    }
+    @Test
+    public void itensOrdenadosDescendenteCom4NodosIguais(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada de diamante", 5));
+        inventario.adicionaItem(new Item("Poção polissuco", 5));
+        inventario.adicionaItem(new Item("Lucky egg", 5));
+        inventario.adicionaItem(new Item("Espada de aço", 5));
+        inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
+        assertEquals("Espada de diamante, Poção polissuco, Lucky egg, Espada de aço", inventario.getDescricaoItens());
+    }
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
-    private Inventario criarInventarioCom3Itens() {
+    private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("Espada de aço", 2));
         inventario.adicionaItem(new Item("Poção polissuco", 45));
         inventario.adicionaItem(new Item("Lucky egg", 3));
         return inventario;
     }
-    
+
 }
