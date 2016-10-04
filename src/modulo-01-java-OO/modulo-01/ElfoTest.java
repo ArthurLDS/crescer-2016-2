@@ -125,4 +125,12 @@ public class ElfoTest
         Item maiorItem = elfo.getInventario().itemMaisPossuido();
         assertEquals(60, maiorItem.getQuantidade());
     }
+    @Test
+    public void adicionarItemNoInventario() {
+        Elfo elfo = new Elfo("Legolas", 30);
+        Item espadaZ = new Item("Espada Z", 1);
+        elfo.adicionarItem(espadaZ);
+        assertTrue(elfo.getInventario().getItens().contains(espadaZ));
+    }
+    
 }

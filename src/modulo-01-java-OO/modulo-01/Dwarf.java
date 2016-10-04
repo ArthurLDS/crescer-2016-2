@@ -1,18 +1,16 @@
 public class Dwarf extends Personagem{
 
-    private int vida;
-    private DataTerceiraEra dataNascimento;
+    protected int vida;
+    protected DataTerceiraEra dataNascimento;
 
     public Dwarf(){
         this(null, new DataTerceiraEra(1,1,1));
     }
 
     public Dwarf(String nome, DataTerceiraEra data){
-        status = Status.VIVO;
-        this.nome = nome;
+        super(nome);
         this.dataNascimento = data;
         vida = 110;
-        inventario = new Inventario();
     }
 
     public void perderVida() {
@@ -36,10 +34,6 @@ public class Dwarf extends Personagem{
         return vida;
     }
 
-    public int getXp() {
-        return experiencia;
-    }
-
     public double getNumeroSorte(){
         double result = 101.0;
         if(dataNascimento.ehBissexto() && (vida>=80 || vida<=90))
@@ -48,14 +42,6 @@ public class Dwarf extends Personagem{
             return result*33 % 100;
         return result;    
 
-    }
-
-    public void adicionarItem(Item item){
-        inventario.adicionaItem(item);
-    }
-
-    public void perderItem(Item item){
-        inventario.removeItem(item);
     }
 
     public void tentarSorte(){

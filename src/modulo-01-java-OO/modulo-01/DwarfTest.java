@@ -87,13 +87,13 @@ public class DwarfTest
     public void recebeFlechaComVidaCheia(){
         Dwarf teste = new Dwarf("nada", new DataTerceiraEra(1,1,2016));
         teste.receberFlecha();
-        assertEquals(2, teste.getXp()); 
+        assertEquals(2, teste.getExperiencia()); 
     }
     @Test
     public void recebeFlechaEmSeixasENaoBissexto(){
         Dwarf teste = new Dwarf("Seixas", new DataTerceiraEra(1,1,2013));
         teste.receberFlecha();
-        assertEquals(0, teste.getXp());
+        assertEquals(0, teste.getExperiencia());
         assertEquals(100, teste.getVida());
     }
     @Test
