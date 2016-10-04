@@ -1,5 +1,6 @@
 public class Elfo extends Personagem{
-   
+    protected float vida;
+    
     public Elfo(String n) {
         // Chamando construtor debaixo
         this(n, 42);
@@ -7,6 +8,7 @@ public class Elfo extends Personagem{
     
     public Elfo(String nome, int quantidadeFlechas) {
         super(nome);
+        vida = 100;
         inventario.adicionaItem(new Item("Arco", 1));
         inventario.adicionaItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
@@ -42,5 +44,8 @@ public class Elfo extends Personagem{
             experienciaNoSingular ? "nível" : "níveis"
         );
     }
- 
+    
+    public float getVida(){
+        return vida;
+    }
 }
