@@ -38,5 +38,11 @@ public class ElfosNoturnosTest
             teste.perderVida();
         assertEquals(Status.MORTO, teste.getStatus());    
     }
-    
+    @Test
+    public void elfoNoturnoNMorre(){
+        ElfosNoturnos teste = new ElfosNoturnos("Elfo da Night");
+        for(int i=0; i<=80;i++)
+            teste.perderVida();
+        assertEquals(Status.VIVO, teste.getStatus());    
+    }
 }

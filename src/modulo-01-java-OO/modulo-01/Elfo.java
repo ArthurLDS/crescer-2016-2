@@ -15,7 +15,6 @@ public class Elfo extends Personagem{
     public Elfo(){
         super(null);
         vida = 100;
-    
     }
 
     public Item getArco() {

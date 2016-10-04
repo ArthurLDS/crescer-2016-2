@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-
 public class ElfosNoturnos extends Elfo{
     public ElfosNoturnos(String nome){
         super(nome);
