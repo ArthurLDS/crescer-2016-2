@@ -29,16 +29,14 @@ public class ElfosNoturnosTest
         teste.atirarFlecha(new Dwarf());
         teste.atirarFlecha(new Dwarf());
         teste.atirarFlecha(new Dwarf());
-        assertEquals(85.73232, teste.getVida(), 0.01);
+        assertEquals(85.732, teste.getVida(), 0.01);
     }
     @Test
-    public void elfoNoturnoNuncaMorre(){
+    public void elfoNoturnoMorre(){
         ElfosNoturnos teste = new ElfosNoturnos("Elfo da Night");
-        for(int i=0; i<=30;i++)
+        for(int i=0; i<=90;i++)
             teste.perderVida();
-        assertEquals(Status.VIVO, teste.getStatus());    
+        assertEquals(Status.MORTO, teste.getStatus());    
     }
-    
-    
     
 }
