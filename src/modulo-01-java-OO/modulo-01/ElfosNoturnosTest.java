@@ -29,6 +29,6 @@ public class ElfosNoturnosTest
         teste.atirarFlecha(new Dwarf());
         teste.atirarFlecha(new Dwarf());
         teste.atirarFlecha(new Dwarf());
-        assertEquals(85.73232, teste.getVida(), 0.);
+        assertEquals(85.73232, teste.getVida(), 0.01);
     }
 }

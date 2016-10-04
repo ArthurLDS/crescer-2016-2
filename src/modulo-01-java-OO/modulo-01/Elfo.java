@@ -1,5 +1,5 @@
 public class Elfo extends Personagem{
-    protected float vida;
+    protected double vida;
     
     public Elfo(String n) {
         // Chamando construtor debaixo
@@ -11,6 +11,11 @@ public class Elfo extends Personagem{
         vida = 100;
         inventario.adicionaItem(new Item("Arco", 1));
         inventario.adicionaItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
+    }
+    public Elfo(){
+        super(null);
+        vida = 100;
+    
     }
 
     public Item getArco() {
@@ -45,7 +50,7 @@ public class Elfo extends Personagem{
         );
     }
     
-    public float getVida(){
+    public double getVida(){
         return vida;
     }
 }

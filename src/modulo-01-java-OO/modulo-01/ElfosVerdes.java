@@ -1,18 +1,18 @@
 public class ElfosVerdes extends Elfo{
     private Item flechaDeVidro;
     
-    public ElfosVerdes(String nome){
-        super(nome);
+    public ElfosVerdes(){
+        super();
         inventario.adicionaItem(new Item("Espada de aço valiriano", 1));
         inventario.adicionaItem(new Item("Flecha de Vidro", 42));
     }
     
     public Item getEspadaDeAcoValiriano(){
-         return inventario.getItens().get(2);
+         return inventario.getItens().get(0);
     }
     
     public Item getFlechaDeVidro(){
-         return inventario.getItens().get(3);
+         return inventario.getItens().get(1);
     }
     
     public void atirarFlechaDeVidro(Dwarf dwarf) {

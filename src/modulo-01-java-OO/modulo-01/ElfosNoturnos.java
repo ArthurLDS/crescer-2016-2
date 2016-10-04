@@ -7,6 +7,7 @@ public class ElfosNoturnos extends Elfo{
    }
    
    public void atirarFlecha(Dwarf dwarf) {
+        status = vida<=0 ? Status.MORTO : Status.VIVO;
         boolean temFlecha = getFlecha().getQuantidade() > 0;
         if (temFlecha) {
             getFlecha().setQuantidade(getFlecha().getQuantidade() - 1);
@@ -16,9 +17,6 @@ public class ElfosNoturnos extends Elfo{
         }
     }
     public void perderVida(){
-        status = vida<=0 ? Status.MORTO : Status.VIVO;
-        DecimalFormat formato = new DecimalFormat("#.##");
         vida -= (vida*5)/100;
-        formato.format(vida);
     }
 }
