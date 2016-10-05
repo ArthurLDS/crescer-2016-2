@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Inventario
 {
     ArrayList<Item> itens = new ArrayList<>();
-    ArrayList<Item> itensOrdem = new ArrayList<>();
+    
 
     public ArrayList<Item> getItens(){
         return itens;
