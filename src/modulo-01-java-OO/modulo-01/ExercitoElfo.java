@@ -11,12 +11,10 @@ public class ExercitoElfo
         exercito = new ArrayList<Elfo>();
     }
 
-    public void alistar(ElfosVerdes elfo){
-        exercito.add(elfo);
-    }
-
-    public void alistar(ElfosNoturnos elfo){
-        exercito.add(elfo);
+    public void alistar(Elfo elfo){
+        boolean podeAlistar = elfo instanceof ElfosVerdes || elfo instanceof ElfosNoturnos;
+        if(podeAlistar)
+            exercito.add(elfo);
     }
 
     public Elfo buscarElfo(String nome){
@@ -24,6 +22,7 @@ public class ExercitoElfo
         for(int i=0; i<exercito.size(); i++){
             if(exercito.get(i).getNome().equals(nome)){
                 escolhido = exercito.get(i);
+                break;
             }
         }
         return escolhido;
