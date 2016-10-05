@@ -2,7 +2,6 @@ import java.util.ArrayList;
 public class ExercitoElfo
 {
     ArrayList<Elfo> exercito;
-    ArrayList<Elfo> escolhidosPorStatus;
     
     public ArrayList<Elfo> getExercito(){
         return exercito;
@@ -31,13 +30,13 @@ public class ExercitoElfo
         return exercito.get(0);
     }
     public ArrayList<Elfo> buscarPorStatus(Status status){
-        
+        ArrayList<Elfo> escolhidosPorStatus = new ArrayList<>();
         for(int i=0; i<exercito.size(); i++){
             if(exercito.get(i).getStatus().equals(status)){
                 escolhidosPorStatus.add(exercito.get(i));
-                return escolhidosPorStatus;
+                
             }
         }
-        return null;
+        return escolhidosPorStatus;
     }
 }
