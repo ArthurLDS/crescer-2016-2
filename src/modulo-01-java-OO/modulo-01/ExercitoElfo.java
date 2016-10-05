@@ -22,7 +22,7 @@ public class ExercitoElfo
     public Elfo buscarElfo(String nome){
         Elfo escolhido = null;
         for(int i=0; i<exercito.size(); i++){
-            if(exercito.get(i).getNome()==nome){
+            if(exercito.get(i).getNome().equals(nome)){
                 escolhido = exercito.get(i);
             }
         }
@@ -34,7 +34,7 @@ public class ExercitoElfo
     public ArrayList<Elfo> buscarPorStatus(Status status){
         
         for(int i=0; i<exercito.size(); i++){
-            if(exercito.get(i).getStatus() == status){
+            if(exercito.get(i).getStatus().equals(status)){
                 escolhidosPorStatus.add(exercito.get(i));
                 return escolhidosPorStatus;
             }
