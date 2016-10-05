@@ -1,7 +1,7 @@
 public class ElfosVerdes extends Elfo{
     
-    public ElfosVerdes(){
-        super();
+    public ElfosVerdes(String nome){
+        super(nome);
         inventario.adicionaItem(new Item("Espada de aço valiriano", 1));
         inventario.adicionaItem(new Item("Flecha de Vidro", 42));
     }
