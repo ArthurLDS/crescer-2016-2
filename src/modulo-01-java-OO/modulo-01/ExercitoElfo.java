@@ -34,7 +34,6 @@ public class ExercitoElfo
         for(int i=0; i<exercito.size(); i++){
             if(exercito.get(i).getStatus().equals(status)){
                 escolhidosPorStatus.add(exercito.get(i));
-                
             }
         }
         return escolhidosPorStatus;

@@ -132,5 +132,26 @@ public class ElfoTest
         elfo.adicionarItem(espadaZ);
         assertTrue(elfo.getInventario().getItens().contains(espadaZ));
     }
-    
+    @Test 
+    public void nasceUmElfoEIncrementaCont(){
+        int atual = Elfo.contElfos;
+        Elfo elfo = new Elfo("Legolas", 30);
+        int depois = Elfo.contElfos;
+        assertEquals(1, depois-atual);
+    }
+    @Test 
+    public void nasce3ElfoEIncrementaCont(){
+        int atual = Elfo.contElfos;
+        Elfo elfo = new Elfo("Legolas", 30);
+        Elfo elf = new Elfo("Legoas", 30);
+        Elfo el = new Elfo("Lelas", 30);
+        int depois = Elfo.contElfos;
+        assertEquals(3, depois-atual);
+    }
+    @Test 
+    public void nasceZeroElfoeNIncrementaCont(){
+        int atual = Elfo.contElfos;
+        int depois = Elfo.contElfos;
+        assertEquals(0, depois-atual);
+    }
 }

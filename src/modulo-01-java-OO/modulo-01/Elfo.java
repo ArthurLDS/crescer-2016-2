@@ -1,6 +1,18 @@
 public class Elfo extends Personagem{
     protected double vida;
+    protected static int contElfos = 0;
     
+    {
+        vida = 100;
+        contElfos++;
+    }
+    public static int getContElfos(){
+        return contElfos;
+    }
+    /*protected void finalize() thows Throwable{
+        
+        contElfos--;
+    }*/
     public Elfo(String n) {
         // Chamando construtor debaixo
         this(n, 42);
@@ -8,13 +20,11 @@ public class Elfo extends Personagem{
     
     public Elfo(String nome, int quantidadeFlechas) {
         super(nome);
-        vida = 100;
         inventario.adicionaItem(new Item("Arco", 1));
         inventario.adicionaItem(new Item("Flechas", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
     public Elfo(){
         super(null);
-        vida = 100;
     }
 
     public Item getArco() {
