@@ -16,10 +16,28 @@ public class BatalhaoEspecialTest{
     public void alistaDoisElfosEPesquisaOPrimeiro(){
         BatalhaoEspecial batalhao = new BatalhaoEspecial();
         Elfo elfo = new ElfosVerdes("Elfão",80);
-        Elfo elfo2 = new ElfosVerdes("Elfão2",80);
+        Elfo elfo2 = new ElfosNoturnos("Elfão2");
         batalhao.alistar(elfo);
         batalhao.alistar(elfo2);
         assertEquals(elfo, batalhao.buscar(elfo.getNome()));
+    }
+    @Test
+    public void alistaDoisElfosIguaisEPesquisa(){
+        BatalhaoEspecial batalhao = new BatalhaoEspecial();
+        Elfo elfo = new ElfosVerdes("Elfão",80);
+        Elfo elfo2 = new ElfosVerdes("Elfão",80);
+        batalhao.alistar(elfo);
+        batalhao.alistar(elfo2);
+        assertEquals(elfo2, batalhao.buscar("Elfão"));
+    }
+    @Test
+    public void alistaUmsElfoValidoEUmInvalidoEPesquisaOInvalido(){
+        BatalhaoEspecial batalhao = new BatalhaoEspecial();
+        Elfo elfo = new ElfosVerdes("Elfão",80);
+        Elfo elfo2 = new Elfo("Elfão2");
+        batalhao.alistar(elfo);
+        batalhao.alistar(elfo2);
+        assertNull(batalhao.buscar(elfo2.getNome()));
     }
 
     @Test
@@ -100,7 +118,7 @@ public class BatalhaoEspecialTest{
     @Test
     public void alista6ElfosEPesquisa2Mortos(){
         BatalhaoEspecial batalhao = new BatalhaoEspecial();
-        
+
         ElfosNoturnos elfo2 =  new ElfosNoturnos("Elf Mcada");
         ElfosNoturnos elfo3 =  new ElfosNoturnos("Eo dascada");
         ElfosNoturnos elfo =  new ElfosNoturnos("Elfo da Masada");
