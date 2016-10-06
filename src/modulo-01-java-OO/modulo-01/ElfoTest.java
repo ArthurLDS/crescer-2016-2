@@ -35,7 +35,7 @@ public class ElfoTest
     public void elfoAtiraFlechaEmUmDwarf() {
         Elfo elfo = new Elfo("Batman");
         Dwarf balin = new Dwarf();
-        elfo.atirarFlecha(balin);
+        elfo.atirarFlechas(balin,12);
         assertEquals(100, balin.getVida());
     }
 
@@ -43,8 +43,8 @@ public class ElfoTest
     public void elfoAtiraDuasFlechaEmUmDwarf() {
         Elfo elfo = new Elfo("Batman");
         Dwarf balin = new Dwarf();
-        elfo.atirarFlecha(balin);
-        elfo.atirarFlecha(balin);
+        elfo.atirarFlechas(balin,12);
+        elfo.atirarFlechas(balin,12);
         assertEquals(90, balin.getVida());
     }
     
@@ -68,7 +68,7 @@ public class ElfoTest
     @Test
     public void elfoAtiraFlechaEToString() {
         Elfo legolas = new Elfo("Legolas");
-        legolas.atirarFlecha(new Dwarf());
+        legolas.atirarFlechas(new Dwarf(), 1);
         assertEquals("Legolas possui 41 flechas e 1 nível de experiência.",
             legolas.toString());
 
