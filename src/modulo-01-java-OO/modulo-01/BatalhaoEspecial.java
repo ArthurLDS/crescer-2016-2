@@ -25,6 +25,7 @@ public class BatalhaoEspecial{
        ArrayList<Elfo> escolhidosByStatus = null;
        for(int i=0; i< batalhao.size(); i++){
            escolhidosByStatus.add(batalhao.get(status));
+           
        }
        return escolhidosByStatus;     
     }
