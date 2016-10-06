@@ -9,10 +9,12 @@ public class Elfo extends Personagem{
     public static int getContElfos(){
         return contElfos;
     }
-    /*protected void finalize() thows Throwable{
-        
-        contElfos--;
-    }*/
+    
+    protected void finalize() throws Throwable {
+        super.finalize();
+        Elfo.contElfos--;
+    }
+    
     public Elfo(String n) {
         // Chamando construtor debaixo
         this(n, 42);
