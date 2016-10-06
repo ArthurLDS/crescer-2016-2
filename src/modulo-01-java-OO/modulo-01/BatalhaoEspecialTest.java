@@ -76,12 +76,47 @@ public class BatalhaoEspecialTest{
     }
 
     @Test
-    public void alista5ElfosEPesquisaVivos(){
-
+    public void alista6ElfosEPesquisa4Vivos(){
+        BatalhaoEspecial batalhao = new BatalhaoEspecial();
+        ElfosNoturnos elfo =  new ElfosNoturnos("Elfo da Masada");
+        for(int i=0; i<=90; i++)
+            elfo.perderVida();
+        ElfosNoturnos elfo1 =  new ElfosNoturnos("Elf da Mascada");
+        for(int i=0; i<=90; i++)
+            elfo1.perderVida();
+        ElfosNoturnos elfo2 =  new ElfosNoturnos("Elf Mcada");
+        ElfosNoturnos elfo3 =  new ElfosNoturnos("Eo dascada");
+        ElfosNoturnos elfo4 =  new ElfosNoturnos("Elfo ddda Masca");
+        ElfosNoturnos elfo5 =  new ElfosNoturnos("Elfoada");
+        batalhao.alistar(elfo);
+        batalhao.alistar(elfo1);
+        batalhao.alistar(elfo2);
+        batalhao.alistar(elfo3);
+        batalhao.alistar(elfo4);
+        batalhao.alistar(elfo5);
+        assertEquals(4, batalhao.buscarPorStatus(Status.VIVO).size());
     }
 
     @Test
-    public void alistaZeroElfosEPesquisaVivos(){
-
+    public void alista6ElfosEPesquisa2Mortos(){
+        BatalhaoEspecial batalhao = new BatalhaoEspecial();
+        
+        ElfosNoturnos elfo2 =  new ElfosNoturnos("Elf Mcada");
+        ElfosNoturnos elfo3 =  new ElfosNoturnos("Eo dascada");
+        ElfosNoturnos elfo =  new ElfosNoturnos("Elfo da Masada");
+        for(int i=0; i<=90; i++)
+            elfo.perderVida();
+        ElfosNoturnos elfo1 =  new ElfosNoturnos("Elf da Mascada");
+        for(int i=0; i<=90; i++)
+            elfo1.perderVida();
+        ElfosNoturnos elfo4 =  new ElfosNoturnos("Elfo ddda Masca");
+        ElfosNoturnos elfo5 =  new ElfosNoturnos("Elfoada");
+        batalhao.alistar(elfo);
+        batalhao.alistar(elfo1);
+        batalhao.alistar(elfo2);
+        batalhao.alistar(elfo3);
+        batalhao.alistar(elfo4);
+        batalhao.alistar(elfo5);
+        assertEquals(2, batalhao.buscarPorStatus(Status.MORTO).size());
     }
 }
