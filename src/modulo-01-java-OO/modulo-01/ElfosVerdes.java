@@ -1,26 +1,37 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 public class ElfosVerdes extends Elfo{
-    
-    public ElfosVerdes(String nome){
-        super(nome);
-        inventario.adicionaItem(new Item("Espada de aço valiriano", 1));
-        inventario.adicionaItem(new Item("Flecha de Vidro", 42));
+
+    public ElfosVerdes(String nome, int quantidadeFlechas) {
+        super(nome, quantidadeFlechas);
     }
+
     
-    public Item getEspadaDeAcoValiriano(){
-         return inventario.getItens().get(0);
+    public void atirarFlecha(Dwarf dwarf) {
+        super.atirarFlechas(dwarf, 2);
     }
+
     
-    public Item getFlechaDeVidro(){
-         return inventario.getItens().get(1);
+    protected void inicializarInventario(int quantidadeFlechas) {
+        this.adicionarItem(new Item("Arco de Vidro", 1));
+        this.adicionarItem(new Item("Flecha de Vidro", quantidadeFlechas >= 0 ? quantidadeFlechas : 42));
     }
-    
-    public void atirarFlechaDeVidro(Dwarf dwarf) {
-        boolean temFlecha = getFlechaDeVidro().getQuantidade() > 0;
-        if (temFlecha) {
-            getFlecha().setQuantidade(getFlechaDeVidro().getQuantidade() - 1);
-            experiencia += 2;
-            dwarf.perderVida();
+
+    public void adicionarItem(Item item) {        
+        String[] validas = getNomesValidos();
+        boolean podeAdicionar = item != null && new ArrayList<>(Arrays.asList(validas)).contains(item.getDescricao());
+
+        if (podeAdicionar) {
+            super.adicionarItem(item);
         }
     }
-    
+
+    private String[] getNomesValidos() {
+        return new String[] { 
+            "Espada de aço valiriano", 
+            "Arco de Vidro",
+            "Flecha de Vidro"
+        };
+    }
+
 }
