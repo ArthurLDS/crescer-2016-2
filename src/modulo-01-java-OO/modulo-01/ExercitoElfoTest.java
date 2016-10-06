@@ -8,7 +8,7 @@ public class ExercitoElfoTest{
     @Test
     public void alistaElfoVerde(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
         teste.alistar(verdao);
         assertEquals("Verdão da Massa", teste.getExercito().get(0).getNome());
     }
@@ -22,36 +22,36 @@ public class ExercitoElfoTest{
     @Test
     public void buscaUmElfoVerde(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
         teste.alistar(verdao);
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
     @Test
     public void buscaUmElfoVerdeEntreMuitos(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
-        teste.alistar(new ElfosVerdes("Verdão"));
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
+        teste.alistar(new ElfosVerdes("Verdão", 50));
         teste.alistar(verdao);
-        teste.alistar(new ElfosVerdes("Verdão Ruim"));
-        teste.alistar(new ElfosVerdes("Recruta"));
+        teste.alistar(new ElfosVerdes("Verdão Ruim", 50));
+        teste.alistar(new ElfosVerdes("Recruta", 50));
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
     @Test
     public void buscaUmElfoVerdeEntreMuitosComMesmoNome(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
         teste.alistar(verdao);
-        teste.alistar(new ElfosVerdes("Verdão da Massa"));
-        teste.alistar(new ElfosVerdes("Verdão da Massa"));
-        teste.alistar(new ElfosVerdes("Verdão da Massa"));
+        teste.alistar(new ElfosVerdes("Verdão da Massa", 50));
+        teste.alistar(new ElfosVerdes("Verdão da Massa", 50));
+        teste.alistar(new ElfosVerdes("Verdão da Massa", 50));
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
     @Test
     public void buscaTresElfoPorStatusVivo(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
-        Elfo verdim = new ElfosVerdes("Verdão do Povo");
-        Elfo verde = new ElfosVerdes("Verdão do Povo");
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
+        Elfo verdim = new ElfosVerdes("Verdão do Povo", 50);
+        Elfo verde = new ElfosVerdes("Verdão do Povo", 50);
         teste.alistar(verdao);
         teste.alistar(verdim);
         teste.alistar(verde);
@@ -62,9 +62,9 @@ public class ExercitoElfoTest{
     @Test
     public void buscaTresElfoPorStatusMortoENenhumEstaMorto(){
         ExercitoElfo teste = new ExercitoElfo();
-        Elfo verdao = new ElfosVerdes("Verdão da Massa");
-        Elfo verdim = new ElfosVerdes("Verdão do Povo");
-        Elfo verde = new ElfosVerdes("Verdão do Povo");
+        Elfo verdao = new ElfosVerdes("Verdão da Massa", 50);
+        Elfo verdim = new ElfosVerdes("Verdão do Povo", 50);
+        Elfo verde = new ElfosVerdes("Verdão do Povo", 50);
         teste.alistar(verdao);
         teste.alistar(verdim);
         teste.alistar(verde);
