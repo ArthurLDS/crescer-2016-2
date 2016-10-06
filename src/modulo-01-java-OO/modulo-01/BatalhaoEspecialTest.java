@@ -46,7 +46,7 @@ public class BatalhaoEspecialTest{
         BatalhaoEspecial batalhao = new BatalhaoEspecial();
         Elfo elfo = new Elfo("Elfão",80);
         batalhao.alistar(elfo);
-        assertEquals(elfo, batalhao.buscarPorStatus(Status.VIVO).get(0));
+        assertEquals(1, batalhao.buscarPorStatus(Status.VIVO).size());
     }
     @Test
     public void alista1ElfoEPesquisaMorto(){
