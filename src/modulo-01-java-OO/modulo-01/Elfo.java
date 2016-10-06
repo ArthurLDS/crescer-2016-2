@@ -35,11 +35,12 @@ public class Elfo extends Personagem{
         return inventario.getItens().get(1);
     }
 
-    public void atirarFlecha(Dwarf dwarf) {
-        boolean temFlecha = getFlecha().getQuantidade() > 0;
+    protected void atirarFlechas(Dwarf dwarf, int fatorExperiencia) {
+        int quantidadeFlechas = getFlecha().getQuantidade();
+        boolean temFlecha = quantidadeFlechas > 0;
         if (temFlecha) {
-            getFlecha().setQuantidade(getFlecha().getQuantidade() - 1);
-            experiencia++;
+            getFlecha().setQuantidade(quantidadeFlechas - 1);
+            experiencia += 1 * fatorExperiencia;
             dwarf.perderVida();
         }
     }
