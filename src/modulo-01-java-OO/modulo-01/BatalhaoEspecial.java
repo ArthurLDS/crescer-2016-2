@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BatalhaoEspecial{
     protected HashMap<String, Elfo> batalhao;
-    
+
     public BatalhaoEspecial(){
         batalhao = new HashMap<>();
     }
@@ -14,19 +14,24 @@ public class BatalhaoEspecial{
     }
 
     public void alistar(Elfo elfo){
-       batalhao.put(elfo.getNome(), elfo);
+        boolean podeAlistar = elfo instanceof ElfosVerdes || elfo instanceof ElfosNoturnos;
+        if(podeAlistar)
+            batalhao.put(elfo.getNome(), elfo);
     }
-    
+
     public Elfo buscar(String nome){
         return batalhao.get(nome);
     }
-    
-    public ArrayList<Elfo> buscarPorStatus(Status status){
-       ArrayList<Elfo> escolhidosByStatus = null;
-       for(int i=0; i< batalhao.size(); i++){
-           escolhidosByStatus.add(batalhao.get(status));
-           
-       }
-       return escolhidosByStatus;     
+
+    public HashMap<String, Elfo> buscarPorStatus(Status status){
+        HashMap<String, Elfo> escolhidosByStatus = new HashMap<>();
+        
+        for(String keyElfo : batalhao.keySet()){
+            Elfo elfoStatus = batalhao.get(keyElfo);
+            if(elfoStatus.getStatus() == status)
+                escolhidosByStatus.put(keyElfo, elfoStatus);
+
+        }
+        return escolhidosByStatus;     
     }
 }
