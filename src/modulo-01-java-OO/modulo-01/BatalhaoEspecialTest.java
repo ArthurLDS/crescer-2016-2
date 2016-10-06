@@ -41,7 +41,7 @@ public class BatalhaoEspecialTest{
         assertNull(batalhao.buscar("Paulão"));
     }
     
-    @Test
+    //@Test
     public void alista1ElfoEPesquisaVivo(){
         BatalhaoEspecial batalhao = new BatalhaoEspecial();
         Elfo elfo = new Elfo("Elfão",80);
