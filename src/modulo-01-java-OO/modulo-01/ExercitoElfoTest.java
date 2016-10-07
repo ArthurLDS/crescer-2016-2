@@ -2,7 +2,7 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import java.util.ArrayList;
+import java.util.*;
 
 public class ExercitoElfoTest{
     @Test
@@ -12,6 +12,7 @@ public class ExercitoElfoTest{
         teste.alistar(verdao);
         assertEquals("Verdão da Massa", teste.getExercito().get(0).getNome());
     }
+
     @Test
     public void alistaElfoNoturbo(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -19,6 +20,7 @@ public class ExercitoElfoTest{
         teste.alistar(verdao);
         assertEquals("Verdão da Massa", teste.getExercito().get(0).getNome());
     }
+
     @Test
     public void buscaUmElfoVerde(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -26,6 +28,7 @@ public class ExercitoElfoTest{
         teste.alistar(verdao);
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
+
     @Test
     public void buscaUmElfoVerdeEntreMuitos(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -36,6 +39,7 @@ public class ExercitoElfoTest{
         teste.alistar(new ElfosVerdes("Recruta", 50));
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
+
     @Test
     public void buscaUmElfoVerdeEntreMuitosComMesmoNome(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -46,6 +50,7 @@ public class ExercitoElfoTest{
         teste.alistar(new ElfosVerdes("Verdão da Massa", 50));
         assertEquals(verdao, teste.buscarElfo("Verdão da Massa"));
     }
+
     @Test
     public void buscaTresElfoPorStatusVivo(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -55,10 +60,11 @@ public class ExercitoElfoTest{
         teste.alistar(verdao);
         teste.alistar(verdim);
         teste.alistar(verde);
-        
+
         ArrayList<Elfo> resultado = teste.buscarPorStatus(Status.VIVO);
         assertEquals(3, resultado.size());
     }
+
     @Test
     public void buscaTresElfoPorStatusMortoENenhumEstaMorto(){
         ExercitoElfo teste = new ExercitoElfo();
@@ -70,5 +76,34 @@ public class ExercitoElfoTest{
         teste.alistar(verde);
         ArrayList<Elfo> resultado = teste.buscarPorStatus(Status.MORTO);
         assertEquals(0, resultado.size());
+    }
+
+    @Test
+    public void getOrdemDeAtaque4Elfos(){
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosVerdes("1", 50));
+        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        assertEquals(elfos.get(0).getNome(), "1");
+        assertEquals(elfos.get(1).getNome(), "1");
+        assertEquals(elfos.get(2).getNome(), "1");
+        assertEquals(elfos.get(3).getNome(), "2");
+        assertEquals(elfos.get(4).getNome(), "2");
+    }
+    @Test
+    public void getOrdemDeAtaque2Elfos(){
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosVerdes("1", 50));
+        
+        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        assertEquals(elfos.get(0).getNome(), "1");
+        assertEquals(elfos.get(1).getNome(), "2");
+        
     }
 }
