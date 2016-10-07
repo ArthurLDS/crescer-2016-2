@@ -88,13 +88,31 @@ public class Inventario
     }
     //Exercicio 3.2 EXTRA
     public double getMediaQuantidades(){
-        int somador  = 0, sizeItens = itens.size();
+        int somador = getSomatorioQuantidades(), sizeItens = itens.size();
         double media = 0;
-        for(int i=0; i<sizeItens; i++){
+        return media = somador / sizeItens; 
+    }   
+    //Exercicio 3.3 EXTRA
+    public int getSomatorioQuantidades(){
+        int somador  = 0;
+        for(int i=0; i<itens.size(); i++){
             int quantItemAtual = itens.get(i).getQuantidade();
             somador += quantItemAtual;
         }
-        return media = somador / sizeItens; 
-
-    }   
+        return somador;
+    }
+    //Exercicio 3.4 EXTRA
+    public Inventario unir(Inventario inventario){
+        ArrayList<Item> itensInventario = inventario.getItens();
+        Inventario resultado = new Inventario();
+        for(int i=0; i<itens.size(); i++){
+            Item itemAtual = itens.get(i);
+            resultado.adicionaItem(itemAtual);
+        }
+        for(int i=0; i<itensInventario.size(); i++){
+            Item itemAtual = itensInventario.get(i);
+            resultado.adicionaItem(itemAtual);
+        }
+        return resultado;
+    }
 }
