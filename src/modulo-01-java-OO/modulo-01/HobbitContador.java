@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class HobbitContador
 {
-    
+
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> lista){
         int[] prodDosPares = new int [lista.size()];
         int[] mmcDosPares = new int[lista.size()];    
@@ -47,5 +47,31 @@ public class HobbitContador
         }while(resto!=0);
         return (nodoAtual * nodoPost)/a;
     }
-}
+    //Exercicio 1 EXTRA
+    public int obterMaiorMultiploDeTresAte(int numero) {
+        int maior = 0;
+        /* Desta maneira a variável limite não esta sendo declarada e o "continue" 
+         * não tem motivo para estar presente no codigo.
+         * for (int i = 1; i <= limite; i++) {
+        Na maneira abaixo.. O teste é feito até o numero recebido
+        por parâmetro, assim percorrendo todos os numeros até o valor informado
+        pelo usuário e testando os mesmosaté obter o maior Multiplo de 3.     */
+        for (int i = 1; i <= numero; i++) {
+            if (i%3 == 0) 
+                maior = i;
+        }
+        return maior;
 
+    }
+
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero) {
+        ArrayList<Integer> multiplos = new ArrayList<>();
+
+        for (int i = 1; i <= limite; i++) {
+            if (i % 3 == 0) break;
+            multiplos.add(i);
+        }
+        return multiplos;
+
+    }
+}
