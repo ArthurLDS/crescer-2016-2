@@ -74,4 +74,17 @@ public class Inventario
         }
 
     }
+    //Exercicio 3.1 EXTRA
+    public Item buscar(String descricao){
+        Item resultado = null;
+        for(int i=0; i<itens.size(); i++){
+            Item itemAtual = itens.get(i);
+            if(descricao.equals(itemAtual.getDescricao())){
+                resultado = itemAtual;
+                break;
+            }
+        }
+        return resultado;
+    }
+    
 }
