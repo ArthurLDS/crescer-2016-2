@@ -1,6 +1,5 @@
 import java.util.ArrayList;
-public class ExercitoElfo
-{
+public class ExercitoElfo{
     ArrayList<Elfo> exercito;
     
     public ArrayList<Elfo> getExercito(){
