@@ -207,6 +207,50 @@ public class InventarioTest
         inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
         assertEquals("Espada de diamante, Poção polissuco, Lucky egg, Espada de aço", inventario.getDescricaoItens());
     }
+    
+    @Test
+    public void adc1ItemEbuscarOMesmoItemPorDescricao(){
+        Inventario inventario = new Inventario();
+        Item item = new Item("Espada de diamante", 5);
+        inventario.adicionaItem(item);
+        assertEquals(item, inventario.buscar("Espada de diamante"));
+    }
+    @Test
+    public void adc5ItensEPesquisaUmPorDescricao(){
+        Inventario inventario = new Inventario();
+        Item item = new Item("Espada de diamante", 5);
+        Item item1 = new Item("Espada de dia", 5);
+        Item item2 = new Item("Espada de diam", 5);
+        Item item3 = new Item("Espada de diaman", 5);
+        Item item4 = new Item("Espada de diamant", 5);
+        inventario.adicionaItem(item1);
+        inventario.adicionaItem(item2);
+        inventario.adicionaItem(item);
+        inventario.adicionaItem(item3);
+        inventario.adicionaItem(item4);
+        assertEquals(item, inventario.buscar("Espada de diamante"));
+    }
+    @Test
+    public void adc5ItensEIguaisPesquisaOPrimeiroPorDescricao(){
+        Inventario inventario = new Inventario();
+        Item item  = new Item("Espada de diamante", 5);
+        Item item1 = new Item("Espada de diamante", 5);
+        Item item2 = new Item("Espada de diamante", 5);
+        Item item3 = new Item("Espada de diamante", 5);
+        Item item4 = new Item("Espada de diamante", 5);
+        inventario.adicionaItem(item);
+        inventario.adicionaItem(item1);
+        inventario.adicionaItem(item2);
+        inventario.adicionaItem(item3);
+        inventario.adicionaItem(item4);
+        assertEquals(item, inventario.buscar("Espada de diamante"));
+    }
+    @Test
+    public void adcZeroItensEPesquisarRetornaNull(){
+        Inventario inventario = new Inventario();
+        assertNull(inventario.buscar("Espada de diamante"));
+    }
+    
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
     private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();
