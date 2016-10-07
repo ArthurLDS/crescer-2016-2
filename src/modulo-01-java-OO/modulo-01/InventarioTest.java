@@ -263,12 +263,14 @@ public class InventarioTest
         inventario.adicionaItem(new Item("Lança", 2));
         assertEquals(3, inventario.getMediaQuantidades(), 0.);
     }
+
     @Test
     public void getMediaQuantidades1item(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("Espada", 3));
         assertEquals(3, inventario.getMediaQuantidades(), 0.);
     }
+
     @Test
     public void getMediaQuantidadesQuebradaCom3itens(){
         Inventario inventario = new Inventario();
@@ -278,6 +280,48 @@ public class InventarioTest
         assertEquals(5.6, inventario.getMediaQuantidades(), 1.);
     }
 
+    @Test
+    public void getSomatorioQuantidades4itens(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada", 5));
+        inventario.adicionaItem(new Item("Poção HP", 6));
+        inventario.adicionaItem(new Item("Lança", 6));
+        inventario.adicionaItem(new Item("GreatBall", 6));
+        assertEquals(23, inventario.getSomatorioQuantidades());
+    }
+
+    @Test
+    public void getSomatorioQuantidades1item(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada", 5));
+        assertEquals(5, inventario.getSomatorioQuantidades());
+    }
+    @Test
+    public void unir2Inventarios(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("GreatBall", 5));
+        Inventario inventario2 = new Inventario();
+        inventario2.adicionaItem(new Item("UltraBall", 6));
+        Inventario resultado = inventario.unir(inventario2);
+        assertEquals("GreatBall", resultado.getItens().get(0).getDescricao());
+        assertEquals("UltraBall", resultado.getItens().get(1).getDescricao());
+    }
+    @Test
+    public void unir2InventariosE1semItem(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("GreatBall", 5));
+        Inventario inventario2 = new Inventario();
+        Inventario resultado = inventario.unir(inventario2);
+        assertEquals(1, resultado.getItens().size());
+    }
+    @Test
+    public void unir2InventariosE2semItem(){
+        Inventario inventario = new Inventario();
+        Inventario inventario2 = new Inventario();
+        Inventario resultado = inventario.unir(inventario2);
+        assertEquals(0, resultado.getItens().size());
+    }
+     
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
     private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();
