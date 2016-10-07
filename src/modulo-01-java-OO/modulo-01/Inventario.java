@@ -133,4 +133,19 @@ public class Inventario
         }
         return resultado;
     }
+    //Exercicio 3.6 EXTRA
+    public Inventario cruzar(Inventario inventario){
+        ArrayList<Item> itensInventarioRecebido = inventario.getItens();
+        Inventario resultado = new Inventario();
+        for(int i=0; i<itens.size(); i++){
+            boolean tem = false;
+            Item itemAtual = itens.get(i);
+            for(int j=0; j<itensInventarioRecebido.size(); j++){
+                if(itemAtual.getDescricao() == itensInventarioRecebido.get(j).getDescricao()){
+                    resultado.adicionaItem(itemAtual);
+                }
+            }      
+        }
+        return resultado;
+    }
 }
