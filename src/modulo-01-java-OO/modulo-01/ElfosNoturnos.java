@@ -1,4 +1,7 @@
-public class ElfosNoturnos extends Elfo{
+import java.util.*;
+
+public class ElfosNoturnos extends Elfo implements Estrategias{
+
     public ElfosNoturnos(String nome){
         super(nome);
     }
@@ -16,5 +19,9 @@ public class ElfosNoturnos extends Elfo{
     public void perderVida(){
         status = (int)vida==0 ? Status.MORTO : this.status;
         vida -= (vida*5)/100;
+    }
+
+    public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes, List<Dwarf> alvos){
+        return null;
     }
 }

@@ -1,5 +1,5 @@
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.*;
+
 public class ElfosVerdes extends Elfo{
 
     public ElfosVerdes(String nome, int quantidadeFlechas) {
@@ -34,4 +34,7 @@ public class ElfosVerdes extends Elfo{
         };
     }
 
+    public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes, List<Dwarf> alvos){
+        return null;
+    }
 }
