@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 public interface Exercito{
     
     Elfo[] getContingente();
@@ -8,5 +8,6 @@ public interface Exercito{
     Elfo buscar(String nome);
 
     ArrayList<Elfo> buscar(Status status);
+    
 
 }
