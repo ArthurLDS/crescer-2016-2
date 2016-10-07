@@ -74,4 +74,24 @@ public class HobbitContadorTest
         HobbitContador hobbit = new HobbitContador();
         assertEquals(0,hobbit.obterMaiorMultiploDeTresAte(2));
     }
+    @Test
+    public void multiplosDe3ate10(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(4, hobbit.obterMultiplosDeTresAte(10).size());
+    }
+    @Test
+    public void multiplosDe3ate30(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(11, hobbit.obterMultiplosDeTresAte(30).size());
+    }
+    @Test
+    public void multiplosDe3ate3(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(2, hobbit.obterMultiplosDeTresAte(3).size());
+    }
+    @Test
+    public void multiplosDe3ate0(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(1, hobbit.obterMultiplosDeTresAte(0).size());
+    }
 }
