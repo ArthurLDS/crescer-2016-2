@@ -51,19 +51,29 @@ public class HobbitContador
     public int obterMaiorMultiploDeTresAte(int numero) { 
         int maior = 0; 
         /* Desta maneira a variável limite não esta sendo declarada e o "continue"  
-         * não tem motivo para estar presente no codigo. 
+         * não tem motivo para estar presente no codigo. E a var "i" deve começar 
+         * com 0 pois o 0 é multiplo de todos os numeros.
          * for (int i = 1; i <= limite; i++) { 
         Na maneira abaixo.. O teste é feito até o numero recebido 
         por parâmetro, assim percorrendo todos os numeros até o valor informado 
         pelo usuário e testando os mesmosaté obter o maior Multiplo de 3.     */ 
-        for (int i = 1; i <= numero; i++) { 
+        for (int i = 0; i <= numero; i++) { 
             if (i%3 == 0)  
                 maior = i; 
         } 
         return maior; 
 
     } 
+    //Exercicio 2 EXTRA
+    public ArrayList<Integer> obterMultiplosDeTresAte(int numero) {
+        ArrayList<Integer> multiplos = new ArrayList<>();/*Não há necessidades de 
+        passar parametros para o construtor do ArrayList*/
+                            //Variavel "limite" deve ser substituida por "numero"         
+        for (int i = 0; i <= numero; i++) { //I deve começar com 0 pois ele é multiplo de todos.
+            if (i % 3 == 0) //Break; é desnecessário
+                multiplos.add(i); // Identação do IF deve estar correta para funcionar!
+        }
 
-     
-} 
-
+        return multiplos;
+    }
+}
