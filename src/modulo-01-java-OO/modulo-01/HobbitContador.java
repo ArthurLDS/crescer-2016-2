@@ -56,10 +56,10 @@ public class HobbitContador
          * for (int i = 1; i <= limite; i++) { 
         Na maneira abaixo.. O teste é feito até o numero recebido 
         por parâmetro, assim percorrendo todos os numeros até o valor informado 
-        pelo usuário e testando os mesmosaté obter o maior Multiplo de 3.     */ 
+        pelo usuário e testando os mesmos até obter o maior Multiplo de 3.     */ 
         for (int i = 0; i <= numero; i++) { 
             if (i%3 == 0)  
-                maior = i; 
+                maior = i; //continue; é desnecessário
         } 
         return maior; 
 
