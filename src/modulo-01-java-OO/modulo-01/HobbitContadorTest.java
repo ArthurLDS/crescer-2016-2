@@ -54,4 +54,24 @@ public class HobbitContadorTest
         int mmc = hobbit.calculaMmc(1,1);
         assertEquals(1, mmc);
     }
+    @Test
+    public void maiorMultiploDe3ate10(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(9,hobbit.obterMaiorMultiploDeTresAte(10));
+    }
+    @Test
+    public void maiorMultiploDe3ate20(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(18,hobbit.obterMaiorMultiploDeTresAte(20));
+    }
+    @Test
+    public void maiorMultiploDe3ate3(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(3,hobbit.obterMaiorMultiploDeTresAte(3));
+    }
+    @Test
+    public void maiorMultiploDe3ate2(){
+        HobbitContador hobbit = new HobbitContador();
+        assertEquals(0,hobbit.obterMaiorMultiploDeTresAte(2));
+    }
 }
