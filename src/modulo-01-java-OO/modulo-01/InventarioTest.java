@@ -380,6 +380,42 @@ public class InventarioTest
         assertEquals("GreatBall", resultado.getItens().get(0).getDescricao());
         assertEquals("UltraBall", resultado.getItens().get(1).getDescricao());
     }
+    @Test
+    public void cruzar2InventariosPorTamanho2EmComum(){
+        Item item1 = new Item("GreatBall", 50);
+        Item item2 = new Item("UltraBall", 20);
+        Item item3 = new Item("Lury", 2);
+        
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(item1);
+        inventario.adicionaItem(item2);
+        
+        Inventario inventario2 = new Inventario();
+        inventario2.adicionaItem(item1);
+        inventario2.adicionaItem(item3);
+        
+        Inventario resultado = inventario.cruzar(inventario2);
+        assertEquals(1, resultado.getItens().size());
+    }
+    @Test
+    public void cruzar2InventariosPorTamanhoEZeroEmComum(){
+        Item item1 = new Item("GreatBall", 50);
+        Item item2 = new Item("UltraBall", 20);
+        Item item3 = new Item("Lury", 2);
+        
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(item2);
+        
+        Inventario inventario2 = new Inventario();
+        inventario2.adicionaItem(item1);
+        inventario2.adicionaItem(item3);
+        
+        Inventario resultado = inventario.cruzar(inventario2);
+        assertEquals(0, resultado.getItens().size());
+    }
+    
+    
+    
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
     private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();
