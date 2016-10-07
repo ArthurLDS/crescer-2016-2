@@ -185,7 +185,7 @@ public class InventarioTest
         inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
         assertEquals("Espada de diamante, Espada de aço, Lucky egg, Poção polissuco", inventario.getDescricaoItens());
     }
-    
+
     @Test
     public void itensOrdenadosDescendenteCom5Nodos(){
         Inventario inventario = new Inventario();
@@ -197,6 +197,7 @@ public class InventarioTest
         inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
         assertEquals("Espada de diamante, Espada de aço, Lucky egg, Poção polissuco, Ultra Ball", inventario.getDescricaoItens());
     }
+
     @Test
     public void itensOrdenadosDescendenteCom4NodosIguais(){
         Inventario inventario = new Inventario();
@@ -207,7 +208,7 @@ public class InventarioTest
         inventario.ordenaItens(TipoOrdenacao.DESCENDENTE);
         assertEquals("Espada de diamante, Poção polissuco, Lucky egg, Espada de aço", inventario.getDescricaoItens());
     }
-    
+
     @Test
     public void adc1ItemEbuscarOMesmoItemPorDescricao(){
         Inventario inventario = new Inventario();
@@ -215,6 +216,7 @@ public class InventarioTest
         inventario.adicionaItem(item);
         assertEquals(item, inventario.buscar("Espada de diamante"));
     }
+
     @Test
     public void adc5ItensEPesquisaUmPorDescricao(){
         Inventario inventario = new Inventario();
@@ -230,6 +232,7 @@ public class InventarioTest
         inventario.adicionaItem(item4);
         assertEquals(item, inventario.buscar("Espada de diamante"));
     }
+
     @Test
     public void adc5ItensEIguaisPesquisaOPrimeiroPorDescricao(){
         Inventario inventario = new Inventario();
@@ -245,12 +248,36 @@ public class InventarioTest
         inventario.adicionaItem(item4);
         assertEquals(item, inventario.buscar("Espada de diamante"));
     }
+
     @Test
     public void adcZeroItensEPesquisarRetornaNull(){
         Inventario inventario = new Inventario();
         assertNull(inventario.buscar("Espada de diamante"));
     }
-    
+
+    @Test
+    public void getMediaQuantidades3itens(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada", 3));
+        inventario.adicionaItem(new Item("Poção HP", 4));
+        inventario.adicionaItem(new Item("Lança", 2));
+        assertEquals(3, inventario.getMediaQuantidades(), 0.);
+    }
+    @Test
+    public void getMediaQuantidades1item(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada", 3));
+        assertEquals(3, inventario.getMediaQuantidades(), 0.);
+    }
+    @Test
+    public void getMediaQuantidadesQuebradaCom3itens(){
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(new Item("Espada", 5));
+        inventario.adicionaItem(new Item("Poção HP", 6));
+        inventario.adicionaItem(new Item("Lança", 6));
+        assertEquals(5.6, inventario.getMediaQuantidades(), 1.);
+    }
+
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
     private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();

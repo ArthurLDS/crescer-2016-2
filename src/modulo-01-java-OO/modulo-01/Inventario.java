@@ -86,5 +86,15 @@ public class Inventario
         }
         return resultado;
     }
-    
+    //Exercicio 3.2 EXTRA
+    public double getMediaQuantidades(){
+        int somador  = 0, sizeItens = itens.size();
+        double media = 0;
+        for(int i=0; i<sizeItens; i++){
+            int quantItemAtual = itens.get(i).getQuantidade();
+            somador += quantItemAtual;
+        }
+        return media = somador / sizeItens; 
+
+    }   
 }
