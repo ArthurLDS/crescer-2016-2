@@ -115,4 +115,23 @@ public class Inventario
         }
         return resultado;
     }
+    //Exercicio 3.5 EXTRA
+    public Inventario diferenciar(Inventario inventario){
+        ArrayList<Item> itensInventarioRecebido = inventario.getItens();
+        Inventario resultado = new Inventario();
+        boolean tem = false;
+        for(int i=0; i<itens.size(); i++){
+            Item itemAtual = itens.get(i);
+            for(int j=0; j<itensInventarioRecebido.size(); j++){
+                if(itemAtual.getDescricao() == itensInventarioRecebido.get(j).getDescricao()){
+                    tem = true;
+                    break;
+                }
+            }      
+            if(!tem)
+                resultado.adicionaItem(itemAtual);
+
+        }
+        return resultado;
+    }
 }

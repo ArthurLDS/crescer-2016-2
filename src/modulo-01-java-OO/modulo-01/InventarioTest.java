@@ -297,14 +297,16 @@ public class InventarioTest
         assertEquals(5, inventario.getSomatorioQuantidades());
     }
     @Test
-    public void unir2Inventarios(){
+    public void unir2Inventarios2Itens(){
         Inventario inventario = new Inventario();
         inventario.adicionaItem(new Item("GreatBall", 5));
         Inventario inventario2 = new Inventario();
         inventario2.adicionaItem(new Item("UltraBall", 6));
+        inventario2.adicionaItem(new Item("Lury", 6));
         Inventario resultado = inventario.unir(inventario2);
         assertEquals("GreatBall", resultado.getItens().get(0).getDescricao());
         assertEquals("UltraBall", resultado.getItens().get(1).getDescricao());
+        assertEquals("Lury", resultado.getItens().get(2).getDescricao());
     }
     @Test
     public void unir2InventariosE1semItem(){
@@ -322,6 +324,45 @@ public class InventarioTest
         assertEquals(0, resultado.getItens().size());
     }
      
+    @Test
+    public void diferenciar2InventariosPorTamanho(){
+        Item item1 = new Item("GreatBall", 50);
+        Item item2 = new Item("UltraBall", 20);
+        Item item3 = new Item("Lury", 2);
+        
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(item1);
+        inventario.adicionaItem(item2);
+        
+        Inventario inventario2 = new Inventario();
+        inventario2.adicionaItem(item1);
+        inventario2.adicionaItem(item3);
+        
+        Inventario resultado = inventario.diferenciar(inventario2);
+        assertEquals(1, resultado.getItens().size());
+    }
+    @Test
+    public void diferenciar2InventariosPorDescricao(){
+        Item item1 = new Item("GreatBall", 50);
+        Item item2 = new Item("UltraBall", 20);
+        Item item3 = new Item("Lury", 2);
+        
+        Inventario inventario = new Inventario();
+        inventario.adicionaItem(item1);
+        inventario.adicionaItem(item2);
+        
+        Inventario inventario2 = new Inventario();
+        inventario2.adicionaItem(item3);
+        inventario2.adicionaItem(item2);
+        
+        Inventario resultado = inventario.diferenciar(inventario2);
+        assertEquals(1, resultado.getItens().size());
+        /*assertEquals("GreatBall", resultado.getItens().get(0).getDescricao());
+        assertEquals("UltraBall", resultado.getItens().get(1).getDescricao());
+        assertEquals("Lury", resultado.getItens().get(2).getDescricao());*/
+    }
+    
+    
     // Isto NÃO É UM TESTE, é apenas um metodo auxiliar.
     private Inventario criarInventarioCom3Itens(){
         Inventario inventario = new Inventario();
