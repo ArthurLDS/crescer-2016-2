@@ -119,8 +119,8 @@ public class Inventario
     public Inventario diferenciar(Inventario inventario){
         ArrayList<Item> itensInventarioRecebido = inventario.getItens();
         Inventario resultado = new Inventario();
-        boolean tem = false;
         for(int i=0; i<itens.size(); i++){
+            boolean tem = false;
             Item itemAtual = itens.get(i);
             for(int j=0; j<itensInventarioRecebido.size(); j++){
                 if(itemAtual.getDescricao() == itensInventarioRecebido.get(j).getDescricao()){
@@ -130,7 +130,6 @@ public class Inventario
             }      
             if(!tem)
                 resultado.adicionaItem(itemAtual);
-
         }
         return resultado;
     }
