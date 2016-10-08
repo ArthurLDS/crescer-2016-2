@@ -87,7 +87,7 @@ public class ExercitoElfoTest{
         elfos.add(new ElfosNoturnos("2"));
         elfos.add(new ElfosVerdes("1", 50));
         elfos.add(new ElfosVerdes("1", 50));
-        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        exercito.getOrdemDeAtaque(elfos);
         assertEquals(elfos.get(0).getNome(), "1");
         assertEquals(elfos.get(1).getNome(), "1");
         assertEquals(elfos.get(2).getNome(), "1");
@@ -112,7 +112,7 @@ public class ExercitoElfoTest{
             enMorto2.perderVida();
         elfos.add(enMorto2);
         
-        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        exercito.getOrdemDeAtaque(elfos);
         assertEquals(elfos.get(0).getNome(), "1");
         assertEquals(elfos.get(1).getNome(), "2");
         assertEquals(elfos.get(2).getNome(), "2");
@@ -124,7 +124,7 @@ public class ExercitoElfoTest{
         elfos.add(new ElfosNoturnos("2"));
         elfos.add(new ElfosVerdes("1", 50));
         
-        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        exercito.getOrdemDeAtaque(elfos);
         
         assertEquals(2, elfos.size());
         assertEquals(elfos.get(0).getNome(), "1");
@@ -145,7 +145,21 @@ public class ExercitoElfoTest{
             enMorto2.perderVida();
         elfos.add(enMorto2);
         
-        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        exercito.getOrdemDeAtaque(elfos);
         assertEquals(0, elfos.size());
+    }
+    @Test
+    public void getOrdemDeAtaqueIntercalado4Elfos(){
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosNoturnos("2"));
+        exercito.getOrdemDeAtaqueItercalado(elfos);
+        assertEquals(elfos.get(0).getNome(), "1");
+        assertEquals(elfos.get(1).getNome(), "2");
+        assertEquals(elfos.get(2).getNome(), "1");
+        assertEquals(elfos.get(3).getNome(), "2");
     }
 }
