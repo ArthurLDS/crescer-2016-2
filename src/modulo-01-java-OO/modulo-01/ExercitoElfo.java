@@ -15,7 +15,7 @@ public class ExercitoElfo{
         boolean podeAlistar = elfo instanceof ElfosVerdes || elfo instanceof ElfosNoturnos;
         if(podeAlistar)
             exercito.add(elfo);
-            
+
     }
 
     public Elfo buscarElfo(String nome){
@@ -45,10 +45,14 @@ public class ExercitoElfo{
 
     public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes, List<Dwarf> alvos){
         Elfo aux = null;
+        for(int i=atacantes.size()-1; i>=0; i--){
+            if(atacantes.get(i).getStatus() == Status.MORTO){
+                atacantes.remove(i);
+                
+            }
+        }
         for(int i=atacantes.size()-1; i>=1; i--){
             for(int j=0; j<i; j++){
-                //if(atacantes.get(j).getStatus() == Status.MORTO)
-                    
                 if(atacantes.get(j) instanceof ElfosNoturnos && atacantes.get(j+1) instanceof ElfosVerdes){
                     aux = atacantes.get(j);
                     atacantes.set(j, atacantes.get(j+1));
