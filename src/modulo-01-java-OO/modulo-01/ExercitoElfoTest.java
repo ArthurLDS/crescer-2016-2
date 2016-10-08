@@ -95,6 +95,29 @@ public class ExercitoElfoTest{
         assertEquals(elfos.get(4).getNome(), "2");
     }
     @Test
+    public void getOrdemDeAtaque4ElfosE2Mortos(){
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosNoturnos("2"));
+        
+        ElfosNoturnos enMorto = new ElfosNoturnos("2");
+        for(int i=0; i<=90; i++)
+            enMorto.perderVida();
+        elfos.add(enMorto);
+        
+        ElfosNoturnos enMorto2 = new ElfosNoturnos("2");
+        for(int i=0; i<=90; i++)
+            enMorto2.perderVida();
+        elfos.add(enMorto2);
+        
+        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        assertEquals(elfos.get(0).getNome(), "1");
+        assertEquals(elfos.get(1).getNome(), "2");
+        assertEquals(elfos.get(2).getNome(), "2");
+    }
+    @Test
     public void getOrdemDeAtaque2Elfos(){
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
@@ -102,8 +125,27 @@ public class ExercitoElfoTest{
         elfos.add(new ElfosVerdes("1", 50));
         
         exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
-        assertEquals(elfos.get(0).getNome(), "1");
-        assertEquals(elfos.get(1).getNome(), "2");
         
+        assertEquals(2, elfos.size());
+        assertEquals(elfos.get(0).getNome(), "1");
+        assertEquals(elfos.get(1).getNome(), "2"); 
+    }
+    @Test
+    public void getOrdemDeAtaque2ElfosMortos(){
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        
+        ElfosNoturnos enMorto = new ElfosNoturnos("2");
+        for(int i=0; i<=90; i++)
+            enMorto.perderVida();
+        elfos.add(enMorto);
+        
+        ElfosNoturnos enMorto2 = new ElfosNoturnos("2");
+        for(int i=0; i<=100; i++)
+            enMorto2.perderVida();
+        elfos.add(enMorto2);
+        
+        exercito.getOrdemDeAtaque(elfos, new ArrayList<>());
+        assertEquals(0, elfos.size());
     }
 }
