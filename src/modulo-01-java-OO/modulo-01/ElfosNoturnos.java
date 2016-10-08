@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class ElfosNoturnos extends Elfo implements Estrategias{
+public class ElfosNoturnos extends Elfo{
 
     public ElfosNoturnos(String nome){
         super(nome);
