@@ -41,9 +41,10 @@ public class ExercitoElfo implements Estrategias{
         return escolhidosPorStatus;
     }
 
-    public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes){
-
+    public List<Elfo> getOrdemDeAtaque(List<Elfo> atacantes, TipoOrdenacao ordem) throws ContingenteDesproporcionalException{
         Elfo aux = null;
+        if(!verificaMetades(atacantes))
+            throw new ContingenteDesproporcionalException();
         for(int i=atacantes.size()-1; i>=0; i--)
             if(atacantes.get(i).getStatus() == Status.MORTO)
                 atacantes.remove(i);
@@ -51,21 +52,37 @@ public class ExercitoElfo implements Estrategias{
         for(int i=atacantes.size()-1; i>=1; i--){
             for(int j=0; j<i; j++){     //Esse elfoPost aí é de "Elfo Posterior"!
                 Elfo elfoAtual = atacantes.get(j), elfoPost = atacantes.get(j+1);
-                if(elfoAtual instanceof ElfosNoturnos && elfoPost instanceof ElfosVerdes){
-                    aux = atacantes.get(j);
-                    atacantes.set(j, elfoPost);
-                    atacantes.set(j+1, aux);
+                if(ordem.equals(TipoOrdenacao.ASCENDENTE)){
+                    if(elfoAtual instanceof ElfosNoturnos && elfoPost instanceof ElfosVerdes){
+                        aux = atacantes.get(j);
+                        atacantes.set(j, elfoPost);
+                        atacantes.set(j+1, aux);
+                    }
+                }
+                else if(ordem.equals(TipoOrdenacao.DESCENDENTE)){
+                    if(elfoAtual instanceof ElfosVerdes && elfoPost instanceof ElfosNoturnos){
+                        aux = atacantes.get(j);
+                        atacantes.set(j, elfoPost);
+                        atacantes.set(j+1, aux);
+                    }
                 }
             }
         }
         return atacantes;
     }
 
-    public List<Elfo> getOrdemDeAtaqueItercalado(List<Elfo> atacantes){
-        atacantes = getOrdemDeAtaque(atacantes);
+    public List<Elfo> getOrdemDeAtaqueItercalado(List<Elfo> atacantes) throws ContingenteDesproporcionalException{
+        if(!verificaMetades(atacantes))
+            throw new ContingenteDesproporcionalException();
+        
+        if(atacantes.get(0) instanceof ElfosVerdes)
+            atacantes = getOrdemDeAtaque(atacantes, TipoOrdenacao.ASCENDENTE);
+        else    
+            atacantes = getOrdemDeAtaque(atacantes, TipoOrdenacao.DESCENDENTE);
+
         ArrayList<Elfo> metade1 = new ArrayList<>();
         ArrayList<Elfo> metade2 = new ArrayList<>();
-        
+
         int metade = atacantes.size() / 2, x=0, y=1;
         for(int i=0; i<atacantes.size(); i++){
             if(i<metade)
@@ -82,7 +99,13 @@ public class ExercitoElfo implements Estrategias{
             atacantes.set(y, metade2.get(i));
             y+=2;
         }
-        
+
         return atacantes;
+    }
+    private boolean verificaMetades(List<Elfo> array){
+        if(array.size() % 2 == 0)
+            return true;
+        else
+            return false;
     }
 }

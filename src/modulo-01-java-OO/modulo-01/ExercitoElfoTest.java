@@ -78,8 +78,8 @@ public class ExercitoElfoTest{
         assertEquals(0, resultado.size());
     }
 
-    @Test
-    public void getOrdemDeAtaque4Elfos(){
+    @Test (expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaque4Elfos() throws ContingenteDesproporcionalException{
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
         elfos.add(new ElfosNoturnos("2"));
@@ -87,15 +87,15 @@ public class ExercitoElfoTest{
         elfos.add(new ElfosNoturnos("2"));
         elfos.add(new ElfosVerdes("1", 50));
         elfos.add(new ElfosVerdes("1", 50));
-        exercito.getOrdemDeAtaque(elfos);
+        exercito.getOrdemDeAtaque(elfos, TipoOrdenacao.ASCENDENTE);
         assertEquals(elfos.get(0).getNome(), "1");
         assertEquals(elfos.get(1).getNome(), "1");
         assertEquals(elfos.get(2).getNome(), "1");
         assertEquals(elfos.get(3).getNome(), "2");
         assertEquals(elfos.get(4).getNome(), "2");
     }
-    @Test
-    public void getOrdemDeAtaque4ElfosE2Mortos(){
+    @Test (expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaque4ElfosE2Mortos() throws ContingenteDesproporcionalException{
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
         elfos.add(new ElfosNoturnos("2"));
@@ -112,26 +112,26 @@ public class ExercitoElfoTest{
             enMorto2.perderVida();
         elfos.add(enMorto2);
         
-        exercito.getOrdemDeAtaque(elfos);
+        exercito.getOrdemDeAtaque(elfos, TipoOrdenacao.ASCENDENTE);
         assertEquals(elfos.get(0).getNome(), "1");
         assertEquals(elfos.get(1).getNome(), "2");
         assertEquals(elfos.get(2).getNome(), "2");
     }
-    @Test
-    public void getOrdemDeAtaque2Elfos(){
+    @Test(expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaque2Elfos() throws ContingenteDesproporcionalException{
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
         elfos.add(new ElfosNoturnos("2"));
         elfos.add(new ElfosVerdes("1", 50));
         
-        exercito.getOrdemDeAtaque(elfos);
+        exercito.getOrdemDeAtaque(elfos, TipoOrdenacao.ASCENDENTE);
         
         assertEquals(2, elfos.size());
         assertEquals(elfos.get(0).getNome(), "1");
         assertEquals(elfos.get(1).getNome(), "2"); 
     }
-    @Test
-    public void getOrdemDeAtaque2ElfosMortos(){
+    @Test (expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaque2ElfosMortos() throws ContingenteDesproporcionalException{
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
         
@@ -145,11 +145,11 @@ public class ExercitoElfoTest{
             enMorto2.perderVida();
         elfos.add(enMorto2);
         
-        exercito.getOrdemDeAtaque(elfos);
+        exercito.getOrdemDeAtaque(elfos, TipoOrdenacao.ASCENDENTE);
         assertEquals(0, elfos.size());
     }
-    @Test
-    public void getOrdemDeAtaqueIntercalado4Elfos(){
+    @Test (expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaqueIntercalado4ElfosEPrimeiroVerde() throws ContingenteDesproporcionalException{
         ExercitoElfo exercito = new ExercitoElfo();
         List<Elfo> elfos = new ArrayList<>();
         elfos.add(new ElfosVerdes("1", 50));
@@ -162,4 +162,19 @@ public class ExercitoElfoTest{
         assertEquals(elfos.get(2).getNome(), "1");
         assertEquals(elfos.get(3).getNome(), "2");
     }
+    @Test (expected=ContingenteDesproporcionalException.class)
+    public void getOrdemDeAtaqueIntercalado4ElfosEPrimeiroNoturno() throws ContingenteDesproporcionalException{
+        ExercitoElfo exercito = new ExercitoElfo();
+        List<Elfo> elfos = new ArrayList<>();
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosNoturnos("2"));
+        elfos.add(new ElfosVerdes("1", 50));
+        elfos.add(new ElfosVerdes("1", 50));
+        exercito.getOrdemDeAtaqueItercalado(elfos);
+        assertEquals(elfos.get(0).getNome(), "2");
+        assertEquals(elfos.get(1).getNome(), "1");
+        assertEquals(elfos.get(2).getNome(), "2");
+        assertEquals(elfos.get(3).getNome(), "1");
+    }
+    
 }
