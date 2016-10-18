@@ -1,9 +1,10 @@
--- Exercicio /
-SELECT COUNT(1) as Total_De_Pedidos FROM Pedido where DataPedido between convert(datetime, '01/09/2016', 103)
-																	and  convert(datetime, '30/09/2016', 103)
+-- Exercicio 1
+SELECT COUNT(1) as Total_De_Pedidos FROM Pedido 
+WHERE DataPedido between convert(datetime, '01/09/2016', 103)
+				     and convert(datetime, '30/09/2016', 103)+.9999;
 
 -- Exercicio 2
-SELECT Nome FROM Produto p 
+SELECT p.IDProduto, p.Nome FROM Produto p 
 INNER JOIN ProdutoMaterial pm ON p.IDProduto = PM.IDProduto 
 INNER JOIN Material ma ON pm.IDMaterial = ma.IDMaterial
 WHERE ma.IDMaterial = 15836;
