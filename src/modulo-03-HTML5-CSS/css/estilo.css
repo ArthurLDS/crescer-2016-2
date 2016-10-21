@@ -40,6 +40,9 @@ body{
 	margin-left: auto; 
 	margin-right: auto
 }
+.container > header > h2{
+	color: #ddd;
+}
 .container > .main{
 	box-shadow: 0px 3px 10px; 
 	width: 700px; 
