@@ -1,8 +1,11 @@
 body{
+	background-image: url('http://cdn.wallpapersafari.com/58/37/51HU98.png');
+	background-repeat: no-repeat;
+	background-size: contain;
 	font-family: Arial;
 }
 /* Remoção dados digimon*/
-span:first-child{ 
+header span:first-child{ 
 	display: none;
 }
 .historia-digimon{
@@ -13,4 +16,18 @@ h2:nth-child(2){
 }
 .digiescolhidos{
 	display: none;
+}
+/* Nav-bar*/
+nav:nth-child(2){
+	background-color: #ddd;
+	width: 800px;
+	padding: 20px;
+	border-radius: 15px;
+}
+nav:nth-child(2) a{
+	font-size: 16pt;
+	text-decoration: none;
+	color: #000;
+	text-shadow: 1px 1px 1px #333;
+	margin-right: 10px;
 }
