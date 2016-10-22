@@ -19,10 +19,13 @@ h2:nth-child(2){
 }
 /* Nav-bar*/
 nav:nth-child(2){
+	margin: 0 auto 0 auto;
 	background-color: #ddd;
 	width: 800px;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 15px;
+	margin-top: 200px;
+	margin-bottom: 20px;
 }
 nav:nth-child(2) a{
 	font-size: 16pt;
@@ -30,4 +33,41 @@ nav:nth-child(2) a{
 	color: #000;
 	text-shadow: 1px 1px 1px #333;
 	margin-right: 10px;
+	margin-left: 10px;
+}
+/* Conteúdo */
+header{
+	width: 1000px;
+	text-align: center;
+	margin: 0 auto 0 auto;
+}
+.historia-pokemon{
+	margin: 0 auto 0 auto;
+	background-color: rgba(150,150,150,.8);
+	width: 1000px;
+	padding: 10px;
+}
+.content{
+	width: 1000px;
+	padding: 10px;
+	margin: 0 auto 0 auto;
+	border: 1px black solid;
+}
+.content > .personagens{
+	display: inline-block;
+	width: 500px;
+	padding: 10px;
+	background-color: rgba(150,150,150,.8);
+}
+.content > .treinadores-pokemon{
+	display: inline-block;
+	width: 450px;
+	padding: 10px;
+	background-color: rgba(150,150,150,.8);
+	float: right;
+}
+/* Footer*/
+footer{
+	background-color: #888;
+	width: 100%;
 }
