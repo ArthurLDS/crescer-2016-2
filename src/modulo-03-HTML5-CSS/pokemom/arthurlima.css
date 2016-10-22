@@ -1,1 +1,16 @@
-arthurlima.css
+body{
+	font-family: Arial;
+}
+/* Remoção dados digimon*/
+span:first-child{ 
+	display: none;
+}
+.historia-digimon{
+	display: none;
+}
+h2:nth-child(2){
+	display: none;
+}
+.digiescolhidos{
+	display: none;
+}
