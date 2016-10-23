@@ -22,35 +22,35 @@ h2:nth-child(2){
 }
 /* Nav-bar*/
 nav:nth-child(2){
-	margin: 0 auto 0 auto;
-	background-color: #FFF;
+	margin: 0 auto 100px auto;
+	background-color: #f8f8f8;
+	
+	border-bottom: 1px #888 solid;
+	box-shadow: 0px 1px 1px #888;
 
-	border-bottom: 2px #F00 solid;
-	border-top: 2px #F00 solid;
-
-	box-shadow: 0px 1px 10px #F00;
 	width: 99%;
-	padding: 10px;
+	padding: 14px;
 	margin-top: 60px;
 	margin-bottom: 20px;
 	text-align: center;
 }
 nav:nth-child(2) a{
-	font-size: 16pt;
+	text-transform: uppercase;
+	font-size: 14pt;
 	text-decoration: none;
-	color: #000;
-	text-shadow: 1px 1px 1px #333;
-	margin-right: 10px;
-	margin-left: 10px;
+	color: #666;
+	font-weight: bold;
+	margin-right: 14px;
+	margin-left: 14px;
 }
 /* Conteúdo */
 /* Logo*/
 .logo{
 	display: inline-block;
-	width: 291px;
-    height: 106px;
-    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/1024px-English_Pok%C3%A9mon_logo.svg.png');
-    background-size: 290px;
+    width: 351px;
+    height: 128px;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/English_Pok%C3%A9mon_logo.svg/1024px-English_Pok%C3%A9mon_logo.svg.png);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 /*Fim logo*/
@@ -68,30 +68,76 @@ header{
 	text-align: center;
 	margin: 50px auto 0 auto;
 }
+
+
 .historia-pokemon{
 	margin: 0 auto 0 auto;
 	background-color: rgba(250,250,250,.8);
+	border: 1px #1e3a61 solid;
 	border-radius: 10px;
-	width: 1000px;
-	padding: 10px;
+	width: 980px;
+	padding: 0px 0px 10px 0px;
 }
+.historia-pokemon h1{
+	color: white;
+	font-size: 16pt;
+	text-transform: uppercase;
+	padding: 8px 8px 6px 8px;
+	background-color: #3268b1;
+	border-radius: 9px 9px 0 0;
+	margin: 0;
+	border-bottom: 1px #1e3a61 solid;
+}
+.historia-pokemon p{
+	margin: 8px 10px 10px 10px;
+}
+
+
 .content{
-	width: 1000px;
+	width: 980px	;
 	padding: 10px;
 	margin: 0 auto 0 auto;
 }
 .content > .personagens{
+	margin: 0 auto 0 auto;
+	background-color: rgba(250,250,250,.8);
+	border: 1px #800000 solid;
+	border-radius: 10px;
+	padding: 0px 0px 10px 0px;
 	display: inline-block;
 	width: 500px;
-	padding: 10px;
 	background-color: rgba(250,250,250,.8);
 }
+.content > .personagens > h2{
+	color: white;
+	font-size: 16pt;
+	text-transform: uppercase;
+	padding: 8px 8px 6px 8px;
+	background-color: #f12200;
+	border-radius: 10px 10px 0 0;
+	margin: 0;
+	border-bottom: 1px #800000 solid;
+}
 .content > .treinadores-pokemon{
+	margin: 0 auto 0 auto;
+	background-color: rgba(250,250,250,.8);
+	border: 1px #800000 solid;
+	border-radius: 10px;
+	padding: 0px 0px 10px 0px;
 	display: inline-block;
-	width: 450px;
-	padding: 10px;
+	width: 465px;
 	background-color: rgba(250,250,250,.8);
 	float: right;
+}
+.content > .treinadores-pokemon > h3{
+	color: white;
+	font-size: 16pt;
+	text-transform: uppercase;
+	padding: 8px 8px 6px 8px;
+	background-color: #f12200;
+	border-radius: 10px 10px 0 0;
+	margin: 0;
+	border-bottom: 1px #800000 solid;
 }
 /* Footer*/
 footer{
@@ -99,14 +145,18 @@ footer{
 	width: 100%;
 }
 /* Autenticacao*/
+.autenticacao{
+	margin-top: 30px;
+}
 .autenticacao > a{
+	margin:0 2px 0 2px; 
 	font-size: 14pt;
 	text-decoration: none;
 	padding: 10px;
 	background-color: 	#3CB371;
-	border-radius: 10px;
+	border-radius: 6px;
 	border: 1px solid #2E8B57;
-	box-shadow: 1px 1px 5px #000;
+	box-shadow: 1px 1px 1px #444;
 	color: #FFF;
 	font-weight: bold;
 }
