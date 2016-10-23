@@ -1,5 +1,5 @@
 body{
-	background-image: url('http://cdn.wallpapersafari.com/58/37/51HU98.png');
+	background-image: url('http://www.pokemongobrasil.com/wp-content/uploads/2016/08/bg-poke.jpeg') ;
 	background-repeat: no-repeat;
 	background-size: contain;
 	font-family: Arial;
@@ -21,10 +21,12 @@ h2:nth-child(2){
 nav:nth-child(2){
 	margin: 0 auto 0 auto;
 	background-color: #ddd;
+	border: 2px #F00 solid;
+	box-shadow: 1px 1px 10px #000;
 	width: 800px;
 	padding: 10px;
 	border-radius: 15px;
-	margin-top: 200px;
+	margin-top: 60px;
 	margin-bottom: 20px;
 }
 nav:nth-child(2) a{
@@ -37,13 +39,16 @@ nav:nth-child(2) a{
 }
 /* Conteúdo */
 header{
+	font-size: 20pt;
+	color: yellow;
 	width: 1000px;
 	text-align: center;
-	margin: 0 auto 0 auto;
+	margin: 50px auto 0 auto;
 }
 .historia-pokemon{
 	margin: 0 auto 0 auto;
-	background-color: rgba(150,150,150,.8);
+	background-color: rgba(250,250,250,.8);
+	border-radius: 10px;
 	width: 1000px;
 	padding: 10px;
 }
@@ -57,17 +62,28 @@ header{
 	display: inline-block;
 	width: 500px;
 	padding: 10px;
-	background-color: rgba(150,150,150,.8);
+	background-color: rgba(250,250,250,.8);
 }
 .content > .treinadores-pokemon{
 	display: inline-block;
 	width: 450px;
 	padding: 10px;
-	background-color: rgba(150,150,150,.8);
+	background-color: rgba(250,250,250,.8);
 	float: right;
 }
 /* Footer*/
 footer{
 	background-color: #888;
 	width: 100%;
+}
+/* Autenticacao*/
+.autenticacao > a:nth-child(2){
+	text-decoration: none;
+	padding: 10px;
+	background-color: #ffa509;
+	border-radius: 10px;
+	border: 1px solid #000;
+	box-shadow: 1px 1px 5px;
+	color: #000;
+	font-weight: bold;
 }
