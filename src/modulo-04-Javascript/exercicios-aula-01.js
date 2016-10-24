@@ -31,6 +31,8 @@ function find(array, funcao){
     return result;
 }
 
+
+
 function subtrair(){
 
 }
