@@ -147,11 +147,23 @@ header{
 .content > .personagens > ul > li:nth-of-type(2n){
 	background-color: #f9e174;
 }
-.content > .personagens > ul > li:nth-child(1):after{
+
+.content > .personagens > ul > li:nth-child(1):hover:after{
 	content: '';
-	width: 120px;
+	width: 140px;
 	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/001_Bulbasaur_icon-icons.com_67334.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: 100px;
+	bottom: -445px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(2):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/002_Ivysaur_icon-icons.com_67333.png');
 	background-repeat: no-repeat;
 	position: absolute;
 	bottom: 100px;
