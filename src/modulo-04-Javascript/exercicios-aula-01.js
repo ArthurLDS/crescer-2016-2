@@ -1,17 +1,19 @@
 // Exercicio 01
 function gerarPiramide(niveis) {
   for(var i=1; i<=niveis; i++)
-       console.log(Array(i+1).join('R$'));
+       console.log(Array(i+1).join('R$ '));
 }
 
 // Exercicio 02
 function diglettDig() {
   for(var i=1; i<=100; i++){
-    if(i%3 === 0 && i%5 === 0)
+    var divisivelPor3 = i%3 == 0;
+    var divisivelPor5 = i%5 == 0;
+    if(divisivelPor3 && divisivelPor5)
       console.log('Diglett dig, trio trio trio');
-    else if(i%3 === 0)
+    else if(divisivelPor3)
       console.log('Diglett dig');
-    else if (i%5 === 0)
+    else if (divisivelPor5)
       console.log('trio trio trio');
     else
       console.log(i);
@@ -43,10 +45,10 @@ function iguais(n1, n2){
     for(i in n1){
       if(n1[i] !== n2[i])
         return false;
-    } 
+    }
     return true;
   }
-  else if(n1 === n2)  
+  else if(n1 === n2)
     return true;
   else
     return false;
@@ -54,7 +56,7 @@ function iguais(n1, n2){
 
 /* 06
 function ctrlC(valor){
- 
+
   return valor;
 }*/
 
@@ -68,7 +70,7 @@ function mesclar(obj1, obj2, bool){
           Object.assign(obj1[i], obj2[j]);
         }
       }
-    }  
+    }
   Object.assign(obj1, obj2);
 
 }
