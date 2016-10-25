@@ -37,16 +37,20 @@ function subtrair(n1){
   return subtrairn2;
 }
 
-/* Exercicio 05 Incompleto
+//Exercicio 05 Incompleto
 function iguais(n1, n2){
-  if(typeof n1 === Object && typeof n2 === Object){
-
+  if(typeof n1 === 'object' && typeof n2 === 'object'){
+    for(i in n1){
+      if(n1[i] !== n2[i])
+        return false;
+    } 
+    return true;
   }
   else if(n1 === n2)  
     return true;
   else
     return false;
-}*/
+}
 
 /* 06
 function ctrlC(valor){
@@ -56,13 +60,15 @@ function ctrlC(valor){
 
 
 // Exercicio 07 C/ BÔNUS
-function mesclar(obj1, obj2){
-  for(i in obj1){
-    for(j in obj2){
-      if(typeof obj1[i] == Object && typeof obj2[j])
+function mesclar(obj1, obj2, bool){
+  if(bool){
+    for(i in obj1){
+      for(j in obj2){
+        if(typeof obj1[i] == Object && typeof obj2[j] == Object)
           Object.assign(obj1[i], obj2[j]);
-    }
-  }
+        }
+      }
+    }  
   Object.assign(obj1, obj2);
 
 }
