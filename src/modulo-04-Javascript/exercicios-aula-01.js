@@ -4,6 +4,7 @@ function gerarPiramide(niveis) {
     for(var j=1; j<=i; j++){
       console.log('R$ ');
     }
+    console.log(' ');
 }
 
 // Exercicio 02
@@ -33,6 +34,9 @@ function find(array, funcao){
 
 
 
-function subtrair(){
-
+function subtrair(n1){
+  function subtrairn2(n2){
+    return subtracao = n1-n2;
+  }
+  return subtrairn2;
 }
