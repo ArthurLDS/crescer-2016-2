@@ -9,6 +9,7 @@ function diglettDig() {
   for(var i=1; i<=100; i++){
     var divisivelPor3 = i%3 == 0;
     var divisivelPor5 = i%5 == 0;
+
     if(divisivelPor3 && divisivelPor5)
       console.log('Diglett dig, trio trio trio');
     else if(divisivelPor3)
@@ -22,11 +23,13 @@ function diglettDig() {
 
 // Exercicio 03
 function find(array, funcao){
-    var result = '';
-    for(var i=0; i< array.length; i++){
-        if(funcao(array[i])){
-          result += array[i] + ' ';
-        }
+    var result = [];
+    if(typeof funcao === 'function'){
+      for(var i=0; i< array.length; i++){
+          if(funcao(array[i])){
+            result.push(array[i]);
+          }
+      }
     }
     return result;
 }
@@ -48,10 +51,6 @@ function iguais(n1, n2){
     }
     return true;
   }
-  else if(n1 === n2)
-    return true;
-  else
-    return false;
 }
 
 /* 06
@@ -66,14 +65,15 @@ function mesclar(obj1, obj2, bool){
   if(bool){
     for(i in obj1){
       for(j in obj2){
-        if(typeof obj1[i] == Object && typeof obj2[j] == Object)
+        if(typeof obj1[i] == Object && typeof obj2[j] == Object){
           Object.assign(obj1[i], obj2[j]);
+          }
         }
-      }
     }
-  Object.assign(obj1, obj2);
-
+  }
 }
+  //Object.assign(obj1, obj2);
+//}
 
 /* Teste
 var objeto1 = {
