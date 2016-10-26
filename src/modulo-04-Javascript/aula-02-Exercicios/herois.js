@@ -1,28 +1,31 @@
 class Herois {
 	// Exercicio 01
-	constructor([id, nome, descricao]){
-		this.id = id;
-		this.nome = nome;
-		this.descricao = descricao;
+	constructor(array){
+		this.heroi = array;
 	}
 
 	//Exercicio 02
-	foraDaGuerraCivil(marvel) {
-		var osDeFora = [];
-	  for(var i in marvel){
-			var itens 	= marvel[i]['events']['items'];
+	foraDaGuerraCivil() {
+
+		//return this.herois.filter(heroi =>
+		//this.heroi.events.items.nome.filter(e => e.name.includes('Civi lWar') !== -1).length === 0;
+
+	  /*for(var i in heroi){
+			var itens = heroi[i].events.items;
 			for(var j in itens){
-					if(itens[j].name !=='Civil War'){
-						osDeFora.push(marvel[i]);
+					if(itens[j].name !== 'Civil War'){
+						osDeFora.push(heroi[i]);
 					}
 			}
-	  }
+	  }*/
 		return osDeFora;
 	}
 	//Exercicio 03
 	maisPublicado(marvel){
 			var maior = 0;
 			var maiorPersonagem;
+			var arr = [];
+
 			for(var i in marvel){
 				var	qntHistorias = marvel[i]['comics']['available'];
 				if(qntHistorias>maior){
@@ -36,6 +39,7 @@ class Herois {
 	// Exercicio 04
 	mediaPaginas(marvel){
 		var somador =  0;
+
 		for(var i in marvel){
 			let itens = marvel[i]['comics']['items'];
 			for(var j in itens){
