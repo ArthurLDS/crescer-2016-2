@@ -84,6 +84,23 @@ class Herois {
 		return ordena();
 	}
 
+	// Exercicio 06 (NÃO TERMINADO)
+	comicMaisCara(marvel){
+		var maior = 0;
+		var maiorComic;
+
+		for(var i in marvel){
+			var itens = marvel[i]['comics']['items'];
+			for(var j in itens){
+					var itemAtual = itens[j];
+					if(itemAtual['prices'][0]>maior){
+						maior = itemAtual['prices'][0]; //Rafatore isso!
+						maiorComic = itemAtual;
+					}
+			}
+		}
+		return maiorComic;
+	}
 
 
 }
