@@ -19,5 +19,29 @@ class Herois {
 	  }
 		return osDeFora;
 	}
+	//Exercicio 03
+	maisPublicado(marvel){
+			var maior = 0;
+			var maiorPersonagem;
+			for(var i in marvel){
+				var	qntHistorias = marvel[i]['comics']['available'];
+				if(qntHistorias>maior){
+					maior = qntHistorias;
+					maiorPersonagem = marvel[i];
+				}
+			}
+			return maiorPersonagem;
+	}
 
+	// Exercicio 04
+	mediaPaginas(marvel){
+		var somador =  0;
+		for(var i in marvel){
+			let itens = marvel[i]['comics']['items'];
+			for(var j in itens){
+					somador += itens[j].pageCount;
+			}
+		}
+		return somador / marvel.length;
+	}
 }
