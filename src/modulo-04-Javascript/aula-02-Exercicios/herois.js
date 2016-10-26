@@ -4,20 +4,27 @@ class Herois {
 		this.heroi = array;
 	}
 
+	pesquisaSimples(x){
+			let array = [3,1,8,5,7,2];
+			return array.filter(function(valor){
+				return valor>3;
+		});
+	}
 	//Exercicio 02
 	foraDaGuerraCivil() {
-
-		//return this.herois.filter(heroi =>
-		//this.heroi.events.items.nome.filter(e => e.name.includes('Civi lWar') !== -1).length === 0;
-
-	  /*for(var i in heroi){
-			var itens = heroi[i].events.items;
+		/*
+		return this.herois.filter(heroi =>
+		this.heroi.events.items.nome.filter(e => e.name.includes('Civi lWar') !== -1).length === 0
+	)*/
+		let osDeFora = [];
+	  for(var i in this.heroi){
+			var itens = this.heroi[i]['events']['items'];
 			for(var j in itens){
-					if(itens[j].name !== 'Civil War'){
-						osDeFora.push(heroi[i]);
+					if(itens[j] !== 'Civil War'){
+						osDeFora.push(this.heroi[i]);
 					}
 			}
-	  }*/
+	  }
 		return osDeFora;
 	}
 	//Exercicio 03
