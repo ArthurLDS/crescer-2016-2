@@ -44,4 +44,46 @@ class Herois {
 		}
 		return somador / marvel.length;
 	}
+
+	//Exercicio 05
+	seriesPorLongevidade(marvel){
+		var seriesOrdernadas = [];
+
+		for(var i in marvel){
+			var itens = marvel[i]['series']['items'];
+			for(var j in itens){
+					var itemAtual = itens[j];
+					seriesOrdernadas.push(itemAtual);
+			}
+		}
+		//Sort
+		function ordena() {seriesOrdernadas.sort(function(x,y){
+				var serie1 = x.endYear - x.startYear;
+				var serie2 = y.endYear - y.startYear;
+				return serie2 - serie1;
+		});}
+
+		/*
+		for(var i=seriesOrdernadas.length-1; i>=0; i--){
+			for(var j=0; j<=i; j++){
+					var tempoTot = seriesOrdernadas[j].endYear - seriesOrdernadas[j].startYear;
+					var tempoStartProx = seriesOrdernadas[j+1].startYear;
+					if(tempoTot<seriesOrdernadas[j+1].endYear - tempoStartProx){
+						var aux = seriesOrdernadas[j];
+						seriesOrdernadas[j] = seriesOrdernadas[j+1];
+						seriesOrdernadas[j+1] = aux;
+					}
+			}
+		}*/
+		ordena();
+		//Teste
+		for(var i in seriesOrdernadas){
+			var tempoTot = seriesOrdernadas[i].endYear - seriesOrdernadas[i].startYear;
+			console.log(tempoTot);
+		}
+		return ordena();
+	}
+
+
+
 }
