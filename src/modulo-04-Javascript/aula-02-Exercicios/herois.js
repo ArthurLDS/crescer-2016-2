@@ -28,32 +28,33 @@ class Herois {
 		return osDeFora;
 	}
 	//Exercicio 03
-	maisPublicado(marvel){
+	maisPublicado(){
 			var maior = 0;
 			var maiorPersonagem;
 			var arr = [];
 
-			for(var i in marvel){
-				var	qntHistorias = marvel[i]['comics']['available'];
+			for(var i in this.heroi){
+				var	qntHistorias = this.heroi[i]['comics']['available'];
+
 				if(qntHistorias>maior){
 					maior = qntHistorias;
-					maiorPersonagem = marvel[i];
+					maiorPersonagem = this.heroi[i];
 				}
 			}
 			return maiorPersonagem;
 	}
 
 	// Exercicio 04
-	mediaPaginas(marvel){
+	mediaPaginas(){
 		var somador =  0;
 
-		for(var i in marvel){
-			let itens = marvel[i]['comics']['items'];
+		for(var i in this.heroi){
+			let itens = this.heroi[i]['comics']['items'];
 			for(var j in itens){
 					somador += itens[j].pageCount;
 			}
 		}
-		return somador / marvel.length;
+		return somador; /// this.heroi.length;
 	}
 
 	//Exercicio 05
