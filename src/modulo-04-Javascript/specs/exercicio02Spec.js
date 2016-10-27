@@ -19,6 +19,8 @@ describe('foraDaGuerraCivil()', function() {
   });
 });
 //Teste Exercicio 03
+
+//Teste Exercicio 03
 describe('maisPublicado()', function() {
   it('deve encontrar heroi mais publicado  que é o segundo.', function() {
     let dadosHerois = [
@@ -44,4 +46,4 @@ describe('mediaPaginas()', function(){
     let resultado = heroi.mediaPaginas().length;
     expect(resultado).toEqual(107);
   });
-});
+});*/
