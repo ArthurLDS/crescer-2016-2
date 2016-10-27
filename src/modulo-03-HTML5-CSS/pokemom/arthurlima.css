@@ -170,6 +170,498 @@ header h1{
 	bottom: -95px;
 	left: 370px;
 }
+.content > .personagens > ul > li:nth-child(3):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/003_Venusaur_icon-icons.com_67332.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(4):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/004_Charmander_icon-icons.com_67331.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(5):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/005_Charmeleon_icon-icons.com_67330.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(6):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/006_Charizard_icon-icons.com_67329.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(7):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/007_Squirtle_icon-icons.com_67328.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(8):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/008_Wartortle_icon-icons.com_67327.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(9):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/009_Blastoise_icon-icons.com_67326.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(10):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/caterpie_icon-icons.com_67577.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(11):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette2.wikia.nocookie.net/es.pokemon/images/d/d9/Metapod_PLB.png/revision/latest?cb=20140809020228');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(12):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Butterfree_icon-icons.com_67435.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(13):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/weedle_icon-icons.com_67497.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(13):hover:after{
+	content: '';
+	width: 140px;
+	height: 115px;
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/weedle_icon-icons.com_67497.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(14):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/6/63/Kakuna.png/revision/latest?cb=20160526070815');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(15):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/0/0d/Beedrill.png/revision/latest?cb=20160416212740');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(16):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/pidgey_icon-icons.com_67536.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(17):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette2.wikia.nocookie.net/victoryroad/images/c/c5/Shuffle_Pidgeotto.png/revision/latest?cb=20160119184859');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(18):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Pidgeot_icon-icons.com_67374.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(19):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/c/c4/Rattata.png/revision/latest?cb=20160502213244');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(20):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette4.wikia.nocookie.net/victoryroad/images/c/cb/Shuffle_Raticate.png/revision/latest?cb=20160119130223');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(21):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/a/a1/Spearow.png/revision/latest?cb=20160526070640');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(22):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/4/41/Fearow.png/revision/latest?cb=20160526070640');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(23):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/1/11/Ekans.png/revision/latest?cb=20160810064306');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(24):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Arbok_icon-icons.com_67441.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(25):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;	
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/037_Pikachu_icon-icons.com_67297.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(26):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/038_Raichu_icon-icons.com_67296.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(27):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/d/df/Sandshrew.png/revision/latest?cb=20160810064305');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(28):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/1/13/Sandslash.png/revision/latest?cb=20160810064305');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(29):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/6/62/Nidoran%28M%29.png/revision/latest?cb=20160810063824');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(30):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/3/31/Nidorina.png/revision/latest?cb=20160810063825');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(31):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Nidoqueen_icon-icons.com_67381.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(33):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/7/7a/Nidorino.png/revision/latest?cb=20160810063825');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(34):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Nidoking_icon-icons.com_67382.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(35):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Clefairy_icon-icons.com_67431.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(36):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/d/d5/Clefable.png/revision/latest?cb=20160329065419');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(37):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Vulpix_icon-icons.com_67353.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(38):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Ninetales_icon-icons.com_67380.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(39):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/jigglypuff_icon-icons.com_67550.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(40):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/f/f1/Wigglytuff.png/revision/latest?cb=20160502213410');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(41):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/ubat_icon-icons.com_67493.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(42):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/2/2c/Golbat.png/revision/latest?cb=20160416222009');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(43):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/d/d9/Oddish.png/revision/latest?cb=20160510074202');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(44):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/5/59/Gloom.png/revision/latest?cb=20160510074211');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(45):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/3/32/Vileplume.png/revision/latest?cb=20160510074217');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(46):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/e/ee/Paras.png/revision/latest?cb=20160526070511');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(47):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/6/62/Parasect.png/revision/latest?cb=20160526070512');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(48):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://icon-icons.com/icons2/851/PNG/128/venonat_icon-icons.com_67499.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(49):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/c/c2/Venomoth.png/revision/latest?cb=20160810064304');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(44):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/5/59/Gloom.png/revision/latest?cb=20160510074211');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(44):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;			
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/5/59/Gloom.png/revision/latest?cb=20160510074211');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+
+
 /* FIM POKÉMONS*/
 .content > .treinadores-pokemon{
 	margin: 0 auto 0 auto;
