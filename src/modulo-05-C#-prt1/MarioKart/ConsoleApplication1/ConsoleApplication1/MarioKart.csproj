@@ -44,13 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Corredor.cs" />
+    <Compile Include="Karts\Dinam.cs" />
     <Compile Include="Habilidade.cs" />
     <Compile Include="Equipamentos\IEquipamentos.cs" />
-    <Compile Include="Kart.cs" />
+    <Compile Include="Karts\Kart.cs" />
     <Compile Include="Equipamentos\MotorABaseDeLava.cs" />
     <Compile Include="Equipamentos\PneusDeCouroDeDragao.cs" />
+    <Compile Include="Karts\Light.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Karts\Sonnar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

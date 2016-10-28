@@ -15,8 +15,8 @@ namespace MarioKart
             this.Equipamentos = new List<IEquipamentos>();
 
         }
-        private List<IEquipamentos> Equipamentos { get; set; }
-        private Corredor CorredorKart { get; set; }
+        protected List<IEquipamentos> Equipamentos { get; set; }
+        protected Corredor CorredorKart { get; set; }
 
         public float Velocidade
         {
@@ -29,6 +29,10 @@ namespace MarioKart
                 return somaBonus = CorredorKart.NivelHabilidade == Habilidade.Profissional ?
                 somaBonus + CorredorKart.GetBonusHabilidade() + Equipamentos.Count + 3
                 : somaBonus + CorredorKart.GetBonusHabilidade() + 3;
+            }
+            protected set
+            {
+                this.Velocidade = value;
             }
         }
         public void Equipar(IEquipamentos equipamento)
