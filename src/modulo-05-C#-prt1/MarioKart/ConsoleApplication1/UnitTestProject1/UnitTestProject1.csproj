@@ -53,7 +53,14 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CorredorTest.cs" />
+    <Compile Include="KartTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ConsoleApplication1\MarioKart.csproj">
+      <Project>{DB43BD69-8262-4F3F-8727-57EA9C02B684}</Project>
+      <Name>MarioKart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

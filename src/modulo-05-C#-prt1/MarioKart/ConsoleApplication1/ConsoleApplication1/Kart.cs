@@ -26,7 +26,9 @@ namespace MarioKart
                 foreach (IEquipamentos equipamento in this.Equipamentos) {
                     somaBonus += equipamento.Bonus;
                 }
-                return somaBonus += CorredorKart.GetBonusHabilidade() + Equipamentos.Count + 3;
+                return somaBonus = CorredorKart.NivelHabilidade == Habilidade.Profissional ?
+                somaBonus + CorredorKart.GetBonusHabilidade() + Equipamentos.Count + 3
+                : somaBonus + CorredorKart.GetBonusHabilidade() + 3;
             }
         }
         public void Equipar(IEquipamentos equipamento)

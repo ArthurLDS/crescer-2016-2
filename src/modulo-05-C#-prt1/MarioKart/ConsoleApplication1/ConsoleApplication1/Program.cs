@@ -11,12 +11,12 @@ namespace MarioKart
     {
         static void Main(string[] args)
         {
-            var corredor = new Corredor("Nego Drama", Habilidade.Noob);
+            var corredor = new Corredor("Nego Drama", Habilidade.Profissional);
             var kart = new Kart(corredor);
-            var motor = new MotorABaseDeLava();
+            //var motor = new MotorABaseDeLava();
             var pneus = new PneusDeCouroDeDragao();
 
-            kart.Equipar(motor);
+            //kart.Equipar(motor);
             kart.Equipar(pneus);
 
             Console.WriteLine(kart.Velocidade);

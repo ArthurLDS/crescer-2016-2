@@ -21,9 +21,7 @@ namespace MarioKart
                 return 3;
             else if (NivelHabilidade == Habilidade.Mediano)
                 return 5;
-            else
-                return 6;
-            return 0;
+           return 6;
         }
     }
 }
