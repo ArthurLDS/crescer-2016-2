@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MarioKart
+namespace ConsoleApplication1
 {
-     public enum Habilidade
-     {
-         Noob, Mediano, Profissional
-     }
-    
+    public interface IEquipamentos
+    {
+        int Bonus { get; }
+    }
 }
