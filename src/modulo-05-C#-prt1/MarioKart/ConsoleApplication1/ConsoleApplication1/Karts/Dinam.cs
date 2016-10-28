@@ -8,7 +8,7 @@ namespace MarioKart
 {
     public class Dinam : Kart
     {
-        public Dinam() : base(new Corredor("", Habilidade.Noob))
+        public Dinam(Corredor corredor) : base(corredor)
         {
              int bonusCorredor = CorredorKart.GetBonusHabilidade();
              Velocidade = (Velocidade - bonusCorredor) + bonusCorredor*2;

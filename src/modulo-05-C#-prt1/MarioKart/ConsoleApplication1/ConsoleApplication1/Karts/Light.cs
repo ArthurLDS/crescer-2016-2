@@ -9,7 +9,7 @@ namespace MarioKart
 {
     public class Light : Kart
     {
-        public Light() : base(new Corredor("", Habilidade.Noob))
+        public Light(Corredor corredor) : base(corredor)
         {
             if (CorredorKart.NivelHabilidade == Habilidade.Noob)
                 Velocidade += 3;
