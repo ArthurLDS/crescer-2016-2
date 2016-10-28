@@ -53,6 +53,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CorredorTest.cs" />
+    <Compile Include="FoqueteDePlutonioTest.cs" />
     <Compile Include="KartTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
