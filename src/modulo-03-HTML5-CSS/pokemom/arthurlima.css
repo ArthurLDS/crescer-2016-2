@@ -8,7 +8,7 @@ body{
 	margin: 0;
 }
 /* Remoção dados digimon*/
-header span:first-child{ 
+header span:first-child{
 	display: none;
 }
 .historia-digimon{
@@ -24,7 +24,7 @@ h2:nth-child(2){
 nav:nth-child(2){
 	margin: 0 auto 100px auto;
 	background-color: #f8f8f8;
-	
+
 	border-bottom: 1px #888 solid;
 	box-shadow: 0px 1px 1px #888;
 
@@ -403,7 +403,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(25):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;	
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/037_Pikachu_icon-icons.com_67297.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -423,7 +423,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(27):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/d/df/Sandshrew.png/revision/latest?cb=20160810064305');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -433,7 +433,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(28):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/1/13/Sandslash.png/revision/latest?cb=20160810064305');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -443,7 +443,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(29):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/6/62/Nidoran%28M%29.png/revision/latest?cb=20160810063824');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -453,7 +453,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(30):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/3/31/Nidorina.png/revision/latest?cb=20160810063825');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -463,7 +463,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(31):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Nidoqueen_icon-icons.com_67381.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -473,7 +473,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(33):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/7/7a/Nidorino.png/revision/latest?cb=20160810063825');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -483,7 +483,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(34):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Nidoking_icon-icons.com_67382.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -493,7 +493,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(35):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Clefairy_icon-icons.com_67431.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -503,7 +503,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(36):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/d/d5/Clefable.png/revision/latest?cb=20160329065419');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -513,7 +513,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(37):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Vulpix_icon-icons.com_67353.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -523,7 +523,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(38):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Ninetales_icon-icons.com_67380.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -533,7 +533,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(39):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/851/PNG/128/jigglypuff_icon-icons.com_67550.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -543,7 +543,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(40):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/f/f1/Wigglytuff.png/revision/latest?cb=20160502213410');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -553,7 +553,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(41):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/851/PNG/128/ubat_icon-icons.com_67493.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -563,7 +563,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(42):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/2/2c/Golbat.png/revision/latest?cb=20160416222009');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -573,7 +573,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(43):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/d/d9/Oddish.png/revision/latest?cb=20160510074202');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -583,7 +583,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(44):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/5/59/Gloom.png/revision/latest?cb=20160510074211');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -593,7 +593,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(45):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette4.wikia.nocookie.net/pkmnshuffle/images/3/32/Vileplume.png/revision/latest?cb=20160510074217');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -603,7 +603,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(46):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/e/ee/Paras.png/revision/latest?cb=20160526070511');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -613,7 +613,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(47):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/6/62/Parasect.png/revision/latest?cb=20160526070512');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -623,7 +623,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(48):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/851/PNG/128/venonat_icon-icons.com_67499.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -633,7 +633,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(49):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/c/c2/Venomoth.png/revision/latest?cb=20160810064304');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -643,7 +643,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(50):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Diglett_icon-icons.com_67427.png');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -653,7 +653,7 @@ header h1{
 .content > .personagens > ul > li:nth-child(51):hover:after{
 	content: '';
 	width: 140px;
-	height: 120px;			
+	height: 120px;
 	background-image: url('http://vignette2.wikia.nocookie.net/pkmnshuffle/images/8/8b/Dugtrio.png/revision/latest?cb=20160810064303');
 	background-repeat: no-repeat;
 	position: absolute;
@@ -671,6 +671,7 @@ header h1{
 	padding: 0px 0px 10px 0px;
 	display: inline-block;
 	width: 465px;
+	height: 500px;
 	background-color: rgba(250,250,250,.8);
 	float: right;
 }
@@ -707,7 +708,7 @@ header h1{
 	right: 245px;
 	background-image: url(http://vignette3.wikia.nocookie.net/pokemonshow/images/4/41/Ash_com_a_m%C3%A3o_p_cima.png/revision/latest?cb=20110519012110&path-prefix=pt-br);
 	width: 148px;
-	height: 338px; 
+	height: 338px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-child(2):hover:after{
@@ -717,7 +718,7 @@ header h1{
 	right: 250px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pokemon/images/6/63/Misty_(anime).png/revision/latest?cb=20100424105822');
 	width: 175px;
-	height: 340px; 
+	height: 340px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-child(3):hover:after{
@@ -727,9 +728,9 @@ header h1{
 	right: 235px;
 	background-image: url('https://upload.wikimedia.org/wikipedia/en/7/71/DP-Brock.png');
 	width: 155px;
-	height: 330px; 
+	height: 330px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(4):hover:after{
 	content: '';
 	position: absolute;
@@ -737,9 +738,9 @@ header h1{
 	right: 255px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pocketmonster/images/6/6f/Tracey.png/revision/latest?cb=20160616015338&path-prefix=pt-br');
 	width: 170px;
-	height: 335px; 
+	height: 335px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(5):hover:after{
 	content: '';
 	position: absolute;
@@ -747,9 +748,9 @@ header h1{
 	right: 255px;
 	background-image: url('http://vignette1.wikia.nocookie.net/pokemonshow/images/3/3c/May_Anime_Artwork.png/revision/latest?cb=20110310013139&path-prefix=pt-br');
 	width: 150px;
-	height: 335px; 
+	height: 335px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(6):hover:after{
 	content: '';
 	position: absolute;
@@ -757,9 +758,9 @@ header h1{
 	right: 225px;
 	background-image: url('http://vignette2.wikia.nocookie.net/pokemonshow/images/3/32/Max.png/revision/latest?cb=20110521010623&path-prefix=pt-br');
 	width: 210px;
-	height: 315px; 
+	height: 315px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(7):hover:after{
 	content: '';
 	position: absolute;
@@ -767,7 +768,7 @@ header h1{
 	right: 215px;
 	background-image: url('http://vignette3.wikia.nocookie.net/pokemonshow/images/3/3e/Dawn2_(1).png/revision/latest?cb=20110131235749&path-prefix=pt-br');
 	width: 190px;
-	height: 340px; 
+	height: 340px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-child(8):hover:after{
@@ -777,9 +778,9 @@ header h1{
 	right: 210px;
 	background-image: url('http://vignette3.wikia.nocookie.net/scratchpad/images/2/2d/IRIS.png/revision/latest?cb=20130425223648');
 	width: 215px;
-	height: 340px; 
+	height: 340px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(9):hover:after{
 	content: '';
 	position: absolute;
@@ -787,9 +788,9 @@ header h1{
 	right: 210px;
 	background-image: url('http://2.bp.blogspot.com/-flMeRB1TK98/TYPjXxMVP2I/AAAAAAAABmk/cuVWx2s8cEo/s1600/Cilan%2Be%2BPansage%2B2.png');
 	width: 175px;
-	height: 345px; 
+	height: 345px;
 	background-size: cover;
-}	
+}
 .content > .treinadores-pokemon > ul > li:nth-child(10):hover:after{
 	content: '';
 	position: absolute;
@@ -797,7 +798,7 @@ header h1{
 	right: 235px;
 	background-image: url('http://img06.deviantart.net/b748/i/2015/070/c/7/smash___clemont_by_lucarioshirona-d8ldmdu.png');
 	width: 170px;
-	height: 345px; 
+	height: 345px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-child(11):hover:after{
@@ -807,7 +808,7 @@ header h1{
 	right: 230px;
 	background-image: url('http://3.bp.blogspot.com/-i5UsC1gZ62I/VL71O2kKULI/AAAAAAAAE60/Evgu250xeZw/s1600/Bonnie_XY_series.png');
 	width: 160px;
-	height: 320px; 
+	height: 320px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-child(12):hover:after{
@@ -817,7 +818,7 @@ header h1{
 	right: 245px;
 	background-image: url('http://cdn.bulbagarden.net/upload/d/d5/Serena_XY2.png');
 	width: 140px;
-	height: 335px; 
+	height: 335px;
 	background-size: cover;
 }
 .content > .treinadores-pokemon > ul > li:nth-of-type(2n-1){
@@ -842,7 +843,7 @@ footer{
 	margin-top: 40px;
 }
 .autenticacao > a{
-	margin:0 2px 0 2px; 
+	margin:0 2px 0 2px;
 	font-size: 14pt;
 	text-decoration: none;
 	padding: 10px;
