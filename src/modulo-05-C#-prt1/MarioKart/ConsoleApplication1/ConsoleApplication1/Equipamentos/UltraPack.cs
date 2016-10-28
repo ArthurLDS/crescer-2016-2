@@ -18,10 +18,12 @@ namespace ConsoleApplication1
         {
             get
             {
-                int vintePorcentoBonus = 
-                    Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(Equipamento.Bonus * 20 / 100)));
-                return Equipamento.Bonus + vintePorcentoBonus;
+                return Equipamento.Bonus + vintePorcentoBonus(Equipamento.Bonus);
             }
+        }
+        public int vintePorcentoBonus(int numero){
+            var retorno = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(numero * 20 / 100)));
+            return retorno; // Essa redundância é para facilitar o monitoramento do Debug. 
         }
     }
 }

@@ -42,7 +42,7 @@ namespace UnitTestProject1
             Assert.AreEqual(12, kart.Velocidade);
         }
         [TestMethod]
-        public void KartCorredorProfissionalTem2EquipamentosETemVelocidadeIgualA1()
+        public void KartCorredorProfissionalTem2EquipamentosETemVelocidadeIgualA16()
         {
             var corredor = new Corredor("Nego Drama", Habilidade.Profissional);
             var kart = new Kart(corredor);
@@ -52,6 +52,20 @@ namespace UnitTestProject1
             kart.Equipar(pneus);
             kart.Equipar(motor);
             Assert.AreEqual(16, kart.Velocidade);
+        }
+        [TestMethod]
+        public void KartCorredorProfissionalTem3EquipamentosETemVelocidadeIgualA1()
+        {
+            var corredor = new Corredor("Nego Drama", Habilidade.Profissional);
+            var kart = new Kart(corredor);
+            var pneus = new PneusDeCouroDeDragao();
+            var motor = new MotorABaseDeLava();
+            var foguete = new FogueteDePlutonio(2);
+
+            kart.Equipar(foguete);
+            kart.Equipar(pneus);
+            kart.Equipar(motor);
+            Assert.AreEqual(21, kart.Velocidade);
         }
     }
 }
