@@ -1,5 +1,5 @@
 body{
-	background-image: url('../bg-poke.jpeg');
+	background-image: url('https://raw.githubusercontent.com/ArthurLDS/crescer-2016-2/master/src/modulo-03-HTML5-CSS/bg-poke.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow-x: hidden;
