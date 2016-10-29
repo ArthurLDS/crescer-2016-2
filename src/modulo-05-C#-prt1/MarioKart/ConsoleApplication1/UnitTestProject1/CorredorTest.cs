@@ -15,6 +15,14 @@ namespace UnitTestProject
             Assert.AreEqual("Fulano", corredor.Nome);
             Assert.AreEqual(Habilidade.Noob, corredor.NivelHabilidade);
         }
+        [TestMethod]
+        public void CorredorComNomeFulanoEHabilidadePro()
+        {
+           var corredor = new Corredor("Fulano", Habilidade.Profissional);
+
+            Assert.AreEqual("Fulano", corredor.Nome);
+            Assert.AreEqual(Habilidade.Profissional, corredor.NivelHabilidade);
+        }
         
     }
 }

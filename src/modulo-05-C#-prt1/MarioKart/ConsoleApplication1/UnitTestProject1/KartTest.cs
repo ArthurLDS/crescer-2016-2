@@ -54,7 +54,7 @@ namespace UnitTestProject1
             Assert.AreEqual(16, kart.Velocidade);
         }
         [TestMethod]
-        public void KartCorredorProfissionalTem3EquipamentosETemVelocidadeIgualA1()
+        public void KartCorredorProfissionalTem3EquipamentosETemVelocidadeIgual21()
         {
             var corredor = new Corredor("Nego Drama", Habilidade.Profissional);
             var kart = new Kart(corredor);
@@ -67,5 +67,42 @@ namespace UnitTestProject1
             kart.Equipar(motor);
             Assert.AreEqual(21, kart.Velocidade);
         }
+        [TestMethod]
+        public void KartCorredorNoobTem2EquipamentosETemVelocidadeIgualA11()
+        {
+            var corredor = new Corredor("Nego Drama", Habilidade.Noob);
+            var kart = new Kart(corredor);
+            var pneus = new PneusDeCouroDeDragao();
+            var motor = new MotorABaseDeLava();
+            
+            kart.Equipar(pneus);
+            kart.Equipar(motor);
+            Assert.AreEqual(11, kart.Velocidade);
+        }
+        [TestMethod]
+        public void KartDinamCorredorNoobTem2EquipamentosETemVelocidadeIgualA()
+        {
+            var corredor = new Corredor("Nego Drama", Habilidade.Noob);
+            var dinam= new Dinam(corredor);
+            var pneus = new PneusDeCouroDeDragao();
+            var motor = new MotorABaseDeLava();
+
+            dinam.Equipar(pneus);
+            dinam.Equipar(motor);
+            Assert.AreEqual(14, dinam.Velocidade);
+        }
+        [TestMethod]
+        public void KartDinamCorredorMedianoTem2EquipamentosETemVelocidadeIgualA()
+        {
+            var corredor = new Corredor("Nego Drama", Habilidade.Mediano);
+            var dinam = new Dinam(corredor);
+            var pneus = new PneusDeCouroDeDragao();
+            var motor = new MotorABaseDeLava();
+
+            dinam.Equipar(pneus);
+            dinam.Equipar(motor);
+            Assert.AreEqual(18, dinam.Velocidade);
+        }
     }
 }
+

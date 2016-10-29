@@ -9,7 +9,7 @@ namespace MarioKart
 {
     public class Sonnar : Kart
     {
-        public Sonnar() : base(new Corredor("", Habilidade.Noob))
+        public Sonnar(Corredor corredor) : base(corredor)
         {
             Velocidade = Equipamentos.Count >= 1 ? Velocidade + 2 : Velocidade;
         }
