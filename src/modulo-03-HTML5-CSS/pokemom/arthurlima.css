@@ -142,12 +142,17 @@ header h1{
 	padding: 5px;
 	font-size: 13pt;
 	cursor: pointer;
+	transition: 0.7s;
 }
+
 .content > .personagens > ul > li:nth-of-type(2n-1){
 	background-color: #fffcb8;
 }
 .content > .personagens > ul > li:nth-of-type(2n){
 	background-color: #f9e174;
+}
+.content > .personagens > ul > li:hover{
+	background-color: #ffd100;
 }
 
 .content > .personagens > ul > li:nth-child(1):hover:after{
@@ -660,6 +665,47 @@ header h1{
 	bottom: -95px;
 	left: 370px;
 }
+.content > .personagens > ul > li:nth-child(52):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Meowth_icon-icons.com_67388.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(53):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette1.wikia.nocookie.net/pkmnshuffle/images/b/b3/Persian.png/revision/latest?cb=20160810063826');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(54):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://icon-icons.com/icons2/850/PNG/128/Psyduck_icon-icons.com_67371.png');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+.content > .personagens > ul > li:nth-child(55):hover:after{
+	content: '';
+	width: 140px;
+	height: 120px;
+	background-image: url('http://vignette3.wikia.nocookie.net/pkmnshuffle/images/c/cf/Golduck.png/revision/latest?cb=20160810064303');
+	background-repeat: no-repeat;
+	position: absolute;
+	bottom: -95px;
+	left: 370px;
+}
+
 
 
 /* FIM POKÉMONS*/
@@ -834,9 +880,13 @@ header h1{
 footer{
 	display: inline-block;
 	background-color: #ddd;
-	margin-top: 5px;
-	padding: 5px;
-	border-radius: 4px;
+	margin: 0 auto 0 auto;
+	margin-top: 10px;
+	padding: 10px;
+	border-radius: 6px;
+}
+footer:after{
+	content: ' | Desenvolvido por Arthur Lima de Souza'
 }
 /* Autenticacao*/
 .autenticacao{
