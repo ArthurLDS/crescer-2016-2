@@ -14,6 +14,7 @@ namespace MarioKart
 
         }
         public int Bonus {
+
             get
             {
                 int totalBonus = Equipamentos.Count*2 + CorredorKart.GetBonusHabilidade()*2;
