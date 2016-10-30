@@ -108,6 +108,10 @@ namespace ExercicioLambda
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
+            IList<Funcionario> filtroPorNome =
+            Funcionarios.Where(funcionario => funcionario.Nome.Contains(nome)).ToList();
+
+            return filtroPorNome;    
             throw new NotImplementedException();
         }
 
