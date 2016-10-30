@@ -18,12 +18,9 @@ namespace ConsoleApplication1
         {
             get
             {
-                return Equipamento.Bonus + vintePorcentoBonus(Equipamento.Bonus);
+                double bonusEquipamento = this.Equipamento.Bonus;
+                return Convert.ToInt32(Math.Ceiling(bonusEquipamento * 1.20));
             }
-        }
-        public int vintePorcentoBonus(int numero){
-            var retorno = Convert.ToInt32(Math.Ceiling(Convert.ToDecimal(numero * 20 / 100)));
-            return retorno; // Essa redundância é para facilitar o monitoramento do Debug. 
         }
     }
 }

@@ -10,8 +10,7 @@ namespace MarioKart
     {
         public Dinam(Corredor corredor) : base(corredor)
         {
-             int bonusCorredor = CorredorKart.GetBonusHabilidade();
-             Velocidade = (Velocidade - bonusCorredor) + bonusCorredor*2;
+             BonusTipoKart = CorredorKart.GetBonusHabilidade();
         }
     }
 }

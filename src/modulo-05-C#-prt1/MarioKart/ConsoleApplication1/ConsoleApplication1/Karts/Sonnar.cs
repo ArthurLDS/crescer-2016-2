@@ -1,4 +1,5 @@
-﻿using MarioKart;
+﻿using ConsoleApplication1;
+using MarioKart;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,13 @@ namespace MarioKart
     {
         public Sonnar(Corredor corredor) : base(corredor)
         {
-            Velocidade = Equipamentos.Count >= 1 ? Velocidade + 2 : Velocidade;
+            
+        }
+        override
+        public void Equipar(IEquipamentos equipamento)
+        {
+            this.Equipamentos.Add(equipamento);
+            BonusTipoKart = Equipamentos.Count >= 1 ? 2 : 0; // Atualizando Velocidade após Equipar.
         }
     }
 }

@@ -12,9 +12,10 @@ namespace MarioKart
         public Light(Corredor corredor) : base(corredor)
         {
             if (CorredorKart.NivelHabilidade == Habilidade.Noob)
-                Velocidade += 3;
-            else if (CorredorKart.NivelHabilidade == Habilidade.Profissional)
-                Velocidade -= 1;
+                BonusTipoKart = 3;
+            if (CorredorKart.NivelHabilidade == Habilidade.Profissional)
+                BonusTipoKart = -1;
+            
         }
     }
 }

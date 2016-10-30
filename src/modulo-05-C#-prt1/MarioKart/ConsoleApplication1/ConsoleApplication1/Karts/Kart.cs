@@ -18,6 +18,8 @@ namespace MarioKart
         protected List<IEquipamentos> Equipamentos { get; set; }
         protected Corredor CorredorKart { get; set; }
 
+        protected int BonusTipoKart { get; set; } = 0;
+
         public float Velocidade
         {
             get
@@ -27,18 +29,21 @@ namespace MarioKart
                     somaBonus += equipamento.Bonus;
                 }
                 return somaBonus = CorredorKart.NivelHabilidade == Habilidade.Profissional ?
-                somaBonus + CorredorKart.GetBonusHabilidade() + Equipamentos.Count + 3
-                : somaBonus + CorredorKart.GetBonusHabilidade() + 3;
+                somaBonus + CorredorKart.GetBonusHabilidade() + Equipamentos.Count + 3 + BonusTipoKart
+                : somaBonus + CorredorKart.GetBonusHabilidade() + 3 + BonusTipoKart;
             }
-            protected set
+            private set
             {
                 this.Velocidade = value;
             }
         }
-        public void Equipar(IEquipamentos equipamento)
+        public virtual void Equipar(IEquipamentos equipamento)
         {
             this.Equipamentos.Add(equipamento);
         }
-
+        /*public void AcrecentarVelocidade(int bonus)
+        {
+            BonusTipoKart = bonus;
+        }*/
     }
 }
