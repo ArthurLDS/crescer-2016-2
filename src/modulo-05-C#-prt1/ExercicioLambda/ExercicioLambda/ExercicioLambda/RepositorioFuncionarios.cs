@@ -141,6 +141,17 @@ namespace ExercicioLambda
 
         public double SalarioMedio(TurnoTrabalho? turno = null)
         {
+            Funcionario[] filtrado;
+            if (turno.Equals(null))
+                filtrado = Funcionarios.ToArray();
+            else
+                filtrado = Funcionarios.Where(funcionario => funcionario.TurnoTrabalho == turno).ToArray();
+            double somador = 0;
+
+            for (int i = 0; i<filtrado.Length; i++)
+                somador += filtrado[i].Cargo.Salario;
+
+            return somador / filtrado.Length;
             throw new NotImplementedException();
         }
 
