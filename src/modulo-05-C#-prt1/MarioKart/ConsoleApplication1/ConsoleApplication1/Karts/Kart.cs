@@ -25,7 +25,8 @@ namespace MarioKart
             get
             {
                 int somaBonus = 0;
-                foreach (IEquipamentos equipamento in this.Equipamentos) {
+                foreach (IEquipamentos equipamento in this.Equipamentos)
+                {
                     somaBonus += equipamento.Bonus;
                 }
                 return somaBonus = CorredorKart.NivelHabilidade == Habilidade.Profissional ?
@@ -41,9 +42,6 @@ namespace MarioKart
         {
             this.Equipamentos.Add(equipamento);
         }
-        /*public void AcrecentarVelocidade(int bonus)
-        {
-            BonusTipoKart = bonus;
-        }*/
+
     }
 }
