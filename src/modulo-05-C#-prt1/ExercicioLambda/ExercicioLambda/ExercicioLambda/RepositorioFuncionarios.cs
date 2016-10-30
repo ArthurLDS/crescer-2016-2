@@ -125,15 +125,17 @@ namespace ExercicioLambda
             ToList();
 
             return filtroPorTurno;
-            //Não terminado.   
-            
-
-
+          
             throw new NotImplementedException();
         }
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
         {
+            return Funcionarios
+                .Where(funcionario => 2016 - funcionario.DataNascimento.Year >= idade - 5 &&
+                2016 - funcionario.DataNascimento.Year <= idade + 5).ToList(); 
+                // Keep it simple :)
+
             throw new NotImplementedException();
         }
 
@@ -143,7 +145,8 @@ namespace ExercicioLambda
         }
 
         public IList<Funcionario> AniversariantesDoMes()
-        {
+        {   
+            
             throw new NotImplementedException();
         }
 
