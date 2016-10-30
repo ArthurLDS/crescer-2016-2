@@ -109,14 +109,22 @@ namespace ExercicioLambda
         public IList<Funcionario> BuscarPorNome(string nome)
         {
             IList<Funcionario> filtroPorNome =
-            Funcionarios.Where(funcionario => funcionario.Nome.Contains(nome)).ToList();
+            Funcionarios.Where(funcionario => funcionario.Nome.Contains(nome))
+            .ToList();
 
-            return filtroPorNome;    
+            return filtroPorNome;
             throw new NotImplementedException();
         }
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
         {
+            IList<Funcionario> filtroPorTurno;
+
+            filtroPorTurno = Funcionarios.Where(funcionario => funcionario.TurnoTrabalho == turnos[0]).ToList();
+            //Não terminado.   
+            
+
+
             throw new NotImplementedException();
         }
 
