@@ -56,6 +56,7 @@
     <Compile Include="FoqueteDePlutonioTest.cs" />
     <Compile Include="KartTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SkyFusionTest.cs" />
     <Compile Include="UltraPackTest.cs" />
   </ItemGroup>
   <ItemGroup>
