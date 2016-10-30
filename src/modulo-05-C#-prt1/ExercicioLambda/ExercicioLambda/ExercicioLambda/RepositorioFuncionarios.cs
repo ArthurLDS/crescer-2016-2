@@ -120,7 +120,11 @@ namespace ExercicioLambda
         {
             IList<Funcionario> filtroPorTurno;
 
-            filtroPorTurno = Funcionarios.Where(funcionario => funcionario.TurnoTrabalho == turnos[0]).ToList();
+            filtroPorTurno = Funcionarios.
+            Where(funcionario => turnos.Contains(funcionario.TurnoTrabalho)).
+            ToList();
+
+            return filtroPorTurno;
             //Não terminado.   
             
 
