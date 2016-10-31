@@ -163,6 +163,19 @@ namespace ExercicioLambda
 
         public IList<dynamic> BuscaRapida()
         {
+            //IList<string> filtro =
+            //(from funcionario in Funcionarios select funcionario.Nome).ToList();
+             
+            IList<dynamic> filtrado = Funcionarios
+            .Select(funcionario => 
+                        new
+                      {
+                          NomeFuncionario = funcionario.Nome,
+                          TituloCargo = funcionario.Cargo.Titulo
+                      })
+                      .ToList<dynamic>();
+
+            return filtrado;
             throw new NotImplementedException();
         }
 
