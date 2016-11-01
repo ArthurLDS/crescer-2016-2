@@ -13,22 +13,22 @@
     </div>
     <div class="descricao-ft">
         <b>Primeira aparição:</b>@Model.PrimeiraAparicao<br>
-        <b>Nascimento: </b>12 de fevereiro de 1966. <br>
-        <b>Altura:</b> 192cm. <br>
-        <b>Peso:</b> 96kg. <br>
-        <b></b>Medidas: B198, C120, Q172.<br>
-        <b>Tipo sanguíneo:</b> B. <br>
-        <b>Habilidades especiais:</b> Caçar, Eletricidade. <br>
-        <b>Gosta:</b> Frutas tropicais, Pirarucu, Sua mãe. <br>
-        <b>Estilo de luta:</b> Luta Selvagem autodidata (Army Ants) / Capoeira.<br>
-        <b>Origem:</b> Brasil (lugar de nascença é provável como sendo Tailândia). <br>
-        <b>Uma fala de vitória:</b> "Ver você em ação é uma piada!" <br>
-        <b>SSF2 nickname:</b> "A selvagem criança da natureza". <br>
-        <b>SFA3 nickname:</b> "A animal pessoa amazônica". <br>
-        <b>SF4 nickname:</b> "Guerreiro da selva". <br>
-        <b>SFA3 stage:</b> Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?). <br>
-        <b>SF2 stage:</b> Bacia do rio Amazonas (Brasil). <br>
-        <b>Golpes especiais famosos:</b> Electric Thunder, Rolling Attack.<br>
+        <b>Nascimento: </b>@Model.Nascimento<br>
+        <b>Altura:</b>@Model.Altura<br>
+        <b>Peso: </b>@(Model.Peso + "cm")<br>
+        <b>Medidas: </b>@Model.Medidas<br>
+        <b>Tipo sanguíneo:</b>@Model.TipoSanguineo<br>
+        <b>Habilidades especiais: </b>@Model.HabilidadesEspeciais<br>
+        <b>Gosta:</b> @Model.Gosta<br>
+        <b>Estilo de luta:</b> @Model.EstiloDeLuta<br>
+        <b>Origem:</b> @Model.Origem<br>
+        <b>Uma fala de vitória:</b> @Model.UmaFalaDeVitoria <br>
+        <b>SSF2 nickname:</b> @Model.Ssf2<br>
+        <b>SFA3 nickname:</b> @Model.Sfa3<br>
+        <b>SF4 nickname:</b> @Model.Sf4 <br>
+        <b>SFA3 stage:</b> @Model.Sfa3Stage <br>
+        <b>SF2 stage:</b> @Model.Sf2Stage<br>
+        <b>Golpes especiais famosos:</b> @Model.GolpesEspeciais<br>
         </p>
     </div>
 </div>
