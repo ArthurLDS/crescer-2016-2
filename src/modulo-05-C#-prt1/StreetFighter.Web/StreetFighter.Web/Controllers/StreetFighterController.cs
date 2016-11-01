@@ -37,7 +37,20 @@ namespace StreetFighter.Web.Controllers
             return View(modelo);
         }
         public ActionResult Sobre() {
-            return View();
+            var modelo = new SobreModel();
+            modelo.PrimeiraAparicao = " Igrejinha - RS ";
+            modelo.Nascimento = " 27 de novembro de 1998";
+            modelo.Altura = 182;
+            modelo.Peso = 76;
+            modelo.TipoSanguineo = " O-";
+            modelo.HabilidadesEspeciais = " Montar cubo mágico e jogar FIFA.";
+            modelo.Gosta = " Pizza, Bacon, Café, Sua mãe.";
+            modelo.EstiloDeLuta = " Peleia Bagual.";
+            modelo.Origem = " Rio Grande do Sul.";
+            modelo.UmaFalaDeVitoria = "Não tá morto quem peleia";
+            modelo.GolpesEspeciais = " Voadora giratória com os dois pés.";
+
+            return View(modelo);
         }
     }
 }

@@ -3,7 +3,7 @@
     ViewBag.Title = "Sobre";
 }
 
-<div class="main">
+
     <div class="personagem">
         <h2>Arthur Lima de Souza</h2>
     </div>
@@ -11,18 +11,18 @@
         <img src="https://avatars3.githubusercontent.com/u/18702590?v=3&s=460" alt="Arthur-muito-loko">
     </div>
     <div class="descricao">
-        <b>Primeira aparição:</b> Igrejinha - RS <br>
-        <b>Nascimento: </b>27 de novembro de 1998. <br>
-        <b>Altura:</b> 1.82cm. <br>
-        <b>Peso:</b> 75kg. <br>
-        <b>Tipo sanguíneo:</b> O-. <br>
-        <b>Habilidades especiais:</b> Montar cubo mágico e jogar FIFA <br>
-        <b>Gosta:</b> Pizza, Bacon, Café, Sua mãe. <br>
-        <b>Estilo de luta:</b> Peleia Bagual<br>
-        <b>Origem:</b> Rio Grande do Sul <br>
-        <b>Uma fala de vitória:</b> "Não tá morto quem peleia" <br>
-        <b>Golpes especiais famosos: </b>Voadora giratória<br>
+        <b>Primeira aparição:</b> @Model.PrimeiraAparicao<br>
+        <b>Nascimento: </b> @Model.Nascimento<br>
+        <b>Altura:</b> @(Model.Altura + " cm")<br>
+        <b>Peso:</b> @(Model.Peso + " kg")<br>
+        <b>Tipo sanguíneo:</b> @Model.TipoSanguineo<br>
+        <b>Habilidades especiais:</b> @Model.HabilidadesEspeciais<br>
+        <b>Gosta:</b> @Model.Gosta<br>
+        <b>Estilo de luta:</b> @Model.EstiloDeLuta<br>
+        <b>Origem:</b> @Model.Origem<br>
+        <b>Uma fala de vitória:</b> @Model.UmaFalaDeVitoria<br>
+        <b>Golpes especiais famosos: </b> @Model.GolpesEspeciais<br>
         </p>
     </div>
-</div>
+
 <br>

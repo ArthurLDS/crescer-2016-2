@@ -6,48 +6,30 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Street Fighter</title>
+    <title>Sobre o Desenvolverdor</title>
     <link rel="stylesheet" href="~/Content/estilo.css">
 </head>
-
 <body>
     <nav class="menu-bar">
         <ul style="">
-            <li><a href="street-fighter-index.html">Início</a></li>
+            <li><a href="~/StreetFighter/Index">Início</a></li>
             <li><a href="https://www.google.com.br/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#tbm=nws&q=Street+Fighter">Notícias</a></li>
-            <li><a href="ficha-tecnica.html">Ficha Técnica</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="~/StreetFighter/FichaTecnica">Ficha Técnica</a></li>
+            <li><a href="~/StreetFighter/Sobre">Sobre</a></li>
         </ul>
     </nav>
     <div class="container">
         <header>
-            <h2 style="color: #ddd"> Street Fighter</h2>
+            <h2> Sobre o desenvolvedor</h2>
         </header>
 
         <div class="main">
-            <h2>Sumário</h2>
-            <ul>
-                <li><a href="#jogo">O Jogo</a></li>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#jogosdaserie">Jogos da série</a></li>
-                <li><a href="#sf">Street Fighter</a></li>
-                <li><a href="#sfII">Street Fighter II</a></li>
-                <li><a href="#sfIII">Street Fighter III</a></li>
-                <li><a href="#sfA">Street Fighter Alpha</a></li>
-            </ul>
-            <hr>
-            <div id="conteudo">
-               <div id="">
-                   <h1>@ViewBag.Title</h1>
-               </div>
-                @RenderBody()
-            </div>
+           @RenderBody()
         </div>
+        <br>
     </div>
 
 </body>
-
 </html>
