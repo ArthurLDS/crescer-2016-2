@@ -1,37 +1,50 @@
 ﻿
 @{
     ViewBag.Title = "FichaTecnica";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-<header>
-    <h2>Ficha Técnica</h2>
-</header>
 
-<div class="main">
-    <div class="personagem">
-        <h1>Blanka</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Desenvolverdor</title>
+    <link rel="stylesheet" href="~/Content/estilo.css">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul style="">
+            <li><a href="~/StreetFighter/Index">Início</a></li>
+            <li><a href="~/StreetFighter/Cadastro">Cadastro</a></li>
+            <li><a href="~/StreetFighter/FichaTecnica">Ficha Técnica</a></li>
+            <li><a href="~/StreetFighter/Sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <div class="ficha-tec-container">
+        <header>
+            <h2>Ficha Técnica</h2>
+        </header>
+
+        <div class="container conteudo-ficha-tec">
+            <div class="row">
+                
+                <div class="img-cont col-md-4">
+                    <img src="@Model.Imagem" alt="Arthur-muito-loko" class="img-responsive">
+                </div>
+                <div class="descricao-ft col-md-8">
+                    <b>Nome: </b>@Model.Nome<br>
+                    <b>Nascimento: </b>@Model.DataNascimento<br>
+                    <b>Altura:</b>@Model.Altura<br>
+                    <b>Peso: </b>@(Model.Peso + "cm")<br>
+                    <b>Origem:</b> @Model.Origem<br>
+                    <b>Golpes especiais famosos:</b> @Model.GolpesEspeciais<br>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="img-cont-ft">
-        <img src="http://www.arkade.com.br/revista/38/data/images/img61.gif" alt="blanka-muito-loko">
-    </div>
-    <div class="descricao-ft">
-        <b>Primeira aparição:</b>@Model.PrimeiraAparicao<br>
-        <b>Nascimento: </b>@Model.Nascimento<br>
-        <b>Altura:</b>@Model.Altura<br>
-        <b>Peso: </b>@(Model.Peso + "cm")<br>
-        <b>Medidas: </b>@Model.Medidas<br>
-        <b>Tipo sanguíneo:</b>@Model.TipoSanguineo<br>
-        <b>Habilidades especiais: </b>@Model.HabilidadesEspeciais<br>
-        <b>Gosta:</b> @Model.Gosta<br>
-        <b>Estilo de luta:</b> @Model.EstiloDeLuta<br>
-        <b>Origem:</b> @Model.Origem<br>
-        <b>Uma fala de vitória:</b> @Model.UmaFalaDeVitoria <br>
-        <b>SSF2 nickname:</b> @Model.Ssf2<br>
-        <b>SFA3 nickname:</b> @Model.Sfa3<br>
-        <b>SF4 nickname:</b> @Model.Sf4 <br>
-        <b>SFA3 stage:</b> @Model.Sfa3Stage <br>
-        <b>SF2 stage:</b> @Model.Sf2Stage<br>
-        <b>Golpes especiais famosos:</b> @Model.GolpesEspeciais<br>
-        </p>
-    </div>
-</div>
+
+</body>
+</html>
+

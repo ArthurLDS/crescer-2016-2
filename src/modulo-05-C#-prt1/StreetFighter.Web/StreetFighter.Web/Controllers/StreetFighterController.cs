@@ -17,26 +17,18 @@ namespace StreetFighter.Web.Controllers
         public ActionResult FichaTecnica()
         {
             var modelo = new FichaTecnicaModel();
-            modelo.PrimeiraAparicao = " Morro da Perdra.";
-            modelo.Nascimento = " 12 de fevereiro de 1966";
+            modelo.Imagem = "http://4.bp.blogspot.com/-5yZGmO2TCpQ/VQmqe8v6RfI/AAAAAAAAN0g/J4X3N-YR9ws/s1600/Blanka%2B1.gif";
+            modelo.Nome = " Blanka";
+            modelo.DataNascimento = " 12 de fevereiro de 1966";
             modelo.Altura = 192;
             modelo.Peso = 96;
-            modelo.Medidas = " B198, C120, Q172.";
-            modelo.TipoSanguineo = " B";
-            modelo.HabilidadesEspeciais = " Caçar, Eletricidade. ";
-            modelo.Gosta = " Frutas tropicais, Pirarucu, Sua mãe. ";
-            modelo.EstiloDeLuta = " Luta Selvagem autodidata (Army Ants) / Capoeira.";
             modelo.Origem = " Brasil (lugar de nascença é provável como sendo Tailândia).";
-            modelo.UmaFalaDeVitoria = " Ver você em ação é uma piada!";
-            modelo.Ssf2 = " A selvagem criança da natureza. ";
-            modelo.Sfa3 = " A animal pessoa amazônica.";
-            modelo.Sf4 = " Guerreiro da selva.";
-            modelo.Sfa3Stage = " Ramificação do Rio Madeira - pantano, Brasil (ramificação do rio Madeira: talvez possa ser Mato Grosso, ou Tocantins?). ";
-            modelo.Sf2Stage = " Bacia do rio Amazonas (Brasil). ";
             modelo.GolpesEspeciais = " Electric Thunder, Rolling Attack.";
             return View(modelo);
+
         }
-        public ActionResult Sobre() {
+        public ActionResult Sobre()
+        {
             var modelo = new SobreModel();
             modelo.PrimeiraAparicao = " Igrejinha - RS ";
             modelo.Nascimento = " 27 de novembro de 1998";
@@ -52,8 +44,20 @@ namespace StreetFighter.Web.Controllers
 
             return View(modelo);
         }
-        public ActionResult Cadastro(CadastroModel model) {
+        public ActionResult Cadastro(FichaTecnicaModel model)
+        {
             return View();
+        }
+        public ActionResult Salvar(FichaTecnicaModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                return View("FichaTecnica", model);
+            }
+            else
+            {
+                return View("Cadastro");
+            }
         }
     }
 }
