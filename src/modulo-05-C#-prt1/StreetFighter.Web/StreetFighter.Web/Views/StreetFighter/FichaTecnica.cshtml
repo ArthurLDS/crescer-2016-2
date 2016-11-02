@@ -30,17 +30,22 @@
         <div class="container conteudo-ficha-tec">
             <div class="row">
                 
+                
+
                 <div class="img-cont col-md-4">
                     <img src="@Model.Imagem" alt="Arthur-muito-loko" class="img-responsive">
                 </div>
                 <div class="descricao-ft col-md-8">
                     <b>Nome: </b>@Model.Nome<br>
-                    <b>Nascimento: </b>@Model.DataNascimento<br>
-                    <b>Altura:</b>@Model.Altura<br>
-                    <b>Peso: </b>@(Model.Peso + "cm")<br>
-                    <b>Origem:</b> @Model.Origem<br>
-                    <b>Golpes especiais famosos:</b> @Model.GolpesEspeciais<br>
+                    <b>Nascimento: </b>@Model.DataNascimento.ToLongDateString()<br>
+                    <b>Altura:</b>@(Model.Altura + " cm")<br>
+                    <b>Peso: </b>@(Model.Peso + " kg")<br>
+                    <b>Origem: </b> @Model.Origem<br>
+                    <b>Golpes especiais famosos: </b> @Model.GolpesEspeciais<br>
+                    <b>Personagem Oculto: </b> @(Model.PersonagemOculto)<br>
                 </div>
+
+
             </div>
         </div>
     </div>

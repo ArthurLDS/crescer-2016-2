@@ -17,13 +17,15 @@ namespace StreetFighter.Web.Controllers
         public ActionResult FichaTecnica()
         {
             var modelo = new FichaTecnicaModel();
-            modelo.Imagem = "http://4.bp.blogspot.com/-5yZGmO2TCpQ/VQmqe8v6RfI/AAAAAAAAN0g/J4X3N-YR9ws/s1600/Blanka%2B1.gif";
+            modelo.Imagem = "https://files.slack.com/files-pri/T2FVBENMS-F2RM5AKSL/blanka.png";
             modelo.Nome = " Blanka";
-            modelo.DataNascimento = " 12 de fevereiro de 1966";
+            modelo.DataNascimento = new DateTime(1966, 02, 12);
             modelo.Altura = 192;
             modelo.Peso = 96;
-            modelo.Origem = " Brasil (lugar de nascença é provável como sendo Tailândia).";
+            modelo.Origem = "Brasil";
             modelo.GolpesEspeciais = " Electric Thunder, Rolling Attack.";
+            modelo.PersonagemOculto = false;
+
             return View(modelo);
 
         }
@@ -46,6 +48,7 @@ namespace StreetFighter.Web.Controllers
         }
         public ActionResult Cadastro(FichaTecnicaModel model)
         {
+            PopularPaises();
             return View();
         }
         public ActionResult Salvar(FichaTecnicaModel model)
@@ -58,6 +61,17 @@ namespace StreetFighter.Web.Controllers
             {
                 return View("Cadastro");
             }
+        }
+
+        public void PopularPaises()
+        {
+            ViewData["ListaPaises"] = new List<SelectListItem>()
+            {
+                new SelectListItem() { Value = "BR", Text = "Brasil" },
+                new SelectListItem() { Value = "AR", Text = "Argentina" },
+                new SelectListItem() { Value = "JP", Text = "Japão" },
+                new SelectListItem() { Value = "US", Text = "EUA" }
+            };
         }
     }
 }
