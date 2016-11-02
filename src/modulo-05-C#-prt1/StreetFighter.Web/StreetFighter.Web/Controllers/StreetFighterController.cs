@@ -52,5 +52,8 @@ namespace StreetFighter.Web.Controllers
 
             return View(modelo);
         }
+        public ActionResult Cadastro() {
+            return View();
+        }
     }
 }
