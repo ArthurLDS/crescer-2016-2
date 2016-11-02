@@ -1,7 +1,7 @@
-﻿  @{
-        ViewBag.Title = "Cadastro";
-        Layout = null;
-    }
+﻿@{
+    ViewBag.Title = "Cadastro";
+    Layout = null;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,43 +31,51 @@
             <div class="col-md-12">
                 <form action="~/StreetFighter/Salvar" method="post" class="navbar-form navbar-left">
                     <div class="form-group">
+                        <h3>@ViewBag.Mensagem</h3>
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                         <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" /><br>
+                        @Html.ValidationMessage("Nome")<br>
                         <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form" /><br>
+                        @Html.ValidationMessage("DataNascimento")<br>
                         <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" /><br>
+                        @Html.ValidationMessage("Altura")<br>
                         <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" /><br>
+                        @Html.ValidationMessage("Peso")<br>
                         <!--<input type="text" name="Origem" placeholder="Digite sua Origem" class="form-control input-form" /><br>-->
 
-                        @Html.DropDownList("Origem", (IEnumerable<SelectListItem>)ViewBag.ListaPaises, "Selecione..", new { @class="form-control input-form"})<br>
-
+                        @Html.DropDownList("Origem", (IEnumerable<SelectListItem>)ViewBag.ListaPaises, "Selecione..", new { @class = "form-control input-form" })<br>
+                        @Html.ValidationMessage("Origem")<br>
                         <input type="text" name="GolpesEspeciais" placeholder="Digite seus Golpes Especiais" class="form-control input-form" /><br>
-                       
+
                         <spam>Personagem Oculto: </spam>
-                        @Html.CheckBox("PersonagemOculto", new { @class="form-control input-control"})<br>
+                        @Html.CheckBox("PersonagemOculto", new { @class = "form-control input-control" })<br>
 
                         <input type="text" name="Imagem" placeholder="URL de sua imagem" class="form-control input-form" /><br>
 
-                       
+
 
                         <input type="submit" name="name" class="btn btn-success" value="Cadastrar" />
                     </div>
                 </form>
-                
-
-                    <!--<b>Nome: </b><br>
-                    <b>Data Nascimento: </b><br>
-                    <b>Altura:</b><br>
-                    <b>Peso: </b><br>
-                    <b>Habilidades Especiais: </b><br>
-                    <b>Origem:</b><br>
-                    <b>Golpes Especiais: </b><br>
-                    <b>Personagem Oculto: </b><br>
-                    </p>-->
-                </div>
+                <script src="~/scripts/jquery-1.9.1.min.js"></script>
+                <script src="~/scripts/jquery.validate.min.js"></script>
+                <script src="~/scripts/jquery.validate.unobtrusive.js"></script>
+                <!--<b>Nome: </b><br>
+                <b>Data Nascimento: </b><br>
+                <b>Altura:</b><br>
+                <b>Peso: </b><br>
+                <b>Habilidades Especiais: </b><br>
+                <b>Origem:</b><br>
+                <b>Golpes Especiais: </b><br>
+                <b>Personagem Oculto: </b><br>
+                </p>-->
             </div>
         </div>
-        <br>
+    </div>
+    <br>
     </div>
 
-                </body>
-            </html>
-
+</body>
+</html>

@@ -55,10 +55,13 @@ namespace StreetFighter.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                ViewBag.Mesnsagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
+
             }
             else
             {
+                ModelState.AddModelError("", "Ocorreu algum erro.");
                 return View("Cadastro");
             }
         }
