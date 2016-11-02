@@ -1,30 +1,64 @@
 ﻿
 @{
     ViewBag.Title = "Cadastro";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;
 }
-<header>
-    <h2>Cadastro</h2>
-</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Desenvolverdor</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/estilo.css">
 
-<div class="main">
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul style="">
+            <li><a href="~/StreetFighter/Index">Início</a></li>
+            <li><a href="~/StreetFighter/Cadastro">Cadastro</a></li>
+            <li><a href="~/StreetFighter/FichaTecnica">Ficha Técnica</a></li>
+            <li><a href="~/StreetFighter/Sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <header>
+            <h2>Cadastro</h2>
+        </header>
 
-    <div class="personagem">
-        <h1>Blanka</h1>
+        <div class="container main">
+            
+           
+            <div class="col-md-12">
+                <form action="~/StreetFighter/Cadastro" method="post" class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" /><br>
+                        <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form"/><br>
+                        <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" /><br>
+                        <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" /><br>
+                        <input type="text" name="Origem" placeholder="Digite sua Origem" class="form-control input-form" /><br>
+                        <input type="text" name="GolpesEspeciais" placeholder="Digite seus Golpes Especiais" class="form-control input-form" /><br>
+                        <input type="text" name="Imagem" placeholder="URL de sua imagem" class="form-control input-form" /><br>
+                        <input type="submit" name="name" class="btn btn-success" value="Cadastrar"/>
+                    </div>
+                </form>
+
+
+                <!--<b>Nome: </b><br>
+                <b>Data Nascimento: </b><br>
+                <b>Altura:</b><br>
+                <b>Peso: </b><br>
+                <b>Habilidades Especiais: </b><br>
+                <b>Origem:</b><br>
+                <b>Golpes Especiais: </b><br>
+                <b>Personagem Oculto: </b><br>
+                </p>-->
+            </div>
+        </div>
     </div>
-    <div class="img-cont-ft">
-        <img src="http://www.arkade.com.br/revista/38/data/images/img61.gif" alt="blanka-muito-loko">
+    <br>
     </div>
-    <div class="descricao-ft">
-        <b>Nome: </b><br>
-        <b>Data Nascimento: </b><br>
-        <b>Altura:</b><br>
-        <b>Peso: </b><br>
-        <b>Habilidades Especiais: </b><br>
-        <b>Origem:</b><br>
-        <b>Golpes Especiais: </b><br>
-        <b>Personagem Oculto: </b><br>
-        </p>
-    </div>
-</div>
-<br>
+
+</body>
+</html>
+

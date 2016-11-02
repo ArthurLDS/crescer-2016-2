@@ -97,7 +97,7 @@ body{
 	margin-left: 5px;
 }
 .container > .main > .img-cont-ft > img{
-	height: 355px; 
+	height: 290px; 
 	margin-bottom: 46px;
 }
 .container > .main > .descricao-ft{
@@ -115,4 +115,9 @@ body{
 .riu:hover{
 	left: 100px;
 }
+/*Forms*/
+.input-form{
+     margin-bottom: 4px;
+}
+/*Fim*/
 

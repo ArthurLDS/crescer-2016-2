@@ -52,7 +52,7 @@ namespace StreetFighter.Web.Controllers
 
             return View(modelo);
         }
-        public ActionResult Cadastro() {
+        public ActionResult Cadastro(CadastroModel model) {
             return View();
         }
     }
