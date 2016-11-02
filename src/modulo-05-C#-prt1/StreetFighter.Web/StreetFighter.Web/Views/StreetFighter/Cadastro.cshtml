@@ -35,13 +35,13 @@
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" /><br>
+                        <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" required/><br>
                         @Html.ValidationMessage("Nome")<br>
-                        <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form" /><br>
+                        <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form" required/><br>
                         @Html.ValidationMessage("DataNascimento")<br>
-                        <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" /><br>
+                        <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" required/><br>
                         @Html.ValidationMessage("Altura")<br>
-                        <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" /><br>
+                        <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" required/><br>
                         @Html.ValidationMessage("Peso")<br>
                         <!--<input type="text" name="Origem" placeholder="Digite sua Origem" class="form-control input-form" /><br>-->
 
