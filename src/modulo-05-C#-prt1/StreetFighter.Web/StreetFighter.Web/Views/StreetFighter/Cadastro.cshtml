@@ -1,9 +1,10 @@
-﻿@{
+﻿@model StreetFighter.Web.Models.FichaTecnicaModel
+@{
     ViewBag.Title = "Cadastro";
     Layout = null;
 }
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <title>Sobre o Desenvolverdor</title>
@@ -22,31 +23,29 @@
     </nav>
     <div class="container">
         <header>
-            <h2>Cadastro</h2>
+            <h2 style="margin-top: 8px;">Cadastro</h2>
         </header>
 
         <div class="container main">
-
-
             <div class="col-md-12">
-                <form action="~/StreetFighter/Salvar" method="post" class="navbar-form navbar-left">
+                @*<form action="~/StreetFighter/Salvar" method="post" class="navbar-form navbar-left">
                     <div class="form-group">
                         <h3>@ViewBag.Mensagem</h3>
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" required/><br>
+                        <input type="text" name="Nome" placeholder="Digite aqui seu nome" class="form-control input-form" required /><br>
                         @Html.ValidationMessage("Nome")<br>
-                        <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form" required/><br>
+                        <input type="text" name="DataNascimento" placeholder="Digite sua Data de Nascimento" class="form-control input-form" required /><br>
                         @Html.ValidationMessage("DataNascimento")<br>
-                        <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" required/><br>
+                        <input type="number" name="Altura" placeholder="Digite sua Altura" class="form-control input-form" required /><br>
                         @Html.ValidationMessage("Altura")<br>
-                        <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" required/><br>
+                        <input type="number" name="Peso" placeholder="Digite seu Peso" class="form-control input-form" required /><br>
                         @Html.ValidationMessage("Peso")<br>
                         <!--<input type="text" name="Origem" placeholder="Digite sua Origem" class="form-control input-form" /><br>-->
 
-                        @Html.DropDownList("Origem", (IEnumerable<SelectListItem>)ViewBag.ListaPaises, "Selecione..", new { @class = "form-control input-form" })<br>
-                        @Html.ValidationMessage("Origem")<br>
+                        @Html.DropDownListFor(model => model.Origem, (IEnumerable<SelectListItem>)ViewBag.ListaPaises, "Selecione...", new { @class = "form-control" })<br>
+
                         <input type="text" name="GolpesEspeciais" placeholder="Digite seus Golpes Especiais" class="form-control input-form" /><br>
 
                         <spam>Personagem Oculto: </spam>
@@ -54,11 +53,79 @@
 
                         <input type="text" name="Imagem" placeholder="URL de sua imagem" class="form-control input-form" /><br>
 
-
-
                         <input type="submit" name="name" class="btn btn-success" value="Cadastrar" />
                     </div>
-                </form>
+                </form>*@
+
+                @using (Html.BeginForm("Salvar", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
+                {   
+                    @Html.ValidationSummary(true, "", new { @class="text-danger"})
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Nome, new { @class = "col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Nome)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.DataNascimento, new {@class = "col-sm-2"})
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.DataNascimento, new { @class="form-control"})
+                            @Html.ValidationMessageFor(model => model.DataNascimento)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Altura, new { @class = "col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.Altura, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Altura)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Peso, new { @class = "col-md-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.Peso, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Peso)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Origem, new { @class = "col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.DropDownListFor(model => model.Origem, (IEnumerable<SelectListItem>)ViewBag.ListaPaises, "Selecione..", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Origem)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.GolpesEspeciais, new { @class = "col-sm-2" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.GolpesEspeciais, new { @class="form-control"})
+                            @Html.ValidationMessageFor(model => model.GolpesEspeciais)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PersonagemOculto, new { @class = "col-sm-2 controls-label" })
+                        <div class="col-sm-10">
+                            @Html.CheckBoxFor(model => model.PersonagemOculto, new { @class = "checkbox-form"})
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Imagem, new { @class = "col-sm-2 controls-label" })
+                        <div class="col-sm-10">
+                            @Html.TextBoxFor(model => model.Imagem, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                         <div class="col-sm-10 pull-right">
+                             <button type="submit" name="Enviar" class="btn btn-success">Cadastrar</button>
+                             <input type="reset" name="Resetar" value="Limpar campos" class="btn btn-danger"/>
+                         </div>                      
+                    </div>
+                }
+
+
+
+
                 <script src="~/scripts/jquery-1.9.1.min.js"></script>
                 <script src="~/scripts/jquery.validate.min.js"></script>
                 <script src="~/scripts/jquery.validate.unobtrusive.js"></script>

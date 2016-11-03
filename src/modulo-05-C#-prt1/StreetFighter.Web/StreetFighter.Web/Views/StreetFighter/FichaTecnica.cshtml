@@ -10,8 +10,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Sobre o Desenvolverdor</title>
-    <link rel="stylesheet" href="~/Content/estilo.css">
+    
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/estilo.css">
 </head>
 <body>
     <nav class="menu-bar">
@@ -24,7 +25,7 @@
     </nav>
     <div class="ficha-tec-container">
         <header>
-            <h2>Ficha Técnica</h2>
+            <h2 style="margin-top: 8px;">Ficha Técnica</h2>
         </header>
 
         <div class="container conteudo-ficha-tec">
@@ -32,13 +33,13 @@
                 
                 
 
-                <div class="img-cont col-md-4">
+                <div class="img-cont col-md-5">
                     <img src="@Model.Imagem" alt="Arthur-muito-loko" class="img-responsive">
                 </div>
-                <div class="descricao-ft col-md-8">
+                <div class="descricao-ft col-md-7">
                     <b>Nome: </b>@Model.Nome<br>
                     <b>Nascimento: </b>@Model.DataNascimento.ToLongDateString()<br>
-                    <b>Altura:</b>@(Model.Altura + " cm")<br>
+                    <b>Altura: </b>@(Model.Altura + " cm")<br>
                     <b>Peso: </b>@(Model.Peso + " kg")<br>
                     <b>Origem: </b> @Model.Origem<br>
                     <b>Golpes especiais famosos: </b> @Model.GolpesEspeciais<br>
