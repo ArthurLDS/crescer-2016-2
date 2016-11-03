@@ -1,25 +1,32 @@
-﻿using StreetFighter.dominio;
+﻿using StreetFighter.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StreetFighter.repositorio
+namespace StreetFighter.Repositorio
 {
-    public class PersonagemRepositorio
+    public class PersonagemRepositorio : IPersonagemRepositorio
     {
-        public List<Personagem> ListaPersonagens(string filtro) {
-
-        }
-        public List<Personagem> IncluirPersonagens(Personagem personagem)
+        public List<Personagem> ListarPersonagens(string filtroNome)
         {
-
+            throw new NotImplementedException();
         }
-        public List<Personagem> EditarPersonagens(Personagem personagem)
+
+        public void IncluirPersonagem(Personagem personagem)
         {
-
+            throw new NotImplementedException();
         }
 
+        public void EditarPersonagem(Personagem personagem)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ExcluirPersonagem(Personagem personagem)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

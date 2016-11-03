@@ -1,4 +1,4 @@
-﻿using StreetFighter.dominio;
+﻿using StreetFighter.Dominio;
 using System;
 using System.Collections.Generic;
 using System.Linq;

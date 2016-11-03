@@ -51,10 +51,17 @@ namespace StreetFighter.Web.Controllers
             PopularPaises();
             return View();
         }
+        public ActionResult ListaDePersonagem(FichaTecnicaModel model)
+        {
+            return View();
+        }
+
+
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             if (ModelState.IsValid)
-            {
+            {   
+
                 ViewBag.Mesnsagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
 

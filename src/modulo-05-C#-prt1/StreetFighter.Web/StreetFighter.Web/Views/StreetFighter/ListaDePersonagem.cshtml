@@ -1,0 +1,66 @@
+﻿@model StreetFighter.Web.Models.FichaTecnicaModel
+@{
+    ViewBag.Title = "ListaDePersonagem";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Desenvolverdor</title>
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/estilo.css">
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul style="">
+            <li><a href="~/StreetFighter/Index">Início</a></li>
+            <li><a href="~/StreetFighter/ListaDePersonagem">Lista de Personagens</a></li>
+            <li><a href="~/StreetFighter/Sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <div class="ficha-tec-container">
+        <header>
+            <h2 style="margin-top: 8px;">Lista de Personagens</h2>
+        </header>
+
+
+
+        <div class="container conteudo-ficha-tec">
+            <div class="row">
+                    @using (Html.BeginForm("Salvar", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
+                    {
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label for="Nome" class="pull-right">Pesquisar por nome: </label>
+                            </div>
+                            <div class="col-md-9 pull-right">
+                                <div class="col-md-9">
+                                    @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
+                                </div>
+                                <div class="col-md-3">
+                                    <button type="submit" class="btn btn-success">Pesquisar</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    }
+                <div class="col-md-3">
+                    <a href="~/StreetFighter/Cadastro"><button class="btn btn-success">Cadastrar Personagem</button></a>
+                </div>
+            </div>
+            <div class="row">
+                <!-- CONTEÚDO AQUI -->
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>
+
+
