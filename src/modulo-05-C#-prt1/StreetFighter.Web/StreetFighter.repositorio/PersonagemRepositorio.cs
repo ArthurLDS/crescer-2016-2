@@ -27,7 +27,7 @@ namespace StreetFighter.Repositorio
         public void IncluirPersonagem(Personagem personagem)
         {
             this.ListaPersonagens.Add(personagem);
-            File.AppendAllText(CaminhoArquivo, Environment.NewLine + personagem.ToString());
+            File.AppendAllText(CaminhoArquivo, Environment.NewLine + personagem.ToString() + ";");
 
             throw new NotImplementedException();
         }

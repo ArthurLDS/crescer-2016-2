@@ -26,8 +26,9 @@ namespace StreetFighter.Dominio
         public string Imagem { get; set; }
 
         
-        public Personagem(string nome, string origem)
+        public Personagem(int id, string nome, string origem)
         {
+            this.Id = id;
             this.Nome = nome;
             this.Origem = origem;
         }
