@@ -13,7 +13,7 @@ namespace StreetFighter.Repositorio
         const string CaminhoArquivo = @"C:\Users\Arthur\Documents\Projeto Crescer\GitHub\crescer-2016-2\src\modulo-05-C#-prt1\listaPersonagens.csv";
         public List<Personagem> ListaPersonagens { get; private set; }
 
-        public PersonagemRepositorio(List<Personagem> personagens)
+        public PersonagemRepositorio()
         {
             this.ListaPersonagens = new List<Personagem>();
 
@@ -27,9 +27,9 @@ namespace StreetFighter.Repositorio
         public void IncluirPersonagem(Personagem personagem)
         {
             this.ListaPersonagens.Add(personagem);
-            File.AppendAllText(CaminhoArquivo, Environment.NewLine + personagem.ToString() + ";");
 
-            throw new NotImplementedException();
+            File.AppendAllText(CaminhoArquivo, Environment.NewLine + personagem.Id + "; " + personagem.Nome + "; " + personagem.Origem + ";");
+            // REFATORAR SUSHI DE STRING
         }
 
         public void EditarPersonagem(Personagem personagem)
