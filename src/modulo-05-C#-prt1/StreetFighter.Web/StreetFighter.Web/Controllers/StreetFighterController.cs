@@ -1,4 +1,5 @@
-﻿using StreetFighter.Dominio;
+﻿using StreetFighter.aplicativo;
+using StreetFighter.Dominio;
 using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -62,7 +63,13 @@ namespace StreetFighter.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                Personagem personagem = new Personagem(0, model.Nome, model.Origem);
+                Personagem personagem = new Personagem
+                    (0, model.Nome, model.DataNascimento, model.Altura, 
+                    model.Peso, model.Origem,  model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
+
+                PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+                personagemAplicativo.Salvar(personagem);
+
                 ViewBag.Mesnsagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
                
