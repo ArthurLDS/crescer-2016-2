@@ -1,4 +1,5 @@
-﻿using StreetFighter.Web.Models;
+﻿using StreetFighter.Dominio;
+using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,11 +61,11 @@ namespace StreetFighter.Web.Controllers
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             if (ModelState.IsValid)
-            {   
-
+            {
+                Personagem personagem = new Personagem(0, model.Nome, model.Origem);
                 ViewBag.Mesnsagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
-
+               
             }
             else
             {
