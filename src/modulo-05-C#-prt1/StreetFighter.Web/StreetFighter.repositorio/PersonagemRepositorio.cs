@@ -68,7 +68,9 @@ namespace StreetFighter.Repositorio
 
         public void ExcluirPersonagem(Personagem personagem)
         {
-            throw new NotImplementedException();
+            this.ListaPersonagens.Remove(personagem);
+
+            //File.Delete
         }
     }
 }
