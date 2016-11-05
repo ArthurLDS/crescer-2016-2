@@ -183,10 +183,6 @@
       <Project>{8494721b-3527-405c-b651-6e11426dd496}</Project>
       <Name>StreetFighter.dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StreetFighter.repositorio\StreetFighter.repositorio.csproj">
-      <Project>{2114FC9D-0BA8-49D5-AC2E-7B0405BE4DC9}</Project>
-      <Name>StreetFighter.repositorio</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
