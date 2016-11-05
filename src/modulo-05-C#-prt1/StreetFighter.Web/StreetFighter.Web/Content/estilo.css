@@ -161,7 +161,17 @@ body{
     margin-top: 10px
 }
 .lista-personagens {
-    border: 2px solid #F00;
+    border: 2px solid rgba(120, 120, 120, 0.7);
+    padding-bottom: 8px;
+    border-radius: 10px;
+    box-shadow: 1px 1px #888;
 }
-
+.pesquisa-form {
+    width: 200px;
+    margin: 0px;
+}
+.pesquisa-btn{
+    margin-left: 0px;
+    padding: 0px;
+}
 /* FIM */
