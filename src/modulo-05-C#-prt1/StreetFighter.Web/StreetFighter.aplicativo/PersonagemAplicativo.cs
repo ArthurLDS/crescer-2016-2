@@ -14,7 +14,7 @@ namespace StreetFighter.aplicativo
 
         public PersonagemAplicativo()
         {
-           // this.repositorio = new PersonagemRepositorio();
+           this.repositorio = new PersonagemRepositorio();
         }
 
         internal PersonagemAplicativo(IPersonagemRepositorio repositorio)
@@ -23,7 +23,8 @@ namespace StreetFighter.aplicativo
         }
 
         public List<Personagem> ListarPersonagens(string filtro) {
-            return this.repositorio.ListarPersonagens(filtro);
+
+            return repositorio.ListarPersonagens(filtro);
         }
 
         public void Salvar(Personagem personagem)

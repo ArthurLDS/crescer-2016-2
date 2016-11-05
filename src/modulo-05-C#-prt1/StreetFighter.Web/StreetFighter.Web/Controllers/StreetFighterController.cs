@@ -53,9 +53,10 @@ namespace StreetFighter.Web.Controllers
             PopularPaises();
             return View();
         }
-        public ActionResult ListaDePersonagem(FichaTecnicaModel model)
+        public ActionResult ListaDePersonagem(string filtro)
         {
-            return View();
+            PersonagemAplicativo modelo = new PersonagemAplicativo();
+            return View(modelo.ListarPersonagens(filtro));
         }
 
 
@@ -80,7 +81,16 @@ namespace StreetFighter.Web.Controllers
                 return View("Cadastro");
             }
         }
+        public ActionResult DetalhesPersonagem(Personagem model)
+        {
+            Personagem personagem = new Personagem
+                    (0, model.Nome, model.DataNascimento, model.Altura,
+                    model.Peso, model.Origem, model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
+            
+            return View("FichaTecnica", personagem);
+        }
 
+        
         public void PopularPaises()
         {
             ViewData["ListaPaises"] = new List<SelectListItem>()

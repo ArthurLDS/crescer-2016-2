@@ -32,6 +32,10 @@ namespace StreetFighter.Dominio
             this.Nome = nome;
             this.Origem = origem;
         }
+        public Personagem()
+        {
+
+        }
 
         public Personagem(
                 int id,
@@ -41,10 +45,10 @@ namespace StreetFighter.Dominio
                 decimal peso, 
                 string origem, 
                 string golpesEspeciais, 
-                string imagem, 
-                bool personagemOculto)
+                string imagem = "Não informado", 
+                bool personagemOculto = false)
         {
-            this.Id = Id;
+            this.Id = id;
             this.Nome = nome;
             this.DataNascimento = dataNascimento;
             this.Altura = altura;

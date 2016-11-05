@@ -155,3 +155,13 @@ body{
 }
 
 /*Fim*/
+/* LISTA DE PERSONAGENS */
+.lista-personagens-container {
+    margin: auto;
+    margin-top: 10px
+}
+.lista-personagens {
+    border: 2px solid #F00;
+}
+
+/* FIM */
