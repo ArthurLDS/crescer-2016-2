@@ -30,7 +30,7 @@ namespace StreetFighter.Repositorio
 
 
                 Personagem personagem = new Personagem(
-                   Convert.ToInt32("0"),
+                   Convert.ToInt32(propriedade[0]),
                    propriedade[1],
                    DateTime.Parse(propriedade[2].ToString()),
                    Convert.ToInt32(propriedade[3]),
@@ -96,7 +96,7 @@ namespace StreetFighter.Repositorio
         }
         public string GerarPersonagemEmString(Personagem personagem)
         {
-            return $"0;{personagem.Nome};{personagem.DataNascimento.ToString("yyyy/MM/dd")};{personagem.Altura};{personagem.Peso}; {personagem.Origem};{ personagem.GolpesEspeciais};{ personagem.Imagem};{personagem.PersonagemOculto};";
+            return $"{personagem.Id};{personagem.Nome};{personagem.DataNascimento.ToString("yyyy/MM/dd")};{personagem.Altura};{personagem.Peso}; {personagem.Origem};{ personagem.GolpesEspeciais};{ personagem.Imagem};{personagem.PersonagemOculto};";
         }
     }
 }
