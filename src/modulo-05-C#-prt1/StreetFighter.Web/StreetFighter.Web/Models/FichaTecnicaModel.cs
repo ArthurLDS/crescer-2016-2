@@ -7,7 +7,8 @@ using System.Web;
 namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
-    {
+    {   
+        public int Id { get; set; }
         [Required]
         public string Imagem { get; set; }
 
