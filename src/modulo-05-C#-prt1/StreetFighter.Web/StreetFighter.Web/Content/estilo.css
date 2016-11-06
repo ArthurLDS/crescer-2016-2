@@ -180,3 +180,14 @@ body{
     margin-left: 90px;
 }
 /* FIM */
+.field-validation-error:before
+{   
+    content: '* ';
+    font-weight: bold;
+    color: #F00;
+}
+.field-validation-error
+{
+    font-weight: 600;
+    color: #F00;
+}
