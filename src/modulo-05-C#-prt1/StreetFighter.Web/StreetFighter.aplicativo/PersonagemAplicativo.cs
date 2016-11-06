@@ -34,6 +34,11 @@ namespace StreetFighter.aplicativo
             else
                 repositorio.EditarPersonagem(personagem);
         }
+        public Personagem BuscarPersonagemPorNome(string nome)
+        {
+            var repositorio = new PersonagemRepositorio();
+            return repositorio.BuscarPersonagemPorNome(nome);
+        }
 
     }
 }

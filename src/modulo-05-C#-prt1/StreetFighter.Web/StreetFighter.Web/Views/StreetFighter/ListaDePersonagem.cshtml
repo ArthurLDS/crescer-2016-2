@@ -30,24 +30,24 @@
 
         <div class="container conteudo-ficha-tec">
             <div class="row">
-                    @using (Html.BeginForm("ListaDePersonagem", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
-                    {
-                        <div class="form-group">
-                            <div class="col-md-10 pull-le">
-                                <div class="col-md-6">
-                                    <!--<input name="filtro" type="text" text" class="form-control"> -->
-                                    @Html.TextBox("filtro", null, new { @class="form-control pesquisa-form", placeholder="Digite um nome para pesquisar", style= "width: 250px" })
-                                    
-                                </div>
-                                <div class="col-md-6 pull-left pesquisa-btn">
-                                    <button type="submit" class="btn btn-success">Pesquisar</button>    
-                                </div>
+                @using (Html.BeginForm("ListaDePersonagem", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
+                {
+                    <div class="form-group">
+                        <div class="col-md-6">
+                            <!--<input name="filtro" type="text" text" class="form-control"> -->
+                            @Html.TextBox("filtro", null, new { @class = "form-control pesquisa-form pull-right", placeholder = "Digite um nome para pesquisar", style = "width: 250px" })
 
-                            </div>
                         </div>
-                    }
+                        <div class="col-md-2 pull-left pesquisa-btn">
+                            <button type="submit" class="btn btn-success">Pesquisar</button>
+                        </div>
+                        <div class="col-md-3 pull-left pesquisa-btn">
+                            <a href="~/StreetFighter/Cadastro"><button class="btn btn-primary pull-right">Cadastrar Personagem</button></a>
+                        </div>
+                    </div>
+                }
                 <div class="col-md-12">
-                    <a href="~/StreetFighter/Cadastro"><button class="btn btn-primary pull-right">Cadastrar Personagem</button></a>
+
                 </div>
             </div>
             <article class="row lista-personagens-container">
@@ -58,17 +58,27 @@
                         <article class="col-md-4 lista-personagens" style="background-image: url(''); background-size: contain;">
                             <h4><b>@personagem.Nome</b></h4>
                             <b>Data Nascimento: </b>@personagem.DataNascimento<br>
-                            <b>Altura: </b>@personagem.Altura cm <br> 
-                            <b>Peso: </b>@personagem.Peso kg<br> 
+                            <b>Altura: </b>@personagem.Altura cm <br>
+                            <b>Peso: </b>@personagem.Peso kg<br>
                             <b>Origem: </b>@personagem.Origem<br>
-                            <b>Golpes Especiais: </b>@personagem.GolpesEspeciais<br >
-                            
-                            @using (Html.BeginForm("DetalhesPersonagem", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
-                            {
-                                <button type="submit" class="btn btn-success">Detalhes</button>
-                            }
+                            <b>Golpes Especiais: </b>@personagem.GolpesEspeciais<br>
+
+                            <a href="~/StreetFighter/FichaTecnica?nome=@personagem.Nome"><button type="submit" class="btn btn-success">Detalhes</button></a>
+                            <button class="btn btn-danger">Excluir</button>
+                            @*@Html.ActionLink(@personagem.Nome, "FichaTecnica", new { nome = @personagem.Nome }, null)*
+
+                                @* @using (Html.BeginForm("FichaTecnica", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
+                                    {
+                                        @*<a href="~/StreetFighter/FichaTecnica?id=@personagem.Nome">@personagem.Nome</a>
+                                                                <input type="text" value="Arthur" style="">
+                                                                <button type="submit" class="btn btn-success">Detalhes</button>*@
+
+
+
+
+                            @*}-->*@
                         </article>
-                            }
+                    }
                 }
             </article>
         </div>

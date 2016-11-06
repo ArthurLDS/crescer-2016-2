@@ -4,6 +4,7 @@ using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,9 +17,14 @@ namespace StreetFighter.Web.Controllers
         {
             return View();
         }
-        public ActionResult FichaTecnica()
-        {
-            var modelo = new FichaTecnicaModel();
+        public ActionResult FichaTecnica(string nome)
+        {   
+            PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+            Personagem personagem = personagemAplicativo.BuscarPersonagemPorNome(nome);
+            return View(personagem);
+
+
+            /*var modelo = new FichaTecnicaModel();
             modelo.Imagem = "https://files.slack.com/files-pri/T2FVBENMS-F2RM5AKSL/blanka.png";
             modelo.Nome = " Blanka";
             modelo.DataNascimento = new DateTime(1966, 02, 12);
@@ -26,9 +32,9 @@ namespace StreetFighter.Web.Controllers
             modelo.Peso = 96;
             modelo.Origem = "Brasil";
             modelo.GolpesEspeciais = " Electric Thunder, Rolling Attack.";
-            modelo.PersonagemOculto = false;
+            modelo.PersonagemOculto = false;*/
 
-            return View(modelo);
+            //return View(modelo);
 
         }
         public ActionResult Sobre()
@@ -88,6 +94,7 @@ namespace StreetFighter.Web.Controllers
             
             return View("FichaTecnica", lista[0]);
         }
+
         
 
 

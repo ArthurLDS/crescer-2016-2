@@ -24,11 +24,12 @@ namespace StreetFighter.Repositorio
             List<Personagem> Lista = new List<Personagem>();
             var linhas = File.ReadLines(CaminhoArquivo);
 
-            foreach (var linha in linhas) {
+            foreach (var linha in linhas)
+            {
                 var propriedade = linha.Split(';');
-                
-                        
-                Personagem personagem  = new Personagem(
+
+
+                Personagem personagem = new Personagem(
                    Convert.ToInt32("0"),
                    propriedade[1],
                    DateTime.Parse(propriedade[2].ToString()),
@@ -38,7 +39,7 @@ namespace StreetFighter.Repositorio
                    propriedade[6],
                    propriedade[7],
                    Convert.ToBoolean(false)
-                   
+
                    );
 
                 if (filtroNome == null || personagem.Nome.Contains(filtroNome)) Lista.Add(personagem);
@@ -71,6 +72,18 @@ namespace StreetFighter.Repositorio
             this.ListaPersonagens.Remove(personagem);
 
             //File.Delete
+        }
+        public Personagem BuscarPersonagemPorNome(string nome)
+        {
+            List<Personagem> listaDePersonagens = ListarPersonagens(null);
+            foreach (Personagem personagem in listaDePersonagens)
+            {
+                if (personagem.Nome.Contains(nome))
+                {
+                    return personagem;
+                }
+            }
+            return null;
         }
     }
 }
