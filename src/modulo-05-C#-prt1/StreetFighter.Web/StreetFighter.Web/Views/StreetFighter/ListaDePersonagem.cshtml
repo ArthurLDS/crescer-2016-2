@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "ListaDePersonagem";
     Layout = null;
 }
@@ -42,7 +41,7 @@
                             <button type="submit" class="btn btn-success">Pesquisar</button>
                         </div>
                         <div class="col-md-3 pull-left pesquisa-btn">
-                            <a href="~/StreetFighter/Cadastro"><button class="btn btn-primary pull-right">Cadastrar Personagem</button></a>
+                            <a href="/StreetFighter/Cadastro"><button class="btn btn-primary pull-right">Cadastrar Personagem</button></a>
                         </div>
                     </div>
                 }
@@ -59,24 +58,13 @@
                             <h4><b>@personagem.Nome</b></h4>
                             <b>Data Nascimento: </b>@personagem.DataNascimento<br>
                             <b>Altura: </b>@personagem.Altura cm <br>
-                            <b>Peso: </b>@personagem.Peso kg<br>
+                            <bTu>Peso: </bTu>@personagem.Peso kg<br>
                             <b>Origem: </b>@personagem.Origem<br>
                             <b>Golpes Especiais: </b>@personagem.GolpesEspeciais<br>
 
                             <a href="~/StreetFighter/FichaTecnica?nome=@personagem.Nome"><button type="submit" class="btn btn-success">Detalhes</button></a>
-                            <button class="btn btn-danger">Excluir</button>
-                            @*@Html.ActionLink(@personagem.Nome, "FichaTecnica", new { nome = @personagem.Nome }, null)*
-
-                                @* @using (Html.BeginForm("FichaTecnica", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
-                                    {
-                                        @*<a href="~/StreetFighter/FichaTecnica?id=@personagem.Nome">@personagem.Nome</a>
-                                                                <input type="text" value="Arthur" style="">
-                                                                <button type="submit" class="btn btn-success">Detalhes</button>*@
-
-
-
-
-                            @*}-->*@
+                            <a href="~/StreetFighter/ListaDePersonagem?nomePersonagem=@personagem.Nome"><button class="btn btn-danger">Excluir</button></a>
+                            
                         </article>
                     }
                 }
