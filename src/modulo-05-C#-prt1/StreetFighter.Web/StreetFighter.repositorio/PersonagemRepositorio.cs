@@ -16,7 +16,7 @@ namespace StreetFighter.Repositorio
         public PersonagemRepositorio()
         {
             this.ListaPersonagens = new List<Personagem>();
-
+            this.ListaPersonagens = ListarPersonagens(null);
         }
 
         public List<Personagem> ListarPersonagens(string filtroNome)
@@ -52,14 +52,10 @@ namespace StreetFighter.Repositorio
         {
             this.ListaPersonagens.Add(personagem);
 
-            string linhaResultado =
-            $"0;{personagem.Nome};{personagem.DataNascimento.ToString("yyyy/MM/dd")};{personagem.Altura};{personagem.Peso}; {personagem.Origem};{ personagem.GolpesEspeciais};{ personagem.Imagem};{personagem.PersonagemOculto};";
+            string linhaResultado = GerarPersonagemEmString(personagem);
 
             File.AppendAllText(CaminhoArquivo, Environment.NewLine + linhaResultado);
-
-
-
-            // REFATORAR SUSHI DE STRING
+            
         }
 
         public void EditarPersonagem(Personagem personagem)
@@ -69,21 +65,38 @@ namespace StreetFighter.Repositorio
 
         public void ExcluirPersonagem(Personagem personagem)
         {
-            this.ListaPersonagens.Remove(personagem);
+            List<string> listaString = new List<string>();
+            ExcluiDaListaDePersonagem(personagem);
 
-            //File.Delete
+            foreach (Personagem personagemDaVez in ListaPersonagens)
+            {   
+                listaString.Add(GerarPersonagemEmString(personagemDaVez));
+            }
+            File.WriteAllLines(CaminhoArquivo, listaString);
         }
+
         public Personagem BuscarPersonagemPorNome(string nome)
         {
             List<Personagem> listaDePersonagens = ListarPersonagens(null);
             foreach (Personagem personagem in listaDePersonagens)
             {
-                if (personagem.Nome.Contains(nome))
+                if (personagem.Nome.Equals(nome))
                 {
                     return personagem;
                 }
             }
             return null;
+        }
+        public void ExcluiDaListaDePersonagem(Personagem personagem)
+        {
+            for (int i = 0; i < ListaPersonagens.Count; i++)
+            {
+                if (personagem.Nome.Equals(ListaPersonagens[i].Nome)) ListaPersonagens.RemoveAt(i);
+            }
+        }
+        public string GerarPersonagemEmString(Personagem personagem)
+        {
+            return $"0;{personagem.Nome};{personagem.DataNascimento.ToString("yyyy/MM/dd")};{personagem.Altura};{personagem.Peso}; {personagem.Origem};{ personagem.GolpesEspeciais};{ personagem.Imagem};{personagem.PersonagemOculto};";
         }
     }
 }
