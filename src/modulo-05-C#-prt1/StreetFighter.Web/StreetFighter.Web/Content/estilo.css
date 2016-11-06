@@ -158,7 +158,6 @@ body{
 /* LISTA DE PERSONAGENS */
 .lista-personagens-container {
     margin: auto;
-    margin-top: 10px
 }
 .lista-personagens {
     border: 2px solid rgba(120, 120, 120, 0.7);
@@ -173,5 +172,11 @@ body{
 .pesquisa-btn{
     margin-left: 0px;
     padding: 0px;
+}
+.situacao-message 
+{   
+    color: #1B1;
+    margin-top: 6px;
+    margin-left: 90px;
 }
 /* FIM */
