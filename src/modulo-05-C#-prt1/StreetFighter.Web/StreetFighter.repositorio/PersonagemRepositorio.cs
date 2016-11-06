@@ -50,12 +50,13 @@ namespace StreetFighter.Repositorio
 
         public void IncluirPersonagem(Personagem personagem)
         {
-            this.ListaPersonagens.Add(personagem);
+            if (RegraDeNegocio(personagem))
+            {
+                this.ListaPersonagens.Add(personagem);
+                string linhaResultado = GerarPersonagemEmString(personagem);
 
-            string linhaResultado = GerarPersonagemEmString(personagem);
-
-            File.AppendAllText(CaminhoArquivo, Environment.NewLine + linhaResultado);
-            
+                File.AppendAllText(CaminhoArquivo, Environment.NewLine + linhaResultado);
+            }            
         }
 
         public void EditarPersonagem(Personagem personagem)
@@ -97,6 +98,12 @@ namespace StreetFighter.Repositorio
         public string GerarPersonagemEmString(Personagem personagem)
         {
             return $"{personagem.Id};{personagem.Nome};{personagem.DataNascimento.ToString("yyyy/MM/dd")};{personagem.Altura};{personagem.Peso}; {personagem.Origem};{ personagem.GolpesEspeciais};{ personagem.Imagem};{personagem.PersonagemOculto};";
+        }
+        public bool RegraDeNegocio(Personagem personagem)
+        {
+            if (personagem.Nome.ToUpper().Equals("NUNES") || personagem.Origem.Equals("MP"))
+                return false;
+            return true;
         }
     }
 }

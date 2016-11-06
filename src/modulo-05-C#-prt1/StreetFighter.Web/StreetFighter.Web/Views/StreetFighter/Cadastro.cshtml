@@ -30,7 +30,7 @@
 
                 @using (Html.BeginForm("Salvar", "StreetFighter", FormMethod.Post, new { @class = "form-horizontal" }))
                 {   
-                    <h3>@ViewBag.Mensagem</h3>
+                    <h3>Situação: @ViewBag.Mensagem</h3>
 
                     @Html.ValidationSummary(true, "", new { @class="text-danger"})
 

@@ -13,5 +13,6 @@ namespace StreetFighter.Dominio
         void IncluirPersonagem(Personagem personagem);
         void EditarPersonagem(Personagem personagem);
         void ExcluirPersonagem(Personagem personagem);
+        bool RegraDeNegocio(Personagem persongem);
     }
 }

@@ -64,7 +64,6 @@ namespace StreetFighter.Web.Controllers
             PersonagemAplicativo modelo = new PersonagemAplicativo();
             try
             {
-
                 if (nomePersonagem != null)
                 {
                     Personagem personagemASerExcluido = modelo.BuscarPersonagemPorNome(nomePersonagem);
@@ -74,37 +73,36 @@ namespace StreetFighter.Web.Controllers
                 return View(modelo.ListarPersonagens(filtro));
 
             }
-            catch {}
+            catch { } // CONSERTAR GAMBI HORRENDA
             return View(modelo.ListarPersonagens(filtro));
 
         }
         public ActionResult Salvar(FichaTecnicaModel model)
         {
-            if (ModelState.IsValid)
-            {
-                Personagem personagem = new Personagem
+            Personagem personagem = new Personagem
                     (0, model.Nome, model.DataNascimento, model.Altura,
                     model.Peso, model.Origem, model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
 
-                PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+            PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+
+            if (!personagemAplicativo.RegraDeNegocio(personagem))
+            {
+                ViewBag.Mensagem = "Não é permitido cadastrar persongens overpowered.";
+                return RedirectToAction("Cadastro");
+                
+            }
+            if (ModelState.IsValid)
+            {
                 personagemAplicativo.Salvar(personagem);
 
                 ViewBag.Mensagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
-
             }
             else
             {
                 ModelState.AddModelError("", "Ocorreu algum erro.");
-                return View("Cadastro");
             }
-        }
-        public ActionResult DetalhesPersonagem()
-        {
-            PersonagemAplicativo personagem = new PersonagemAplicativo();
-            List<Personagem> lista = personagem.ListarPersonagens(null);
-
-            return View("FichaTecnica", lista[0]);
+            return View("Cadastro");
         }
 
         public void PopularPaises()
@@ -114,7 +112,8 @@ namespace StreetFighter.Web.Controllers
                 new SelectListItem() { Value = "BR", Text = "Brasil" },
                 new SelectListItem() { Value = "AR", Text = "Argentina" },
                 new SelectListItem() { Value = "JP", Text = "Japão" },
-                new SelectListItem() { Value = "US", Text = "EUA" }
+                new SelectListItem() { Value = "US", Text = "EUA" },
+                new SelectListItem() { Value = "MP", Text = "Morro da Pedra" }
             };
         }
     }

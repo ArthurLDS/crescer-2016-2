@@ -21,6 +21,10 @@ namespace StreetFighter.aplicativo
         {
             this.repositorio = repositorio;
         }
+        public bool RegraDeNegocio(Personagem personagem)
+        {
+            return this.repositorio.RegraDeNegocio(personagem);
+        }
 
         public List<Personagem> ListarPersonagens(string filtro) {
 
@@ -29,10 +33,11 @@ namespace StreetFighter.aplicativo
 
         public void Salvar(Personagem personagem)
         {
-            if (personagem.Id == 0)
+            if (repositorio.RegraDeNegocio(personagem) && personagem.Id == 0) {
                 repositorio.IncluirPersonagem(personagem);
-            else
-                repositorio.EditarPersonagem(personagem);
+            }
+            //else
+            //    repositorio.EditarPersonagem(personagem);
         }
         public Personagem BuscarPersonagemPorNome(string nome)
         {
