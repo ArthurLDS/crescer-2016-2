@@ -18,7 +18,7 @@ namespace StreetFighter.Web.Controllers
             return View();
         }
         public ActionResult FichaTecnica(string nome)
-        {   
+        {
             PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
             Personagem personagem = personagemAplicativo.BuscarPersonagemPorNome(nome);
             return View(personagem);
@@ -62,32 +62,36 @@ namespace StreetFighter.Web.Controllers
         public ActionResult ListaDePersonagem(string filtro, string nomePersonagem)
         {
             PersonagemAplicativo modelo = new PersonagemAplicativo();
-
-            if (nomePersonagem != null)
+            try
             {
-                Personagem personagemASerExcluido = modelo.BuscarPersonagemPorNome(nomePersonagem);
-                modelo.ExcluirPersonagem(personagemASerExcluido);
+
+                if (nomePersonagem != null)
+                {
+                    Personagem personagemASerExcluido = modelo.BuscarPersonagemPorNome(nomePersonagem);
+                    modelo.ExcluirPersonagem(personagemASerExcluido);
+                    ViewBag.Situacao = "Personagem excluído com SUCESSO!";
+                }
+                return View(modelo.ListarPersonagens(filtro));
+
             }
+            catch {}
             return View(modelo.ListarPersonagens(filtro));
 
-            
         }
-
-
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             if (ModelState.IsValid)
             {
                 Personagem personagem = new Personagem
-                    (0, model.Nome, model.DataNascimento, model.Altura, 
-                    model.Peso, model.Origem,  model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
+                    (0, model.Nome, model.DataNascimento, model.Altura,
+                    model.Peso, model.Origem, model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
 
                 PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
                 personagemAplicativo.Salvar(personagem);
 
-                ViewBag.Mesnsagem = "Cadastrado com SUCESSO!";
+                ViewBag.Mensagem = "Cadastrado com SUCESSO!";
                 return View("FichaTecnica", model);
-               
+
             }
             else
             {
@@ -99,7 +103,7 @@ namespace StreetFighter.Web.Controllers
         {
             PersonagemAplicativo personagem = new PersonagemAplicativo();
             List<Personagem> lista = personagem.ListarPersonagens(null);
-            
+
             return View("FichaTecnica", lista[0]);
         }
 
