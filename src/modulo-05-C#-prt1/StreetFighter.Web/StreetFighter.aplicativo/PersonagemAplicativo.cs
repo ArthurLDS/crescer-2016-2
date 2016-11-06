@@ -39,6 +39,9 @@ namespace StreetFighter.aplicativo
             var repositorio = new PersonagemRepositorio();
             return repositorio.BuscarPersonagemPorNome(nome);
         }
-
+        public void ExcluirPersonagem(Personagem personagem)
+        {
+            this.repositorio.ExcluirPersonagem(personagem);
+        }
     }
 }
