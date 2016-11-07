@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A05AD1DC-425D-4938-BB36-A66C2BF957B1}</ProjectGuid>
+    <ProjectGuid>{2C23181B-C8D4-42A1-A400-06F69AD8C5AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StreetFighter.aplicativo</RootNamespace>
-    <AssemblyName>StreetFighter.aplicativo</AssemblyName>
+    <RootNamespace>StreetFighter.Infra</RootNamespace>
+    <AssemblyName>StreetFighter.Infra</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,23 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PersonagemAplicativo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServicoDeUsuario.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\StreetFighter.dominio\StreetFighter.dominio.csproj">
-      <Project>{8494721b-3527-405c-b651-6e11426dd496}</Project>
-      <Name>StreetFighter.dominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StreetFighter.Infra\StreetFighter.Infra.csproj">
-      <Project>{2C23181B-C8D4-42A1-A400-06F69AD8C5AA}</Project>
-      <Name>StreetFighter.Infra</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StreetFighter.repositorio\StreetFighter.repositorio.csproj">
-      <Project>{2114fc9d-0ba8-49d5-ac2e-7b0405be4dc9}</Project>
-      <Name>StreetFighter.repositorio</Name>
-    </ProjectReference>
+    <Compile Include="ServicoDeCriptografia.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
