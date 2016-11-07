@@ -55,7 +55,8 @@ namespace StreetFighter.Web.Controllers
             return View(modelo);
         }
         public ActionResult Cadastro(FichaTecnicaModel model)
-        {
+        {   
+            
             PopularPaises();
             return View();
         }
@@ -88,9 +89,7 @@ namespace StreetFighter.Web.Controllers
             if (!personagemAplicativo.RegraDeNegocio(personagem))
             {
                 ViewBag.Mensagem = "Não é permitido cadastrar persongens overpowered.";
-                return RedirectToAction("Cadastro");
-                
-            }
+                return RedirectToAction("Cadastro");            }
             if (ModelState.IsValid)
             {
                 personagemAplicativo.Salvar(personagem);
@@ -103,6 +102,26 @@ namespace StreetFighter.Web.Controllers
                 ModelState.AddModelError("", "Ocorreu algum erro.");
             }
             return View("Cadastro");
+        }
+        public ActionResult EditarPersonagem(string nome)
+        {
+            PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
+            Personagem personagem = new Personagem();
+
+            personagem = personagemAplicativo.BuscarPersonagemPorNome(nome);
+
+            FichaTecnicaModel personagemEmFichaTecnica = new FichaTecnicaModel();
+            personagemEmFichaTecnica.Id = personagem.Id;
+            personagemEmFichaTecnica.Nome = personagem.Nome;
+            personagemEmFichaTecnica.DataNascimento = personagem.DataNascimento;
+            personagemEmFichaTecnica.Altura = personagem.Altura;
+            personagemEmFichaTecnica.Peso = personagem.Peso;
+            personagemEmFichaTecnica.Origem = personagem.Origem;
+            personagemEmFichaTecnica.GolpesEspeciais = personagem.GolpesEspeciais;
+            personagemEmFichaTecnica.PersonagemOculto = personagem.PersonagemOculto;
+            personagemEmFichaTecnica.Imagem = personagem.Imagem;
+
+            return View("Cadastro", personagemEmFichaTecnica);
         }
 
         public void PopularPaises()
