@@ -58,11 +58,24 @@ namespace StreetFighter.Repositorio
                 File.AppendAllText(CaminhoArquivo, Environment.NewLine + linhaResultado);
             }            
         }
+        
 
         public void EditarPersonagem(Personagem personagem)
         {
-            throw new NotImplementedException();
+            var propriedades = GerarPersonagemEmString(personagem);
+
+            for (int i = 0; i < ListaPersonagens.Count; i++)
+            {
+                if (ListaPersonagens[i].Nome.Equals(personagem.Nome))
+                {
+                    ExcluiDaListaDePersonagem(ListaPersonagens[i]);
+                    ListaPersonagens.Insert(i, personagem);
+                    IncluirPersonagem(personagem);
+                }
+            }
+
         }
+
 
         public void ExcluirPersonagem(Personagem personagem)
         {
