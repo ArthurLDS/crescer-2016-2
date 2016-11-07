@@ -1,13 +1,52 @@
 ﻿@{
     ViewBag.Title = "Login";
+    Layout = null;
 }
 
-@using (Html.BeginForm("FazerLogin", "Login", FormMethod.Post))
-{   
-    <h2>Login</h2>
-    @Html.AntiForgeryToken()
-    @Html.TextBox("usuario", "", new { placeholder = "usuario" });<br>
-    @Html.Password("senha", "", new { placeholder = "senha" });<br/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre o Desenvolverdor</title>
 
-    <button type="submit">Entrar</button>
-}
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/estilo.css">
+</head>
+<body>
+    <nav class="menu-bar">
+        <ul style="">
+            <li><a href="~/StreetFighter/Index">Início</a></li>
+            <li><a href="~/StreetFighter/ListaDePersonagem">Lista de Personagens</a></li>
+            <li><a href="~/StreetFighter/Sobre">Sobre</a></li>
+        </ul>
+    </nav>
+    <div class="ficha-tec-container">
+        <header>
+            <h2 style="margin-top: 8px;">Login</h2>
+        </header>
+
+        <div class="container conteudo-ficha-tec">
+            <div class="row">
+                <div class="col-md-4">
+                    @using (Html.BeginForm("FazerLogin", "Login", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.TextBox("usuario", "", new { placeholder = "usuario", @class="form-control"});<br>
+                        @Html.Password("senha", "", new { placeholder = "senha" , @class = "form-control" });<br />
+
+                        <button type="submit" class="btn btn-success">Entrar</button>
+                    }
+                </div>
+                <div class="col-md-04"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+

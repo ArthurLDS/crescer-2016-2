@@ -1,4 +1,5 @@
-﻿using StreetFighter.Web.Models;
+﻿using StreetFighter.dominio;
+using StreetFighter.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,5 +22,6 @@ namespace StreetFighter.Web.Services
                 return (UsuarioLogadoModel)HttpContext.Current.Session[USUARIO_LOGADO_CHAVE];
             }
         }
+
     }
 }
