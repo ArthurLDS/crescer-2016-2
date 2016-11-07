@@ -95,8 +95,7 @@ namespace StreetFighter.Repositorio
                     nome: nomeRow,
                     dataNascimento: dataNascimentoRow,
                     altura: alturaRow;
-
-                    
+        
                 );
             return personagem;
         }
