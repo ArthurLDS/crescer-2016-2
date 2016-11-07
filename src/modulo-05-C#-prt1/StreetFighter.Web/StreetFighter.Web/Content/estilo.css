@@ -179,6 +179,10 @@ body{
     margin-top: 6px;
     margin-left: 90px;
 }
+.btn-editar 
+{
+    margin-top: 10px;
+}
 /* FIM */
 .field-validation-error:before
 {   
