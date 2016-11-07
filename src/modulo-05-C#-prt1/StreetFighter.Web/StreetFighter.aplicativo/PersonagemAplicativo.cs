@@ -33,11 +33,17 @@ namespace StreetFighter.aplicativo
 
         public void Salvar(Personagem personagem)
         {
-            if (repositorio.RegraDeNegocio(personagem) && personagem.Id == 0) {
+            if (repositorio.RegraDeNegocio(personagem)) {
                 repositorio.IncluirPersonagem(personagem);
             }
-            //else
-            //    repositorio.EditarPersonagem(personagem);
+
+            // NÃO ENTENDI A MORAL DISSO. POR ISSO REMOVI :/
+            /*if (personagem.Id == 0)
+            {
+                repositorio.IncluirPersonagem(personagem);
+            }
+            else
+               repositorio.EditarPersonagem(personagem);*/
         }
         public Personagem BuscarPersonagemPorNome(string nome)
         {

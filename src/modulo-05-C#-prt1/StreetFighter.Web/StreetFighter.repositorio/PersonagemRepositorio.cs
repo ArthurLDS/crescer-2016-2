@@ -67,6 +67,7 @@ namespace StreetFighter.Repositorio
         public void ExcluirPersonagem(Personagem personagem)
         {
             List<string> listaString = new List<string>();
+
             ExcluiDaListaDePersonagem(personagem);
 
             foreach (Personagem personagemDaVez in ListaPersonagens)
