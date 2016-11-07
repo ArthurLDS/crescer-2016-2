@@ -3,10 +3,6 @@ using StreetFighter.dominio;
 using StreetFighter.Web.Filters;
 using StreetFighter.Web.Models;
 using StreetFighter.Web.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace StreetFighter.Web.Controllers

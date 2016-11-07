@@ -1,6 +1,9 @@
-﻿using StreetFighter.Dominio;
+﻿using StreetFighter.dominio;
+using StreetFighter.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,7 +13,7 @@ namespace StreetFighter.Repositorio
 {
     public class PersonagemRepositorio : IPersonagemRepositorio
     {
-        const string CaminhoArquivo = @"C:\Users\Arthur\Documents\Projeto Crescer\GitHub\crescer-2016-2\src\modulo-05-C#-prt1\listaPersonagens.csv";
+        const string CaminhoArquivo = @"C:\Users\Arthur.Souza\Documents\Git\crescer-2016-2\crescer-2016-2\src\modulo-05-C#-prt1\listaPersonagem.csv";
         public List<Personagem> ListaPersonagens { get; private set; }
 
         public PersonagemRepositorio()
@@ -19,8 +22,102 @@ namespace StreetFighter.Repositorio
             this.ListaPersonagens = ListarPersonagens(null);
         }
 
+        public List<Personagem> GetPersonagemById(Personagem personagem)
+        {
+            string connectionString = 
+                ConfigurationManager.ConnectionStrings["StreetFighter"]
+                                    .ConnectionString;
+
+            List<Personagem> result = null;
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = $"SELECT * FROM Personagem WHERE Id = @param_id)";
+
+
+                var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_id", personagem.Id));
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Personagem found = ConverterReaderToPersonagem(reader);
+                    result.Add(found);
+                }
+
+                connection.Close();
+            }
+            return result;
+        }
+
+        public List<Personagem> GetUsuarioById(Usuario usuario)
+        {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["PersonagemConexao"]//mudar aqui.
+                                    .ConnectionString;
+
+            List<Personagem> result = new List<Personagem>();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string sql = $"SELECT * FROM Personagem WHERE Id = @param_nome";//criar ID para usuario.
+
+
+                /*var command = new SqlCommand(sql, connection);
+                command.Parameters.Add(new SqlParameter("param_nome", usuario.Id));
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    Personagem found = ConverterReaderToPersonagem(reader);
+                    result.Add(found);
+                }*/
+
+                connection.Close();
+            }
+            return result;
+        }
+
+
+
+        private Personagem ConverterReaderToPersonagem(SqlDataReader reader)
+        {
+            int idRow = Convert.ToInt32(reader["Id"]);
+            string nomeRow = reader["Nome"].ToString();
+            DateTime dataNascimentoRow = Convert.ToDateTime(reader["DataNascimento"]);
+            int alturaRow = Convert.ToInt32(reader["Altura"]);
+            decimal pesoRow = Convert.ToDecimal(reader["Peso"]);
+            string origenRow = reader["Origem"].ToString();
+            string golpesEspeciaisRow = reader["GolpesEspeciais"].ToString();
+
+            var personagem = new Personagem(
+                    id: idRow,
+                    nome: nomeRow,
+                    dataNascimento: dataNascimentoRow,
+                    altura: alturaRow;
+
+                    
+                );
+            return personagem;
+        }
+
+        private Personagem ConverterReaderToUsuario(SqlDataReader reader)
+        {
+            int idRow = Convert.ToInt32(reader["Id"]);
+            string nomeRow = reader["Nome"].ToString();
+
+            var usuario = new Usuario(
+                    id: idRow,
+                    nome: nomeRow
+                );
+            return usuario;
+        }*/
+
+
+
         public List<Personagem> ListarPersonagens(string filtroNome)
         {
+
             List<Personagem> Lista = new List<Personagem>();
             var linhas = File.ReadLines(CaminhoArquivo);
 
@@ -62,6 +159,8 @@ namespace StreetFighter.Repositorio
 
         public void EditarPersonagem(Personagem personagem)
         {
+            GetPersonagemById(personagem);
+
             var propriedades = GerarPersonagemEmString(personagem);
 
             for (int i = 0; i < ListaPersonagens.Count; i++)

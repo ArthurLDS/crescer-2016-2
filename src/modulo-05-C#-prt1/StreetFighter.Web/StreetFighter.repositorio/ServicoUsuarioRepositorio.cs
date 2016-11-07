@@ -11,7 +11,7 @@ namespace StreetFighter.repositorio
     public class ServicoUsuarioRepositorio
     {
         Usuario[] ListaUsuarios;
-        private const string LOCAL_ARQUIVO = @"C:\Users\Arthur\Documents\Projeto Crescer\GitHub\crescer-2016-2\src\modulo-05-C#-prt1\usuario.csv";
+        private const string LOCAL_ARQUIVO = @"C:\Users\Arthur.Souza\Documents\Git\crescer-2016-2\crescer-2016-2\src\modulo-05-C#-prt1\usuario.csv";
 
         public ServicoUsuarioRepositorio()
         {
