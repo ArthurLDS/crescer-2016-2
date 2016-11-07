@@ -8,8 +8,9 @@ namespace StreetFighter.Web.Models
 {
     public class FichaTecnicaModel
     {   
+
         public int Id { get; set; }
-        [Required]
+        
         public string Imagem { get; set; }
 
         [Required]
@@ -24,9 +25,12 @@ namespace StreetFighter.Web.Models
         [Required]
         public decimal Peso { get; set; }
         
+        [Required]
         public string Origem { get; set; }
 
+        [Required]
         public string GolpesEspeciais { get; set; }
+
         public bool PersonagemOculto { get; set; }
     }
 }
