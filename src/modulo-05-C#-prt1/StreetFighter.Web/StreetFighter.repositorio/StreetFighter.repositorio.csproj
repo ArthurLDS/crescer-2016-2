@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="PersonagemRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicoUsuarioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\StreetFighter.dominio\StreetFighter.dominio.csproj">
