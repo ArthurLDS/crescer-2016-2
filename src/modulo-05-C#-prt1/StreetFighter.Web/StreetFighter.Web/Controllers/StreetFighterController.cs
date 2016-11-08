@@ -23,19 +23,6 @@ namespace StreetFighter.Web.Controllers
             Personagem personagem = personagemAplicativo.BuscarPersonagemPorId(id);
             return View(personagem);
 
-
-            /*var modelo = new FichaTecnicaModel();
-            modelo.Imagem = "https://files.slack.com/files-pri/T2FVBENMS-F2RM5AKSL/blanka.png";
-            modelo.Nome = " Blanka";
-            modelo.DataNascimento = new DateTime(1966, 02, 12);
-            modelo.Altura = 192;
-            modelo.Peso = 96;
-            modelo.Origem = "Brasil";
-            modelo.GolpesEspeciais = " Electric Thunder, Rolling Attack.";
-            modelo.PersonagemOculto = false;*/
-
-            //return View(modelo);
-
         }
         public ActionResult Sobre()
         {
@@ -103,12 +90,12 @@ namespace StreetFighter.Web.Controllers
             }
             return View("Cadastro");
         }
-        public ActionResult EditarPersonagem(string nome)
+        public ActionResult EditarPersonagem(int id)
         {
             PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
             Personagem personagem = new Personagem();
 
-            personagem = personagemAplicativo.BuscarPersonagemPorNome(nome);
+            personagem = personagemAplicativo.BuscarPersonagemPorId(id);
 
             FichaTecnicaModel personagemEmFichaTecnica = new FichaTecnicaModel();
             personagemEmFichaTecnica.Id = personagem.Id;

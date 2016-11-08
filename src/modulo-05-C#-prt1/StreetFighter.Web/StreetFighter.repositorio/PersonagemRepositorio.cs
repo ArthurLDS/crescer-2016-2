@@ -1,6 +1,7 @@
 ﻿using StreetFighter.dominio;
 using StreetFighter.Dominio;
 using System;
+using System.Activities.Statements;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -8,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace StreetFighter.Repositorio
 {
@@ -24,7 +26,7 @@ namespace StreetFighter.Repositorio
 
         public Personagem GetPersonagemById(int id)
         {
-            string connectionString = 
+            string connectionString =
                 ConfigurationManager.ConnectionStrings["StreetFighter"]
                                     .ConnectionString;
 
@@ -34,8 +36,8 @@ namespace StreetFighter.Repositorio
             {
                 connection.Open();
 
-                string sql = $"SELECT * FROM Personagem WHERE Id ="+ id;
-                
+                string sql = $"SELECT * FROM Personagem WHERE Id =" + id;
+
                 var command = new SqlCommand(sql, connection);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -62,9 +64,12 @@ namespace StreetFighter.Repositorio
             {
                 connection.Open();
 
-                if (nome == null) nome = "Nunes";
+                string sql = "";
 
-                string sql = $"SELECT * FROM Personagem WHERE Nome LIKE '%" + nome + "%'";
+                if (nome == null)
+                    sql = "SELECT * FROM Personagem";
+                else
+                    sql = $"SELECT * FROM Personagem WHERE Nome LIKE '%" + nome + "%'";
 
                 var command = new SqlCommand(sql, connection);
                 SqlDataReader reader = command.ExecuteReader();
@@ -108,50 +113,78 @@ namespace StreetFighter.Repositorio
         }
 
 
-        
+
         public List<Personagem> ListarPersonagens(string filtroNome)
-        {   
+        {
             return GetPersonagemByNome(filtroNome);
-            /*
-
-
-            var linhas = File.ReadLines(CaminhoArquivo);
-
-            foreach (var linha in linhas)
-            {
-                var propriedade = linha.Split(';');
-
-
-                Personagem personagem = new Personagem(
-                   Convert.ToInt32(propriedade[0]),
-                   propriedade[1],
-                   DateTime.Parse(propriedade[2].ToString()),
-                   Convert.ToInt32(propriedade[3]),
-                   Convert.ToDecimal(propriedade[4]),
-                   propriedade[5],
-                   propriedade[6],
-                   propriedade[7],
-                   Convert.ToBoolean(false)
-
-                   );
-
-                if (filtroNome == null || personagem.Nome.Contains(filtroNome)) Lista.Add(personagem);
-            }
-            return Lista;*/
+            
         }
-
-
         public void IncluirPersonagem(Personagem personagem)
         {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["StreetFighter"]
+                                    .ConnectionString;
+
+            Personagem result = new Personagem();
+
             if (RegraDeNegocio(personagem))
             {
-                this.ListaPersonagens.Add(personagem);
-                string linhaResultado = GerarPersonagemEmString(personagem);
+                using (var transaction = new System.Transactions.TransactionScope(TransactionScopeOption.Required))
+                using (var connection = new SqlConnection(connectionString))
+                {
+                    try
+                    {
 
-                File.AppendAllText(CaminhoArquivo, Environment.NewLine + linhaResultado);
-            }            
+                        connection.Open();
+                        string sql = "";
+                        var parameters = new List<SqlParameter>();
+
+                        if (personagem.Id > 0)
+                        {
+                            sql = $"UPDATE Personagem SET Nome=@param_nome, DataNascimento=@param_data, Altura=@param_altura, Peso=@param_peso, Origen=@param_origem, GolpesEspeciais=@param_golpes, PesonagemOculto=@param_personagemOculto, Imagem=@param_imagem  WHERE Id = @param_id";
+                            parameters.Add(new SqlParameter("param_id", personagem.Id));
+                            parameters.Add(new SqlParameter("param_nome", personagem.Nome));
+                            parameters.Add(new SqlParameter("param_data", personagem.DataNascimento));
+                            parameters.Add(new SqlParameter("param_altura", personagem.Altura));
+                            parameters.Add(new SqlParameter("param_peso", personagem.Peso));
+                            parameters.Add(new SqlParameter("param_origem", personagem.Origem));
+                            parameters.Add(new SqlParameter("param_golpes", personagem.GolpesEspeciais));
+                            parameters.Add(new SqlParameter("param_personagemOculto", personagem.PersonagemOculto));
+                            parameters.Add(new SqlParameter("param_imagem", personagem.Imagem));
+                            // Aplicar o resto dos parâmetros 
+                        }
+                        else
+                        {
+                            sql = $"INSERT INTO Personagem(Nome, DataNascimento, Altura, Peso, Origen, GolpesEspeciais, PersonagemOculto, Imagem) VALUES(@param_nome, @param_data, @param_altura, @param_peso, @param_origem, @param_golpes, @param_personagemOculto, @param_imagem); ";
+
+                            parameters.Add(new SqlParameter("param_nome", personagem.Nome));
+                            parameters.Add(new SqlParameter("param_data", personagem.DataNascimento));
+                            parameters.Add(new SqlParameter("param_altura", personagem.Altura));
+                            parameters.Add(new SqlParameter("param_peso", personagem.Peso));
+                            parameters.Add(new SqlParameter("param_origem", personagem.Origem));
+                            parameters.Add(new SqlParameter("param_golpes", personagem.GolpesEspeciais));
+                            parameters.Add(new SqlParameter("param_personagemOculto", personagem.PersonagemOculto));
+                            parameters.Add(new SqlParameter("param_imagem", personagem.Imagem));
+                        }
+                        var command = new SqlCommand(sql, connection);
+                        foreach (SqlParameter param in parameters)
+                        {
+                            command.Parameters.Add(param);
+                        }
+                        command.ExecuteNonQuery();
+                        transaction.Complete();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.Write("Deu ruim. Erro ao cadastrar!"); // Melhorar isso
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
         }
-        
 
         public void EditarPersonagem(Personagem personagem)
         {
@@ -169,8 +202,7 @@ namespace StreetFighter.Repositorio
             }
 
         }
-
-
+        
         public void ExcluirPersonagem(Personagem personagem)
         {
             List<string> listaString = new List<string>();
@@ -178,16 +210,14 @@ namespace StreetFighter.Repositorio
             ExcluiDaListaDePersonagem(personagem);
 
             foreach (Personagem personagemDaVez in ListaPersonagens)
-            {   
+            {
                 listaString.Add(GerarPersonagemEmString(personagemDaVez));
             }
             File.WriteAllLines(CaminhoArquivo, listaString);
         }
 
         public Personagem BuscarPersonagemPorNome(string nome)
-        {   
-
-
+        {
             List<Personagem> listaDePersonagens = ListarPersonagens(null);
             foreach (Personagem personagem in listaDePersonagens)
             {
@@ -198,6 +228,7 @@ namespace StreetFighter.Repositorio
             }
             return null;
         }
+
         public void ExcluiDaListaDePersonagem(Personagem personagem)
         {
             for (int i = 0; i < ListaPersonagens.Count; i++)
