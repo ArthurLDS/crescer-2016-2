@@ -17,10 +17,10 @@ namespace StreetFighter.Web.Controllers
         {
             return View();
         }
-        public ActionResult FichaTecnica(string nome)
+        public ActionResult FichaTecnica(int id)
         {
             PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
-            Personagem personagem = personagemAplicativo.BuscarPersonagemPorNome(nome);
+            Personagem personagem = personagemAplicativo.BuscarPersonagemPorId(id);
             return View(personagem);
 
 

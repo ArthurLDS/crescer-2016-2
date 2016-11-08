@@ -50,6 +50,11 @@ namespace StreetFighter.aplicativo
             var repositorio = new PersonagemRepositorio();
             return repositorio.BuscarPersonagemPorNome(nome);
         }
+        public Personagem BuscarPersonagemPorId(int id)
+        {
+            var repositorio = new PersonagemRepositorio();
+            return repositorio.GetPersonagemById(id);
+        }
         public void ExcluirPersonagem(Personagem personagem)
         {
             this.repositorio.ExcluirPersonagem(personagem);
