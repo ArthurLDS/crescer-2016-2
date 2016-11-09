@@ -68,7 +68,7 @@ namespace StreetFighter.Web.Controllers
         public ActionResult Salvar(FichaTecnicaModel model)
         {
             Personagem personagem = new Personagem
-                    (0, model.Nome, model.DataNascimento, model.Altura,
+                    (model.Id, model.Nome, model.DataNascimento, model.Altura,
                     model.Peso, model.Origem, model.GolpesEspeciais, model.Imagem, model.PersonagemOculto);
 
             PersonagemAplicativo personagemAplicativo = new PersonagemAplicativo();
@@ -76,7 +76,8 @@ namespace StreetFighter.Web.Controllers
             if (!personagemAplicativo.RegraDeNegocio(personagem))
             {
                 ViewBag.Mensagem = "Não é permitido cadastrar persongens overpowered.";
-                return RedirectToAction("Cadastro");            }
+                return RedirectToAction("Cadastro");
+            }
             if (ModelState.IsValid)
             {
                 personagemAplicativo.Salvar(personagem);

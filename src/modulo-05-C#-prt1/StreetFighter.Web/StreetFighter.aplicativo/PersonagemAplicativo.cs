@@ -1,5 +1,6 @@
 ﻿using StreetFighter.Dominio;
 using StreetFighter.Repositorio;
+using StreetFighter.RepositorioEF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,18 @@ namespace StreetFighter.aplicativo
 
         public List<Personagem> ListarPersonagens(string filtro) {
 
-            return repositorio.ListarPersonagens(filtro);
+            PersonagemRepositorioEF personagem = new PersonagemRepositorioEF();
+            return personagem.ListarPersonagens(filtro);
         }
 
         public void Salvar(Personagem personagem)
         {
-            if (repositorio.RegraDeNegocio(personagem)) {
-                repositorio.IncluirPersonagem(personagem);
-            }
+            PersonagemRepositorioEF personagemEF = new PersonagemRepositorioEF();
+
+            //if (repositorio.RegraDeNegocio(personagem)) {
+              personagemEF.IncluirPersonagem(personagem);
+            //}
+
 
             // NÃO ENTENDI A MORAL DISSO. POR ISSO REMOVI :/
             /*if (personagem.Id == 0)
@@ -52,8 +57,8 @@ namespace StreetFighter.aplicativo
         }
         public Personagem BuscarPersonagemPorId(int id)
         {
-            var repositorio = new PersonagemRepositorio();
-            return repositorio.GetPersonagemById(id);
+            var repositorio = new PersonagemRepositorioEF();
+            return repositorio.BuscarById(id);
         }
         public void ExcluirPersonagem(Personagem personagem)
         {

@@ -53,6 +53,10 @@
       <Project>{2C23181B-C8D4-42A1-A400-06F69AD8C5AA}</Project>
       <Name>StreetFighter.Infra</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StreetFighter.RepositorioEF\StreetFighter.RepositorioEF.csproj">
+      <Project>{939D2535-0797-484C-98D7-B1A1F99A0466}</Project>
+      <Name>StreetFighter.RepositorioEF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StreetFighter.repositorio\StreetFighter.repositorio.csproj">
       <Project>{2114fc9d-0ba8-49d5-ac2e-7b0405be4dc9}</Project>
       <Name>StreetFighter.repositorio</Name>

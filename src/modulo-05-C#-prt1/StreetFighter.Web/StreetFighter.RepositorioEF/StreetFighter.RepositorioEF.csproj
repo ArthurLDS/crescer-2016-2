@@ -49,13 +49,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DatabaseContext.cs" />
     <Compile Include="Migrations\201611081851250_Initial.cs" />
     <Compile Include="Migrations\201611081851250_Initial.Designer.cs">
       <DependentUpon>201611081851250_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611090917293_criando tables.cs" />
+    <Compile Include="Migrations\201611090917293_criando tables.Designer.cs">
+      <DependentUpon>201611090917293_criando tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="PersonagemRepositorioEF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +75,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611081851250_Initial.resx">
       <DependentUpon>201611081851250_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611090917293_criando tables.resx">
+      <DependentUpon>201611090917293_criando tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
