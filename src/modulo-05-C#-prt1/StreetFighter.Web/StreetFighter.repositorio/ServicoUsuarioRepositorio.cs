@@ -21,38 +21,38 @@ namespace StreetFighter.repositorio
         }
 
 
-        public Usuario[] GetUsuarios()
-        {
+        /* public Usuario[] GetUsuarios()
+         {
 
-            string connectionString =
-                ConfigurationManager.ConnectionStrings["StreetFighter"]
-                                    .ConnectionString;
+             string connectionString =
+                 ConfigurationManager.ConnectionStrings["StreetFighter"]
+                                     .ConnectionString;
 
-            Usuario[] result = new Usuario[10];
+             Usuario[] result = new Usuario[10];
 
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
+             using (var connection = new SqlConnection(connectionString))
+             {
+                 connection.Open();
 
-                string sql = "SELECT * FROM Usuario";
-                var command = new SqlCommand(sql, connection);
+                 string sql = "SELECT * FROM Usuario";
+                 var command = new SqlCommand(sql, connection);
 
-                SqlDataReader reader = command.ExecuteReader();
+                 SqlDataReader reader = command.ExecuteReader();
 
-                int i =  0;
-                while (reader.Read())
-                {
-                    Usuario found = ConvertReaderToUsuario(reader);
-                    result[i] = found;
-                    i++;
-                }
-                connection.Close();
-            }
-            return result;
+                 int i =  0;
+                 while (reader.Read())
+                 {
+                     Usuario found = ConvertReaderToUsuario(reader);
+                     result[i] = found;
+                     i++;
+                 }
+                 connection.Close();
+             }
+             return result;
 
-        }
+    }*/
 
-        public Usuario ConvertReaderToUsuario(SqlDataReader reader)
+    public Usuario ConvertReaderToUsuario(SqlDataReader reader)
         {
             int idRow = Convert.ToInt32(reader["Id"]);
             string usernameRow = reader["Username"].ToString();

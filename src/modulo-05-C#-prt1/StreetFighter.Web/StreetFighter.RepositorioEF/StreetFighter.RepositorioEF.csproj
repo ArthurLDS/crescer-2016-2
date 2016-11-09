@@ -61,6 +61,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PersonagemRepositorioEF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsuarioRepositorioEF.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
