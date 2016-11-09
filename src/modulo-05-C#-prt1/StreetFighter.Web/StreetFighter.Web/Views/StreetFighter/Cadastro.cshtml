@@ -35,11 +35,13 @@
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                     @Html.HiddenFor(model => model.Id)
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.Nome, new { @class = "col-sm-2" })
                         <div class="col-sm-9 pull-right">
                             @Html.TextBoxFor(model => model.Nome, new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.Nome)
+                            @Html.HiddenFor(model => model.Id)
                         </div>
                     </div>
                     <div class="form-group">
@@ -110,23 +112,18 @@
                     <div class="form-group">
                         <div class="col-md-9 pull-right">
                             @{
-                                try
-                                {
-                                    if (Model.Nome != null)
-                                    {
-                                        <button type="submit" name="Enviar" class="btn btn-success">Salvar Edição</button>
-                                    }
+                                if (Model==null || Model.Id > 0) {
+                                  <button type="submit" name="Enviar" class="btn btn-success">Salvar Edição</button>
                                 }
-                                catch
-                                {
+                                else {
                                     <button type="submit" name="Enviar" class="btn btn-success">Cadastrar</button>
                                 }
-
 
                             }
                             <input type="reset" name="Resetar" value="Limpar campos" class="btn btn-danger" />
                         </div>
                     </div>
+                                }
                     @*<form action="~/StreetFighter/Salvar" method="post" class="navbar-form navbar-left">
                             <div class="form-group">
                                 <h3>@ViewBag.Mensagem</h3>
@@ -155,7 +152,7 @@
                                 <input type="submit" name="name" class="btn btn-success" value="Cadastrar" />
                             </div>
                         </form>*@
-                                }
+
 
                 <script src="~/scripts/jquery-1.9.1.min.js"></script>
                 <script src="~/scripts/jquery.validate.min.js"></script>
