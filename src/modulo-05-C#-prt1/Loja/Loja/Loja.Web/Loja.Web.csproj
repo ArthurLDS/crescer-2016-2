@@ -212,6 +212,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Produto\Produto.cshtml" />
     <Content Include="Views\Produto\FichaTecnica.cshtml" />
+    <Content Include="Views\Produto\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
