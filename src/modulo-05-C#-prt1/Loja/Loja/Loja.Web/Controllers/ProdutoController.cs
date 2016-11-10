@@ -27,9 +27,12 @@ namespace Loja.Web.Controllers
 
             return View("Produto", model);
         }
-        public ActionResult FichaTecnica(int id, string nome, decimal valor)
-        {   
-            ProdutoModel modelo = new ProdutoModel(new Produto(id,nome,valor));
+        public ActionResult FichaTecnica(int id)
+        {
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+            Produto produto = produtoServico.BuscarPorId(id);
+
+            ProdutoModel modelo = new ProdutoModel(produto);
             return View("FichaTecnica", modelo);
         }
 
