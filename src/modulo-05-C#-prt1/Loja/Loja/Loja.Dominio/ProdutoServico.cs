@@ -21,6 +21,11 @@ namespace Loja.Dominio
             return produtoRepositorio.ListarProdutos(nome);
         }
 
+        public void SalvarProduto(Produto produto)
+        {
+            this.produtoRepositorio.SalvarProduto(produto);
+        }
+
         public Produto BuscarPorId(int id)
         {
             return this.produtoRepositorio.BuscarPorId(id);

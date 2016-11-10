@@ -15,6 +15,7 @@ namespace Loja.Dominio
             this.Valor = valor;
         }
 
+
         public Produto() { }
 
         public int Id { get; set; }
