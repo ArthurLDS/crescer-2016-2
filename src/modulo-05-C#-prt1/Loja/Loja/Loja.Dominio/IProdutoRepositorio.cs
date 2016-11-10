@@ -11,5 +11,7 @@ namespace Loja.Dominio
         List<Produto> ListarProdutos(string nome="");
 
         void SalvarProduto(Produto produto);
+
+        Produto BuscarPorId(int id);
     }
 }

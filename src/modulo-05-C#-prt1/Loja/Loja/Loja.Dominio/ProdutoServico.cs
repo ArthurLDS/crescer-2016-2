@@ -20,5 +20,10 @@ namespace Loja.Dominio
         {
             return produtoRepositorio.ListarProdutos(nome);
         }
+
+        public Produto BuscarPorId(int id)
+        {
+            return this.produtoRepositorio.BuscarPorId(id);
+        }
     }
 }

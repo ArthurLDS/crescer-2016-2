@@ -25,6 +25,13 @@ namespace Loja.Repositorio
                 return context.Produtos.Where(u => u.Nome.Contains(nome)).ToList();
             }
         }
+        public Produto BuscarPorId(int id)
+        {
+            using (var context = new ContextoDeDados())
+            {
+                return context.Produtos.Find(id);
+            }
+        }
 
         public void SalvarProduto(Produto produto)
         {
