@@ -174,7 +174,7 @@ namespace StreetFighter.Repositorio
                         command.ExecuteNonQuery();
                         transaction.Complete();
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         Console.Write("Deu ruim. Erro ao cadastrar!"); // Melhorar isso
                     }
