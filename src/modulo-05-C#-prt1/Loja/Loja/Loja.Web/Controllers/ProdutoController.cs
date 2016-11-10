@@ -24,10 +24,14 @@ namespace Loja.Web.Controllers
             {
                 model.Add(new ProdutoModel(produto));
             }
-            
+
             return View("Produto", model);
         }
-
+        public ActionResult FichaTecnica(int id, string nome, decimal valor)
+        {   
+            ProdutoModel modelo = new ProdutoModel(new Produto(id,nome,valor));
+            return View("FichaTecnica", modelo);
+        }
 
     }
 }

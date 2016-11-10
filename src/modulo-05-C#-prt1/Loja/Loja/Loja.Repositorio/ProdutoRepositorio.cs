@@ -13,6 +13,13 @@ namespace Loja.Repositorio
     {
         public List<Produto> ListarProdutos(string nome = "")
         {
+            if (String.IsNullOrEmpty(nome))
+            {
+                using (var context = new ContextoDeDados())
+                {
+                    return context.Produtos.ToList();
+                }
+            }
             using (var context = new ContextoDeDados())
             {
                 return context.Produtos.Where(u => u.Nome.Contains(nome)).ToList();

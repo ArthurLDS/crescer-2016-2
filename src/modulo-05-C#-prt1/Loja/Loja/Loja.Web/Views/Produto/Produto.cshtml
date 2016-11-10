@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Produto";
 }
 
@@ -9,7 +8,7 @@
         <section class="form-group">
             @using (Html.BeginForm("Produto", "Produto", FormMethod.Post, new { @class = "form-horizontal" }))
             {
-                @Html.TextBox("nome", null, new { @class="form-control", plaseholder="Digite um nome para pesquisar"})
+                @Html.TextBox("nome", null, new { @class="form-control", placeholder="Digite um nome para pesquisar", style="display: inline-block"})
                 <button type="submit" class="btn btn-primary">Pesquisar</button>
             }
         </section>
@@ -22,19 +21,19 @@
             {
             <div class="col-sm-6 col-md-4">
                 <div class="thumbnail">
-                    <img src="@Model.Imagem" alt="produto-imagem" class="img-responsive">
                     <div class="caption">
-                        <h3>@Model.Nome</h3>
-                        <p>@Model.Valor/p>
+                        <h3>@produto.Nome</h3>
+                        <p>R$ @produto.Valor</p>
+                        <p>ID: @produto.Id</p>
                         <p>
-                            <a href="#" class="btn btn-success" role="button">Detalhes</a>
+                            <a href="~/Produto/FichaTecnica?id=@produto.Id" class="btn btn-success" role="button">Detalhes</a>
                             <a href="#" class="btn btn-primary" role="button">Editar</a>
                             <a href="#" class="btn btn-danger" role="button">Excluir</a>
                         </p>
                     </div>
                 </div>
             </div>
-                }
+             }
         }
         </div>
     </article>
