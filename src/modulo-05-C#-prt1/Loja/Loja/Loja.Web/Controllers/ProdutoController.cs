@@ -35,6 +35,32 @@ namespace Loja.Web.Controllers
             ProdutoModel modelo = new ProdutoModel(produto);
             return View("FichaTecnica", modelo);
         }
+        public ActionResult Cadastro()
+        {
+            return View();
+        }
+        public ActionResult Salvar(ProdutoModel modelo)
+        {
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+            Produto produto = new Produto(modelo.Id, modelo.Nome, modelo.Valor);
+
+            if (ModelState.IsValid || (modelo.Id.Equals(0) && modelo.Nome!=null && modelo.Valor!=0))
+            {
+                produtoServico.SalvarProduto(produto);
+                return View("FichaTecnica", modelo);
+                
+            }
+            ViewBag.Situacao = "Vefirique os dados.";
+            return View("Cadastro");
+        }
+        public ActionResult Editar(int id)
+        {
+            ProdutoServico produtoServico = ServicoDeDependencias.MontarProdutoServico();
+            Produto produto = produtoServico.BuscarPorId(id);
+            ProdutoModel modelo = new ProdutoModel(produto);
+
+            return View("Cadastro", modelo);
+        }
 
     }
 }
