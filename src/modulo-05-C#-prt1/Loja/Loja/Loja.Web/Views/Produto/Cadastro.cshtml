@@ -1,0 +1,41 @@
+﻿@model Loja.Web.Models.ProdutoModel
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<div class="col-md-12">
+    <header>
+        <h2>Cadastro</h2>
+    </header>
+    @using (Html.BeginForm("Salvar", "Produto", FormMethod.Post, new { @class = "form-horizontal" }))
+    {   
+        <h3>@ViewBag.Situacao</h3>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    @Html.HiddenFor(model => model.Id)
+
+                    <div class="form-group">
+                        <div class="col-sm-9 pull-right">
+                            @Html.TextBoxFor(model => model.Nome, new { @class = "form-control", placeholder ="Digite o nome do produto"})
+                            @Html.ValidationMessageFor(model => model.Nome)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9 pull-right">
+                            @Html.TextBoxFor(model => model.Valor, new { @class = "form-control", placeholder = "Digite o valor do produto" })
+                            @Html.ValidationMessageFor(model => model.Valor)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-9 pull-right">
+                           
+                            <button type="submit" name="Enviar" class="btn btn-success">Salvar</button>
+                           
+                            <input type="reset" name="Resetar" value="Limpar campos" class="btn btn-danger" />
+                        </div>
+                    </div>
+              }
+</div>
