@@ -1,0 +1,22 @@
+﻿@model Loja.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Entrar", "Login", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+    @Html.TextBoxFor(model => model.Email, new { placeholder = "email"})
+    @Html.ValidationMessageFor(model => model.Email)<br>
+    
+    @Html.PasswordFor(model => model.Senha, new { placeholder = "senha"})<br />
+    @Html.ValidationMessageFor(model => model.Senha)
+    <br />
+    <button type="submit">Entrar</button> <strong style="color: #F00;">@ViewBag.Mensagem</strong>
+
+}

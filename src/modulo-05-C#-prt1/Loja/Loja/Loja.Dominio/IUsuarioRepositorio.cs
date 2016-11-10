@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StreetFighter.RepositorioEF
+namespace Loja.Dominio
 {
-    public class Class1
+    public interface IUsuarioRepositorio
     {
+        Usuario BuscarPorEmail(string email);
     }
 }
