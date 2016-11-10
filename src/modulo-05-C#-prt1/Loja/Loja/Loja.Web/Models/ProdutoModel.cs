@@ -15,6 +15,16 @@ namespace Loja.Web.Models
             this.Nome = produto.Nome;
             this.Valor = produto.Valor;
         }
+        public ProdutoModel(int id, string nome, decimal valor)
+        {
+            this.Id = id;
+            this.Nome = nome;
+            this.Valor = Valor;
+        }
+        public ProdutoModel()
+        {
+
+        }
 
         public int Id { get; set; }
         
