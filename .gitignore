@@ -27,7 +27,6 @@ src/modulo-01-java-OO/projeto-lotr-bluej/doc/
 *.suo
 *.user
 *.sln.docstates
-.vs/
 
 # NuGet Packages
 packages
