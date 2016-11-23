@@ -1,0 +1,245 @@
+@media only screen and (max-width: 600px) {
+    .carousel-inner h3{
+        font-size: 15px;
+    }
+    .ico-rd{
+    	margin-bottom: 10px;
+    }
+    .maps{
+    	height:440px;
+    	width: 302px;
+    }
+}
+.maps{
+	height:440px;
+	width: 100%;
+}
+hr{
+	color: black;
+	height: 6px;
+	width: 100%;
+	margin: 0;
+}
+p{
+	text-align: justify;
+	color: #4c4b4b;
+	font-weight: normal;
+	text-decoration: none;
+}
+.menutopo{
+	border-radius: 0;
+	position: relative;
+	bottom: 30px;
+	box-shadow: 0px 0px 5px #000;
+	margin-bottom: 0px;
+}
+.cabecalho{
+	background-image: url('https://farm6.staticflickr.com/5550/14053802127_a50b3cdd5a_b.jpg');
+	background-position: center;
+	background-size: cover ;
+	width: 100%;
+	box-shadow: 0px 5px 0px #000;
+
+}
+.cabecalho p{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+/* CARROSEL*/
+.carousel-inner h3{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px #000;
+}
+/* FIM */
+
+
+/* definições dos articles ;D  */
+
+.panel-heading{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.panel-spo{
+	border-color: #006400;
+}
+.panel-primary>.panel-heading{
+	background-color: #1b1b1b;
+    border-color: #717171;
+}
+.panel-primary {
+    border-color: #838383;
+}
+
+.panel{
+	border-color: #838383;
+}
+.title-games{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	color: #4c4b4b;
+    font-weight: 700;
+   	margin-bottom: 10px;
+   	margin-top: 10px;
+    padding: 0px;
+}
+/*fim*/
+legend{
+	font-size: 17pt;
+	color: #FFF;
+}
+.img-logo{
+  width: 108px;
+  height: 103px;
+}
+
+/* Nav bar*/
+.navbar-nav .dropdown-menu a{
+	text-transform: none;
+}
+.navbar-nav a{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.navbar-brand{
+	padding-left: 30px;
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.navbar-nav form{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    text-transform: uppercase;
+}
+/*FIM NAV BAR*/
+
+.inter-img{
+	margin-right: auto;
+	margin-left: auto;
+	height: 110px;
+	width: 110px;
+}
+.form textarea{
+	resize:none;
+}
+
+
+/* Articles */
+
+  /* Form de inscrição */
+  .btn-inscreva-me{
+    width: 100%;
+  }
+  .inscricao-panel input{
+    margin-bottom: 10px;
+  }
+  .inscricoes-panel-body{
+    border: 0.1px solid #BBB;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+  }
+  /* Fim form de inscrição*/
+
+.coluna-art{
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.coluna-art a{
+	text-decoration: none;
+	color: #000;
+}
+.coluna-art h3, a{
+	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 700;
+}
+.coluna-art h3{
+	padding-top: 0;
+	margin-top: 0px;
+	color: #4c4b4b;
+}
+.coluna-art  a h3:hover{
+	color: #fc7700;
+}
+.art-p{
+	color: #777;
+    font-family: opensans-regular-loaded-by-bastian,Helvetica Neue,Arial,sans-serif;
+}
+.art-type{
+	color: #fc7700;
+}
+.art-type:hover{
+	color: #b75600;
+}
+.coluna-art img{
+	border-radius: 4px;
+}
+/* FIM */
+
+
+/* FOOTER */
+.bs-docs-footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 70px;
+    color: #99979c;
+    text-align: center;
+    background-color: #2a2730;
+    box-shadow: 0px 0px 15px #000;
+}
+.bs-docs-footer h3{
+	color: #99979c;
+}
+/* FIM */
+
+.cabecalho input {
+	margin-bottom: 2px;
+}
+
+/* Quem somos */
+/* Icones Redes Sociais*/
+.ico-rd{
+	padding-right: 4px;
+	width: 34px;
+	height: 34px;
+	transition: .5s;
+}
+.ico-rd:hover{
+	transition: .5s;
+	opacity: 0.7;
+}
+
+
+/* Fim */
+#eu{
+	width: 195px;
+	height: 195px;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	box-shadow: 1px 1px 5px #cecece;
+}
+.eu-img{
+	text-align: center;
+}
+.eu-img #eu{
+	border: solid 5px #cecece;
+	border-radius: 50%;
+	background-size: 40%;
+}
+.eu-img h4{
+	font-weight: 600;
+}
+/* FIM */
+
+/* Tela de Cadastro*/
+.login-container{
+    padding:15px;
+    border: 1px solid #BBB;
+    border-radius: 5px;
+}
+.input-usuario{
+    margin-bottom: 10px;
+}

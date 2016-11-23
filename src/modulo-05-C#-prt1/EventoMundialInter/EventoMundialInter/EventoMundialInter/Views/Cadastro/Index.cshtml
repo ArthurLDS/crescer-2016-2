@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6aceff">
+
+    <title>Festa 10 anos Mundial internacional</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="container main sub-tela">
+        <section class="row">
+            <article class="col-md-12 forca-container">
+                <section class="forca-panel">
+                    <article class="panel-body">
+                        <section class="row">
+
+                            <article class="col-md-4"></article>
+                            <article class="col-md-4">
+                                <header>
+                                    <h3 class="pTitle">Confirme seu cadastro</h3>
+                                </header>
+                                <article class="col-md-12 login-container">
+                                    
+                                    <form id="formInicioJogo" class="form-usuario control" method="post">
+                                        <input name="userName" id="nomeUser" type="text" placeholder="Digite seu nome" class="form-control input-usuario" value="@Model.Nome">
+                                        <input name="userName" id="EmailUser" type="email" placeholder="Digite seu Email" class="form-control input-usuario" required value="@Model.Email">
+                                        <input name="userName" id="TelefoneUser" type="text" placeholder="Digite seu Telefone" class="form-control input-usuario" required>
+                                        <input name="userName" id="CidadeUser" type="text" placeholder="Digite sua Cidade" class="form-control input-usuario" required>
+                                        <input name="userName" id="CpfUser" type="text" placeholder="Digite seu CPF" class="form-control input-usuario" required>
+                                        
+                                        <select id="selectData" class="form-control">
+                                            <!-- Aqui o JavaScript vai preencher -->
+                                        </select>
+
+                                        <hr>
+                                       
+                                        <button id="btn-salvar" class="btn btn-success btn-jogar" type="submit" name="button">Confirmar Inscrição</button>
+                                        <div id="notificacao" class="alert alert-success" role="alert" style="margin-top: 10px; display: none;">Presença confirmada com sucesso!</div>
+                                    </form>
+
+                                </article>
+                            </article>
+                            <section class="col-md-4"></section>
+
+                        </section>
+                    </article>
+                </section>
+            </article>
+        </section>
+    </section>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/app/telaCadastro.js"></script>
+</body>

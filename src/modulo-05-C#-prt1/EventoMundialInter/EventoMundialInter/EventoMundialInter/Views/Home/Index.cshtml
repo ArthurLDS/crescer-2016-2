@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#6aceff">
+
+    <title>Festa 10 anos Mundial internacional</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <header class="jumbotron cabecalho">
+        <div class="container">
+            <div class="col-md-9">
+                <a href="index.html"><img class="img-logo" src="https://logodownload.org/wp-content/uploads/2015/05/internacional-porto-alegre-logo-escudo.png" alt=""></a>
+                <p>10 anos Mundial Interclubes</p>
+                <a class="btn btn-primary btn-lg" href="#inscricoes" role="button">Faça sua reserva já!</a>
+            </div>
+
+        </div>
+    </header>
+    <nav class="navbar navbar-default menutopo">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Notícias<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Promoções</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cadastro.html">Cadastro</a></li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="contato.html">Contato</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quem somos<spam class="caret"></spam></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="quemsomos.html#developer">Desenvolvedor do site</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <section class="container">
+
+        <section class="col-md-9 sectionmain">
+
+            <div>
+                <article id="inscricoes" class="col-md-12 coluna-art inscricao-panel" style="padding-top: 0px;">
+                    <div class="panel panel-primary">
+                        <header class="panel-heading header-articles"><h2 class="panel-title">INSCRIÇÕES</h2></header>
+                        <div class="panel-body">
+                            <section class="row">
+                                <div class="col-md-3"></div>
+                                <article class="col-md-6">
+                                    <h1>Datas do envento: </h1>
+                                    <article class="col-md-12 inscricoes-panel-body">
+                                        <!--  Inscrição -->
+                                        <ul id="listaDatas" class="list-group" style="height: 200px ;overflow-y: auto">
+                                            <!-- Esse espaço é preenchido pelo JS -->
+                                        </ul>
+
+                                    </article>
+                                    
+                                </article>
+                                <div class="col-md-3"></div>
+                            </section>
+
+                            <section class="row" style="margin-top: 25px;">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6">
+                                    <header>
+                                        <h3>Inscreva-se já!</h3>
+                                    </header>
+                                    <article class="col-md-12 inscricoes-panel-body">
+                                        <!--  Inscrição -->
+                                        
+                                            <input id="txt-nome" class="form-control" placeholder="Nome Completo" type="text" name="name" value="">
+                                            <input id="txt-email" class="form-control" placeholder="Email" type="email" name="name" value="">
+                                            <button id="btn-enviarEmail" button" class="btn btn-success btn-inscreva-me" name="button">Inscrever</button>
+                                        
+                                    </article>
+                                    <div id="notificacao" class="alert alert-info" role="alert" style="margin-top: 10px; display: none;">Aguarde um instante...</div>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </section>
+                        </div>
+
+                    </div>
+
+            </div>
+            </article>
+
+
+            <article class="col-md-12 coluna-art">
+                <div class="panel panel-primary">
+                    <header class="panel-heading header-articles"><h2 class="panel-title">TOP VÍDEOS</h2></header>
+                    <div class="panel-body">
+                        <div style="padding-left: 10px; padding-right: 0px;" class="col-md-4">
+                            <!--<iframe class="img-responsive" width="250" height="180" src="" frameborder="0" allowfullscreen></iframe>-->
+                            <img style="width: 250px; height: 180px;" src="http://zh.rbsdirect.com.br/imagesrc/12696140.jpg" alt="Alternate Text" />
+                            <h4 class="title-games">Gol Adriano Gabiru.</h4>
+                        </div>
+                        <div style="padding-left: 5px; padding-right: 0px;" class="col-md-4">
+                            <!--<iframe class="img-responsive" width="250" height="180" src="" frameborder="0" allowfullscreen></iframe>-->
+                            <img style="width: 250px; height: 180px;" src="http://www.internacional.com.br/imagens/craques/Fernandao_craques_280512_1.jpg" alt="Alternate Text" />
+                            <h4 class="title-games">O grande dia</h4>
+
+                        </div>
+                        <div style="padding-left: 2px; padding-right: 0px;" class="col-md-4">
+                            <!--<iframe class="img-responsive" width="250" height="180" src="" frameborder="0" allowfullscreen></iframe>-->
+                            <img style="width: 250px; height: 180px;" src="https://imortaisdofutebol.files.wordpress.com/2012/08/barcelona-internacional-ronaldinho-fabiano-eller-mundial-clubes-2006-yokohama-japao-size-598.jpg" alt="Alternate Text" />
+                            <h4 class="title-games">A queda do gigante</h4>
+
+                        </div>
+                    </div>
+
+                </div>
+            </article><br>
+
+            <article class="coluna-art col-md-12">
+                <div style="padding-left: 0;" class="col-md-5">
+                    <a href="#"><img src="http://www.internacional.com.br/imagens/noticias/album_mundial.png" alt="" class="img-responsive"><a>
+                </div>
+                <div class="col-md-7">
+                    <a href=""><p class="art-type">Atrações</p></a>
+                    <a href="#"><h3>Inter lança album de figurinhas</h3></a>
+                    <p class="art-p">
+                        Álbum de figurinhas celebra 10 anos do Mundial conquistado no Japão
+                    </p>
+                </div>
+            </article><br>
+            <hr>
+            <article class="coluna-art col-md-12">
+                <div style="padding-left: 0;" class="col-md-5">
+                    <a href="#"><img src="http://s2.glbimg.com/upnZEZdYZ_RkykivBT_xOaKt8es=/0x0:2000x1131/690x390/s.glbimg.com/es/ge/f/original/2016/08/10/perd2_Div85NU.jpg" alt="" class="img-responsive"><a>
+                </div>
+                <div class="col-md-7">
+                    <a href=""><p class="art-type">Atrações</p></a>
+                    <a href="#"><h3>Perdigão é presença confirmada para Evento</h3></a>
+                    <p class="art-p">Campeão da Libertadores e do Mundial de Clubes pelo Inter, o ex-volante Perdigão é presença confirmada para aniversário de 10 anos do Mundial do inter.</p>
+                </div>
+            </article>
+            <hr>
+            </div>
+        </section>
+        </a>
+        <aside class="col-md-3 asidebarra">
+            <div class="panel panel-primary">
+                <header class="panel-heading">
+                    <h3 class="panel-title">Atrações</h3>
+                </header>
+                <section class="panel-body">
+                    <img class="img-responsive taça-img" src="http://wp.clicrbs.com.br/boladividida/files/2013/12/copa.jpg" alt="bf1">
+                    <h3 class="title-games">Taça Mundial 2006</h3>
+                    <p>
+                        </br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu turpis ut est faucibus ultricies. Nulla convallis efficitur felis, nec sodales nisi accumsan id. Vivamus vitae risus velit. Sed et fringilla leo. Sed feugiat velit at molestie laoreet. Aliquam volutpat rutrum urna, at porta sapien fermentum tristique. Vestibulum ac ex aliquam, fringilla velit ut,
+                    </p>
+                </section>
+
+            </div>
+        </aside>
+    </section>
+    <footer class="bs-docs-footer">
+        <p class="pfooter">
+            <div><a href="" target="_blanck"><img class="img-responsive inter-img" src="https://logodownload.org/wp-content/uploads/2015/05/internacional-porto-alegre-logo-escudo.png" alt=""></a></div><br>
+            Desenvolvido por: Arthur Lima de Souza<br>
+
+            <br>Projeto Crescer - Todos os direitos reservados © 2016
+        </p>
+    </footer>
+
+    <script src="http://momentjs.com/downloads/moment.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/app/telaHome.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        telaHome.iniciar();
+    </script>
+</body>
+</html>
+
+
