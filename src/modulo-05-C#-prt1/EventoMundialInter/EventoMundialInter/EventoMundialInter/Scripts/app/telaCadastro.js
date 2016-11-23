@@ -5,7 +5,6 @@
     let cidadeUser = $("#CidadeUser");
     let cpfUser = $("#CpfUser");
     let datas = $("#selectData");
-
     let notificacao = $("#notificacao");
 
     $.getJSON('/Cadastro/ListarDatas', u => u.lista).done(

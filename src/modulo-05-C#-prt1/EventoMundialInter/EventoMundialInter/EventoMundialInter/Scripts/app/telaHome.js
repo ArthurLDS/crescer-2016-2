@@ -36,8 +36,13 @@ telaHome.EnviarEmail =
         }
 
         else {
-            notificacao.removeClass("alert-info");
-            notificacao.removeClass("alert-success");
+            if (notificacao.hasClass("alert-info")) {
+                notificacao.removeClass("alert-info");
+            }
+            else {
+                notificacao.removeClass("alert-success");
+            }
+
             notificacao.addClass("alert-danger");
             notificacao.text("Preecha todos os campos!");
         }
