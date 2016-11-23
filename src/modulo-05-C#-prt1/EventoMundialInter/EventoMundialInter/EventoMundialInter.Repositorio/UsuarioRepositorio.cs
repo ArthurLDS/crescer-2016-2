@@ -48,7 +48,7 @@ namespace EventoMundialInter.Repositorio
             {
                 MailMessage mail = new MailMessage();
 
-                mail.From = new MailAddress("arthurlds73@gmail.com");
+                mail.From = new MailAddress("emaildetestedoarthur@gmail.com");
                 mail.To.Add(email); // para
                 mail.Subject = "Teste"; // assunto
                 mail.IsBodyHtml = true;
@@ -62,7 +62,7 @@ namespace EventoMundialInter.Repositorio
                     smtp.UseDefaultCredentials = false; // vamos utilizar credencias especificas
 
                     // seu usuário e senha para autenticação
-                    smtp.Credentials = new NetworkCredential("arthurlds73@gmail.com", "arml1527ls");
+                    smtp.Credentials = new NetworkCredential("emaildetestedoarthur@gmail.com", "123456zzaa");
 
                     // envia o e-mail
                     smtp.Send(mail);
