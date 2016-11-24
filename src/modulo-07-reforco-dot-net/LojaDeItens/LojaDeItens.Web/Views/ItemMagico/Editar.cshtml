@@ -14,6 +14,7 @@
         @Html.AntiForgeryToken()
         @Html.ValidationSummary()
 
+        @Html.HiddenFor(m => m.Id)
         <div class="form-group">
             @Html.LabelFor(m => m.Nome)
             @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
