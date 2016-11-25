@@ -8,11 +8,9 @@ import br.com.cwi.crescer.aula1.MeuStringUtil;
 
 public class StringRun {
     MeuStringUtil stringUtil = new MeuStringUtil();
-    int resultado = stringUtil.contaVogais("ola");
     
     public static void main(String[] args) {
         
-        System.out.println(resultado);
     }
     
     //Exercicios Datas
