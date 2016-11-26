@@ -27,13 +27,22 @@ public class MeuFileUtils {
     }
 
     public static String mostrarCaminhoAbsoluto(String caminho) {
+        String retorno = "";
+        File arquivo =  new File(caminho);
         
-        if (caminho.contains("."))
-            return new File(caminho).getAbsolutePath();
-        else
-            Arrays.asList(new File(caminho).listFiles());
-        
-        return "";    
+        if (arquivo.isFile())
+            retorno = arquivo.getAbsolutePath();
+        else{
+            List<File> listaDeArquivos = Arrays.asList(arquivo.listFiles());
+            
+            for(File arq : listaDeArquivos){
+                String nomeArquivoAtual = arq.getName();
+                
+                if(nomeArquivoAtual.contains("."))
+                    retorno += nomeArquivoAtual + " " ;
+            }
+        }
+        return retorno; 
     }
-
+    
 }
