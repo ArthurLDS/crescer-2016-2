@@ -10,17 +10,6 @@ public class MeuWriterUtils {
 
     public static void escreverConteudo(String arquivo, List<String> conteudos) {
         try {
-            final File file = new File(arquivo); 
-            
-            if(!arquivo.contains(".txt")){
-                System.out.println("Arquivo incompatível!");
-                return;
-            }
-            if(!file.exists()){
-                System.out.println("Arquivo inexistente!");
-                return;
-            }
-            
             final Writer writer = new FileWriter(arquivo, true);
             final BufferedWriter bufferedWriter = new BufferedWriter(writer);
             
@@ -33,5 +22,19 @@ public class MeuWriterUtils {
 
         } catch (Exception e) {
         }
+    }
+    
+    public static boolean validarEntrada(String arquivo){
+        final File file = new File(arquivo); 
+            
+            if(!arquivo.contains(".txt")){
+                System.out.println("Arquivo incompatível!");
+                return false;
+            }
+            if(!file.exists()){
+                System.out.println("Arquivo inexistente!");
+                return false;
+            }
+            return true;
     }
 }
