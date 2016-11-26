@@ -20,6 +20,7 @@ public class Run {
             String comando = MeuFileUtils.getComando(instrucao);
             String caminho = MeuFileUtils.getCaminho(instrucao);
 
+            
             switch (comando) {
                 case "mk":
                     MeuFileUtils.criarArquivo(caminho);
