@@ -11,15 +11,7 @@ import java.util.Scanner;
 public class Run {
 
     public static void main(String[] args) {
-        //C:\\Users\\Arthur\\Documents\\Projeto Crescer\\GitHub\\crescer-2016-2\\src\\modulo-08-Java\\exerciciosDeArquivos\\
         
-        /*List<String> lista = new ArrayList<String>();
-        lista.add("Oi");
-        lista.add("thau");
-        
-        MeuWriterUtils.escreverConteudo("naoExiste.txt", lista);
-        MeuReaderUtils.exibirConteudo("teste.txt");*/
-         
         Scanner ler = new Scanner(System.in);
         do {
             System.out.print("Digite um comando: ");
@@ -60,12 +52,11 @@ public class Run {
                     }while(resposta.charAt(0) != 'N');
                     
                     MeuWriterUtils.escreverConteudo(caminho, conteudos);
-                        
+                    break;    
+                    
                 default:
                     System.out.println("Comando inválido!");
             }
         } while (true);
-        
-        
     }  
 }
