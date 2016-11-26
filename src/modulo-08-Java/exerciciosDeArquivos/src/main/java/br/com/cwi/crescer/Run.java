@@ -40,6 +40,8 @@ public class Run {
                     break;
                 //Escrita em Arquivo (Exercicio-03)
                 case "write":
+                    if(!MeuWriterUtils.validarEntrada(caminho)) continue;
+                    
                     List<String> conteudos = new ArrayList<>();
                     String resposta = "N";
                     do{
@@ -53,9 +55,6 @@ public class Run {
                     
                     MeuWriterUtils.escreverConteudo(caminho, conteudos);
                     break;    
-                    
-                default:
-                    System.out.println("Comando inválido!");
             }
         } while (true);
     }  
