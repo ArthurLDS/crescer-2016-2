@@ -27,22 +27,39 @@ public class MeuFileUtils {
     }
 
     public static String mostrarCaminhoAbsoluto(String caminho) {
-        String retorno = "";
-        File arquivo =  new File(caminho);
-        
-        if (arquivo.isFile())
-            retorno = arquivo.getAbsolutePath();
-        else{
-            List<File> listaDeArquivos = Arrays.asList(arquivo.listFiles());
-            
-            for(File arq : listaDeArquivos){
-                String nomeArquivoAtual = arq.getName();
-                
-                if(nomeArquivoAtual.contains("."))
-                    retorno += nomeArquivoAtual + " " ;
+        try {
+            String retorno = "";
+            File arquivo = new File(caminho);
+
+            if (arquivo.isFile()) {
+                retorno = arquivo.getAbsolutePath();
+            } else {
+                List<File> listaDeArquivos = Arrays.asList(arquivo.listFiles());
+
+                for (File arq : listaDeArquivos) {
+                    String nomeArquivoAtual = arq.getName();
+
+                    if (nomeArquivoAtual.contains(".")) {
+                        retorno += nomeArquivoAtual + " ";
+                    }
+                }
             }
+            return retorno;
+
+        } catch (Exception e) {
+            return "Caminho inexistente!";
         }
-        return retorno; 
     }
-    
+
+    public static String getComando(String instrucao) {
+        return instrucao.split(" ")[0];
+    }
+
+    public static String getCaminho(String instrucao) {
+        return instrucao.split(" ")[1];
+    }
+
+    public static boolean validaComando(String instrucao) {
+        return instrucao.contains(" ");
+    }
 }

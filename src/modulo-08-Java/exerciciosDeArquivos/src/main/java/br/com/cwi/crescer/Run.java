@@ -13,13 +13,12 @@ public class Run {
             System.out.print("Digite um comando: ");
             String instrucao = ler.nextLine();
             
-            if(!validaComando(instrucao)){ 
+            if(!MeuFileUtils.validaComando(instrucao)){ 
                 System.out.println("Comando inválido!");
                 continue;
             }
-            
-            String comando = getComando(instrucao);
-            String caminho = getCaminho(instrucao);
+            String comando = MeuFileUtils.getComando(instrucao);
+            String caminho = MeuFileUtils.getCaminho(instrucao);
 
             switch (comando) {
                 case "mk":
@@ -36,16 +35,5 @@ public class Run {
             }
         } while (true);
 
-    }
-
-    public static String getComando(String instrucao) {
-        return instrucao.split(" ")[0];
-    }
-
-    public static String getCaminho(String instrucao) {
-        return instrucao.split(" ")[1];
-    }
-    public static boolean validaComando(String instrucao){
-        return instrucao.contains(" ");
-    }
+    }  
 }
