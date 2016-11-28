@@ -11,7 +11,7 @@ public class MeuSQLUtils {
     
     }
     
-    public void executarSQL(String query){
+    public static void executarSQL(String query){
         
         try{
             final Connection conexao = ConexaoUtils.getConexao();
@@ -21,8 +21,8 @@ public class MeuSQLUtils {
                 final ResultSet resultSet = statement.executeQuery(query);
                 
                 while(resultSet.next()) {
-                    final long idPessoa = resultSet.getLong("ID_PESSOA");
-                    final String nmPessoa = resultSet.getString("NM_PESSOA");
+                    final long idPessoa = resultSet.getLong("id");
+                    final String nmPessoa = resultSet.getString("nome");
                     
                     System.out.format("ID: %s NOME: %s\n", idPessoa, nmPessoa);
                 }
