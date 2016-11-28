@@ -8,7 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import br.com.cwi.crescer.exerciciosdesql.ConexaoUtils;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.sql.PreparedStatement;
+import java.util.List;
 
 public class MeuSQLUtils {
 
@@ -65,9 +69,9 @@ public class MeuSQLUtils {
             System.err.format("SQLException: %s", e);
         }
     }
-
-    public static void exportarArquivo(String arquivo) {
-        try {
+    
+    public static void importarArquivo(String arquivo) {
+         try {
             final Reader reader = new FileReader(arquivo);
             final BufferedReader bufferReader = new BufferedReader(reader);
             
@@ -76,7 +80,7 @@ public class MeuSQLUtils {
             String linha = bufferReader.readLine();
             while (linha != null) {
                 propriedades = linha.split(";");
-                inserir(propriedades);
+                
                 linha = bufferReader.readLine();
             }
         } catch (Exception e) {
@@ -84,8 +88,7 @@ public class MeuSQLUtils {
         }
     }
     
-    public static void importarArquivo(String arquivo) {
+    public static void exportarArquivo(String arquivo) {
         
     }
-
 }
