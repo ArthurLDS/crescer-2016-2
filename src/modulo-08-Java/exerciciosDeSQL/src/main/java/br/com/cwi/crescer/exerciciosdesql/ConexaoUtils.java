@@ -10,7 +10,7 @@ public class ConexaoUtils {
     private static final String USER = "system";
     private static final String PASS = "1234";
     
-    public static Connection getConexao() throws SQLException{
+    public Connection getConexao() throws SQLException{
         return DriverManager.getConnection(URL, USER, PASS);
     }
 }
