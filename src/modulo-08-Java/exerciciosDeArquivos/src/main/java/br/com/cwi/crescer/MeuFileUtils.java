@@ -60,6 +60,6 @@ public class MeuFileUtils {
     }
 
     public static boolean validaComando(String instrucao) {
-        return instrucao.contains(" ");
+        return instrucao.contains(" ") && instrucao.split(" ").length <= 2;
     }
 }
