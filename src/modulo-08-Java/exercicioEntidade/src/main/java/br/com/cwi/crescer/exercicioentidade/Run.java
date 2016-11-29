@@ -23,7 +23,7 @@ public class Run {
         final ClientDao clienteDao = new ClientDao(em);
         final Client cliente = new Client();
         
-        cliente.setDsEmail("adfsdf@sfdfsd.com");
+        /*cliente.setDsEmail("adfsdf@sfdfsd.com");
         cliente.setDsPassword("12345");
         cliente.setDsPreferredCoin("Real");
         cliente.setDsState("Ativo");
@@ -31,7 +31,9 @@ public class Run {
         cliente.setNmClient("Arthur Lima");
         cliente.setTpPermission("Admin");
         
-        clienteDao.insert(cliente);
+        clienteDao.insert(cliente);*/
+        
+        clienteDao.list();
         
         em.close();
         emf.close();
