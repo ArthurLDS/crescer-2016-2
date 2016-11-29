@@ -80,7 +80,7 @@ public class MeuSQLUtils {
             String linha = bufferReader.readLine();
             while (linha != null) {
                 propriedades = linha.split(";");
-                
+                inserir(propriedades);
                 linha = bufferReader.readLine();
             }
         } catch (Exception e) {
