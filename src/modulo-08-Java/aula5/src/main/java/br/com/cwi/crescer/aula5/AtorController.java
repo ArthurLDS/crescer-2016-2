@@ -18,7 +18,7 @@ import javax.faces.bean.ViewScoped;
  *
  * @author Arthur
  */
-@ManagedBean
+@ManagedBean(name = "atorController")
 @ViewScoped
 public class AtorController {
      @EJB
@@ -32,7 +32,12 @@ public class AtorController {
         this.ator = new Ator();
         this.atores = atorBean.findAll();
     }
-
+    
+    public void adicionar(){
+        atorBean.insert(ator);
+        this.init();
+    }
+    
     public AtorBean getAtorBean() {
         return atorBean;
     }
