@@ -1,0 +1,49 @@
+<ui:composition 
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+
+    template="/templates/template.xhtml"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="form">
+
+        <div class="form-group"> 
+            <h:outputLabel for="descricao" value="Descrição: "></h:outputLabel>
+            <h:inputText id="descricao" value="#{classificacaoController.classificacao.descricao}" styleClass="form-control"/>
+        </div>
+        <div class="form-group"> 
+            <h:outputLabel for="nome" value="Idade: "></h:outputLabel>
+            <h:inputText id="idade" value="#{classificacaoController.classificacao.idade}" styleClass="form-control"/>
+        </div>
+
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{classificacaoController.adicionar()}">    
+            <f:ajax execute="@form" render="@form" />
+        </h:commandButton>
+        
+        <h:dataTable id="classificacoes" value="#{classificacaoController.classificacoes}" var="classificacao" styleClass="table table-hover">
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="ID"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idClassificacao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Descrição"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.descricao}"/>
+            </h:column>
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Idade"/>
+                </f:facet>
+                <h:outputText value="#{classificacao.idade}"/>
+            </h:column>
+
+        </h:dataTable>
+        
+    </ui:define>
+
+</ui:composition>
