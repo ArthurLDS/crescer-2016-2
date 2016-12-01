@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui:composition 
 
     xmlns="http://www.w3.org/1999/xhtml"
@@ -10,26 +11,27 @@
     <ui:define name="form">
 
         <div class="form-group"> 
-            <h:outputLabel for="nome" value="Descrição: "></h:outputLabel>
-            <h:inputText id="nome" value="#{generoController.genero.descricao}" styleClass="form-control"/>
+            <h:outputLabel for="nome" value="Nome ator: "></h:outputLabel>
+            
+            <h:inputText id="nome" value="#{atorController.ator.nmAtor}" styleClass="form-control"/>
         </div>
 
-        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{generoController.adicionar}">    
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{atorController.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
         
-        <h:dataTable id="generos" value="#{generoController.generos}" var="genero" styleClass="table table-hover">
+        <h:dataTable id="atores" value="#{atorController.atores}" var="ator" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Id"/>
+                    <h:outputText value="ID"/>
                 </f:facet>
-                <h:outputText value="#{genero.idGenero}"/>
+                <h:outputText value="#{ator.idAtor}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Descricao"/>
+                    <h:outputText value="Nome"/>
                 </f:facet>
-                <h:outputText value="#{genero.descricao}"/>
+                <h:outputText value="#{ator.nmAtor}"/>
             </h:column>
 
         </h:dataTable>
