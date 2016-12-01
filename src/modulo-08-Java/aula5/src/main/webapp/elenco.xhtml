@@ -5,22 +5,29 @@
 
     template="/templates/template.xhtml"
     xmlns:f="http://java.sun.com/jsf/core">
-    
+
     <ui:define name="form">
-        
+
         <div class="form-group">
             <h:outputLabel for="nome" value="Nome: "></h:outputLabel>
             <h:inputText id="descricao" value="#{elencoController.elenco.nmElenco}" styleClass="form-control"></h:inputText>
         </div>
+
         <div class="form-group">
-            <h:outputLabel for="atores" value="Nome: "></h:outputLabel>
-            <h:inputText id="atores" value="#{elencoController.elenco.atores}" styleClass="form-control"></h:inputText>
+            <h:outputLabel for="atores" value="Atores: "></h:outputLabel>
+            
+            <h:selectManyListbox  id="atores" value="#{elencoController.elenco.atores}"  styleClass="form-control">
+                
+                <f:selectItems value="#{atorController.atores}" var="ator" itemValue="#{ator}" itemLabel="#{ator.nmAtor}"/>
+                
+                <f:selectItems itemValue="2" itemLabel="Item 2" />
+            </h:selectManyListbox>
         </div>
-        
+
         <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{elencoController.adicionar()}"> 
             <f:ajax execute="@form" render="@form"/>
         </h:commandButton>
-        
+
         <h:dataTable id="elencos" value="#{elencoController.elencos}" var="elenco" styleClass="table table-hover">
             <h:column>
                 <f:facet name="header">
@@ -43,5 +50,5 @@
 
         </h:dataTable>
     </ui:define>
-    
+
 </ui:composition>

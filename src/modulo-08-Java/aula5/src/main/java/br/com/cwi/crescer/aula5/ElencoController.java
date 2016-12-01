@@ -6,6 +6,7 @@
 package br.com.cwi.crescer.aula5;
 
 
+import br.com.cwi.crescer.aula4.Ator;
 import br.com.cwi.crescer.aula4.Elenco;
 import br.com.cwi.crescer.aula4.ElencoBean;
 import java.util.List;
@@ -34,6 +35,8 @@ public class ElencoController {
     }
     
     public void adicionar() {
+       // String id = elenco.getAtores().get(0).toString();
+        
         elencoBean.insert(elenco);
         this.init();
     }
