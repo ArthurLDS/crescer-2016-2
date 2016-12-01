@@ -14,7 +14,7 @@
             <h:inputText id="nome" value="#{GeneroController.genero.descricao}" styleClass="form-control"/>
         </div>
 
-        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{hello.adicionar}">    
+        <h:commandButton type="submit" value="Enviar" styleClass="btn btn-success" action="#{GeneroController.adicionar}">    
             <f:ajax execute="@form" render="@form" />
         </h:commandButton>
         
