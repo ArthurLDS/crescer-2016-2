@@ -27,5 +27,5 @@ public class PessoaDaoTest extends AbstractDaoTest {
 	public void testFindAll() {
 		assertTrue(this.pessoaDao.findAll().stream().anyMatch(pessoa -> pessoa.getNmPessoa().equals(Pessoa.class.getName())));
 	}
-
+        
 }
