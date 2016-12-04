@@ -6,6 +6,7 @@
 package br.com.cwi.crescer.aula5.bean;
 
 import br.com.cwi.crescer.aula5.dao.UserDao;
+import br.com.cwi.crescer.aula5.entity.Usuario;
 import br.com.cwi.crescer.aula5.filters.User;
 import javax.persistence.EntityManager;
 
@@ -13,7 +14,7 @@ import javax.persistence.EntityManager;
  *
  * @author Arthur
  */
-public class UserBean extends AbstractBean<User, Long, UserDao>{
+public class UserBean extends AbstractBean<Usuario, Long, UserDao>{
     
     private UserDao userDao;
     

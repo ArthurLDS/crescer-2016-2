@@ -7,6 +7,7 @@ package br.com.cwi.crescer.aula5.mbean;
 
 import br.com.cwi.crescer.aula5.bean.UserBean;
 import br.com.cwi.crescer.aula5.dao.UserDao;
+import br.com.cwi.crescer.aula5.entity.Usuario;
 import br.com.cwi.crescer.aula5.filters.User;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
@@ -19,23 +20,23 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
-public class CadastroMBean extends AbstractMBean<User, Long, UserDao, UserBean>{
+public class CadastroMBean extends AbstractMBean<Usuario, Long, UserDao, UserBean>{
     
     private UserBean userBean;
-    private User user;
+    private Usuario usuario;
     
 
     @PostConstruct
     public void init() {
-        this.user = new User();
+        this.usuario = new Usuario();
     }
     
-    public User getUser() {
-        return user;
+    public Usuario getUser() {
+        return usuario;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override
@@ -45,12 +46,12 @@ public class CadastroMBean extends AbstractMBean<User, Long, UserDao, UserBean>{
 
     @Override
     public void limpar() {
-        this.setEntity(new User());
+        this.setEntity(new Usuario());
         this.setList(this.getBean().findAll());
     }
     
     @Override
     public void adicionar(){
-        this.getBean().insert(user);
+        this.getBean().insert(usuario);
     }
 }

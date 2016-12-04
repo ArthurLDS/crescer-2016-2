@@ -5,6 +5,7 @@
  */
 package br.com.cwi.crescer.aula5.dao;
 
+import br.com.cwi.crescer.aula5.entity.Usuario;
 import br.com.cwi.crescer.aula5.filters.User;
 import javax.persistence.EntityManager;
 
@@ -12,12 +13,12 @@ import javax.persistence.EntityManager;
  *
  * @author Arthur
  */
-public class UserDao extends AbstractDao<User, Long>{
+public class UserDao extends AbstractDao<Usuario, Long>{
     
     final EntityManager entityManager;
      
     public UserDao(EntityManager entityManager) {
-        super(User.class);
+        super(Usuario.class);
         this.entityManager = entityManager;
     }
 

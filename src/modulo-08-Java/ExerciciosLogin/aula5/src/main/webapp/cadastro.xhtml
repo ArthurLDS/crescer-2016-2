@@ -25,11 +25,11 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <h:outputLabel for="username" value="Username: "/>
-                            <h:inputText id="username" styleClass="form-control" value="#{cadastroMBean.user.username}" required="true" validator="UsuarioValidator"/>
+                            <h:inputText id="username" styleClass="form-control" value="#{cadastroMBean.user.username}" required="true"/>
                         </div>
                         <div class="form-group">
                             <h:outputLabel for="email" value="Email"/>
-                            <h:inputText id="email" styleClass="form-control" value="#{cadastroMBean.user.email}" required="true" validator="emailValidator"/>
+                            <h:inputText id="email" styleClass="form-control" value="#{cadastroMBean.user.email}" required="true"/>
                         </div>
                         <div class="form-group">
                             <h:outputLabel for="password" value="Senha: "/>
@@ -37,9 +37,7 @@
                         </div>
                         <div class="form-group">
                             <h:commandButton styleClass="btn btn-success" value="Cadastrar" action="#{cadastroMBean.adicionar()}"/>
-                        </div>
-                        <div class="form-group">
-                            <input type="reset" value="Limpar campos" class="btn btn-danger">
+                            <input type="reset" value="Limpar campos" class="btn btn-danger"/>
                         </div>
                         
                         <div class="messages">
