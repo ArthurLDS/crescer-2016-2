@@ -12,7 +12,7 @@ import javax.persistence.PersistenceContext;
  * @param <ID>
  * @param <DAO>
  */
-public abstract class AbstractBean<T, ID, DAO extends AbstractDao<T, ID>> implements ICrud<T, ID> {
+public abstract class AbstractBean<T, ID, DAO extends AbstractDao<T, ID>> implements ICrud<T, ID, String> {
 
     @PersistenceContext(unitName = "crescer")
     private EntityManager entityManager;
@@ -41,6 +41,11 @@ public abstract class AbstractBean<T, ID, DAO extends AbstractDao<T, ID>> implem
     @Override
     public T find(ID id) {
         return this.getDao().find(id);
+    }
+    
+    @Override
+    public boolean findByUsername(String username) {
+        return this.getDao().findByUsername(username);
     }
     
 }

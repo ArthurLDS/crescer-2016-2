@@ -19,5 +19,4 @@ public class ClassificacaoBean extends AbstractBean<Classificacao, Long, Classif
         }
         return dao;
     }
-
 }

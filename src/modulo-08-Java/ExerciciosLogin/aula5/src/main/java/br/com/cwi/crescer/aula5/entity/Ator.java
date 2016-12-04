@@ -19,7 +19,7 @@ import javax.persistence.Table;
 public class Ator implements Serializable {
 
     private static final String SQ_NAME = "SQ_ATOR";
-
+    
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = SQ_NAME)
     @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1)

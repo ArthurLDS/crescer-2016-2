@@ -20,4 +20,5 @@ public class AtorBean extends AbstractBean<Ator, Long, AtorDao> {
         return dao;
     }
 
+
 }

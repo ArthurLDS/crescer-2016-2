@@ -11,7 +11,7 @@ import javax.persistence.criteria.CriteriaQuery;
  * @param <ID>
  *
  */
-public abstract class AbstractDao<T, ID> implements ICrud<T, ID> {
+public abstract class AbstractDao<T, ID> implements ICrud<T, ID, String> {
 
     public abstract EntityManager getEntityManager();
 
@@ -40,6 +40,10 @@ public abstract class AbstractDao<T, ID> implements ICrud<T, ID> {
     public List<T> findAll() {
         final CriteriaQuery<T> createQuery = this.getEntityManager().getCriteriaBuilder().createQuery(clazz);
         return this.getEntityManager().createQuery(createQuery).getResultList();
+    }
+    @Override
+    public boolean findByUsername(String username) {
+        return getEntityManager().contains(username);
     }
 
 }

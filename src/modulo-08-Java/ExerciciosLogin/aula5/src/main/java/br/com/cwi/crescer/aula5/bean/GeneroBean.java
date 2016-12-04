@@ -19,5 +19,4 @@ public class GeneroBean extends AbstractBean<Genero, Long, GeneroDao> {
         }
         return dao;
     }
-
 }

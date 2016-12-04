@@ -7,7 +7,7 @@ import java.util.List;
  * @param <T>
  * @param <ID>
  */
-public interface ICrud<T, ID> {
+public interface ICrud<T, ID, Nome> {
 
     void insert(T t);
     
@@ -16,4 +16,6 @@ public interface ICrud<T, ID> {
     T find(ID id);
     
     List<T> findAll();
+    
+    boolean findByUsername(Nome n);
 }

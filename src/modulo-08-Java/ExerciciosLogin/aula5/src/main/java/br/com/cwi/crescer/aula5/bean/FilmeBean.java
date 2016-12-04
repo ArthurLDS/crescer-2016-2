@@ -19,5 +19,4 @@ public class FilmeBean extends AbstractBean<Filme, Long, FilmeDao> {
         }
         return dao;
     }
-
 }
