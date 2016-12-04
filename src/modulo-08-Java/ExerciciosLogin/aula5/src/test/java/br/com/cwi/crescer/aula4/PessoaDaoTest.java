@@ -10,7 +10,7 @@ import org.junit.Test;
  */
 public class PessoaDaoTest extends AbstractDaoTest {
 
-	private PessoaDao pessoaDao;
+	/*private PessoaDao pessoaDao;
 
 	@Before
 	public void setBefore() {
@@ -22,10 +22,10 @@ public class PessoaDaoTest extends AbstractDaoTest {
 
 	/**
 	 * Test of findAll method, of class PessoaDao.
-	 */
+	 *//*
 	@Test
 	public void testFindAll() {
 		assertTrue(this.pessoaDao.findAll().stream().anyMatch(pessoa -> pessoa.getNmPessoa().equals(Pessoa.class.getName())));
-	}
+	}*/
         
 }
