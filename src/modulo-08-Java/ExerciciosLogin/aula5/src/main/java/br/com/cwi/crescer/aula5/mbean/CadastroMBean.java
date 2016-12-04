@@ -49,6 +49,7 @@ public class CadastroMBean extends AbstractMBean<User, Long, UserDao, UserBean>{
         this.setList(this.getBean().findAll());
     }
     
+    @Override
     public void adicionar(){
         this.getBean().insert(user);
     }

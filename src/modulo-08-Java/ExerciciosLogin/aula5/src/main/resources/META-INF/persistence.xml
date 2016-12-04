@@ -4,7 +4,7 @@
         <jta-data-source>jdbc/crescer</jta-data-source>
         <class>br.com.cwi.crescer.aula4.Filho</class>
         <class>br.com.cwi.crescer.aula4.Pessoa</class>
-        <class>br.com.cwi.crescer.aula5.entity.A</class>
+        <class>br.com.cwi.crescer.aula5.entity.Ator</class>
         <class>br.com.cwi.crescer.aula5.entity.Classificacao</class>
         <class>br.com.cwi.crescer.aula5.entity.Elenco</class>
         <class>br.com.cwi.crescer.aula5.entity.Filme</class>
