@@ -11,6 +11,7 @@ import br.com.cwi.crescer.aula5.entity.Usuario;
 import br.com.cwi.crescer.aula5.filters.User;
 import java.io.Serializable;
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
@@ -20,38 +21,32 @@ import javax.faces.bean.ViewScoped;
  */
 @ManagedBean
 @ViewScoped
-public class CadastroMBean extends AbstractMBean<Usuario, Long, UserDao, UserBean>{
+public class CadastroMBean{
     
+    @EJB
     private UserBean userBean;
     private Usuario usuario;
     
-
     @PostConstruct
     public void init() {
         this.usuario = new Usuario();
     }
-    
-    public Usuario getUser() {
-        return usuario;
-    }
 
-    public void setUser(Usuario usuario) {
-        this.usuario = usuario;
-    }
-
-    @Override
     public UserBean getBean() {
         return userBean;
     }
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
-    @Override
-    public void limpar() {
-        this.setEntity(new Usuario());
-        this.setList(this.getBean().findAll());
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     
-    @Override
-    public void adicionar(){
-        this.getBean().insert(usuario);
+    public void inserir(){
+        userBean.insert(usuario);
     }
+
+    
+    
 }

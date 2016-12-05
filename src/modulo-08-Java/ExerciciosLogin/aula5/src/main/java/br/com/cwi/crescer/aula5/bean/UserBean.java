@@ -5,25 +5,32 @@
  */
 package br.com.cwi.crescer.aula5.bean;
 
+import br.com.cwi.crescer.aula5.dao.AbstractDao;
 import br.com.cwi.crescer.aula5.dao.UserDao;
 import br.com.cwi.crescer.aula5.entity.Usuario;
 import br.com.cwi.crescer.aula5.filters.User;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author Arthur
  */
-public class UserBean extends AbstractBean<Usuario, Long, UserDao>{
+@Stateless
+public class UserBean extends AbstractDao<Usuario, Long>{
     
-    private UserDao userDao;
-    
-    
-    @Override
-    public UserDao getDao() {
-        if (userDao == null) {
-            userDao = new UserDao(this.getEntityManager());
-        }
-        return userDao;
+    @PersistenceContext(unitName = "crescer")
+    private EntityManager entityManager;
+
+    public UserBean() {
+        super(Usuario.class);
     }
+
+    @Override
+    public EntityManager getEntityManager() {
+       return this.entityManager;
+    }
+    
+   
 }
