@@ -23,17 +23,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class PessoaController {
+    
     @Autowired
     Servico servico = new Servico();
     
     
-    @RequestMapping(value = "/pessoa.json", method = RequestMethod.GET)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public void inserir(@RequestBody Pessoa pessoa) {
         pessoa = new Pessoa();
         servico.insert(pessoa);
     }
     
-    @RequestMapping(value = "/pessoa.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Pessoa> list() {
         return servico.listAll();
     }
