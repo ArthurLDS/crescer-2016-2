@@ -14,6 +14,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 /**
  *
  * @author Arthur
@@ -29,7 +30,8 @@ public class Ator implements Serializable {
     @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1)
     @Column(name = "ID_ATOR")
     private Long id;
-
+    
+    @Size(min = 1, max = 255, message = "DEU MERDA NO CAMPO NOME")
     @Basic(optional = false)
     @Column(name = "NM_ATOR")
     private String nome;

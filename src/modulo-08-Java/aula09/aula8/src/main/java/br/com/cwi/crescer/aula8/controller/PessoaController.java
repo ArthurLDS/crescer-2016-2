@@ -39,7 +39,8 @@ public class PessoaController {
             pageable = new PageRequest(0, 10);
         }
         model.addAttribute("pessoa", pessoa);
-        model.addAttribute("pessoas", service.findAll(pageable));
+        Iterable<Pessoa> pessoas = service.findAll(pageable);
+        model.addAttribute("pessoas", pessoas);
         return "pessoa";
     }
     
