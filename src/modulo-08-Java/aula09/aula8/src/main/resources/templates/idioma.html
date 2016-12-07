@@ -18,13 +18,13 @@ and open the template in the editor.
                 <article class="col-md-12">
 
                     <div class="panel panel-default">
-                        <div class="panel-heading">Ator</div>
+                        <div class="panel-heading">Idioma</div>
                         <div class="panel-body">
 
-                            <form action="#" th:action="@{/ator}" th:object="${ator}" method="POST">
+                            <form action="#" th:action="@{/idioma}" th:object="${idioma}" method="POST">
 
                                 <article class="form-group">
-                                    <label for="nome" th:text="#{ator.nome}"></label>
+                                    <label for="nome" th:text="#{idioma.nome}"></label>
                                     <input class="form-control" type="text" th:field="*{nome}" autofocus="true" />
                                     <span class="help-block"></span>
                                 </article>
@@ -41,22 +41,19 @@ and open the template in the editor.
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th th:text="#{ator.id}" />
-                                <th th:text="#{ator.nome}" />
+                                <th th:text="#{idioma.id}" />
+                                <th th:text="#{idioma.nome}" />
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr th:each="ator : ${atores}">
-                                <td th:text="${ator.id}">ID</td>
-                                <td th:text="${ator.nome}">NOME</td>
-                                <td>
-                                    <a th:href="@{${'/filmes'}(id=${ator.id})}" class="btn btn-default btn-xs">Editar</a>
-                                </td>
+                            <tr th:each="idioma : ${idiomas}">
+                                <td th:text="${idioma.id}">ID</td>
+                                <td th:text="${idioma.nome}">DESCRICAO</td>
                             </tr>
                         </tbody>
                     </table>
-                    <div th:replace="fragments :: paginator(${atores}, '/filmes')">
+                    <div th:replace="fragments :: paginidioma(${idiomas}, '/idioma')">
 
                     </div>
                 </article>

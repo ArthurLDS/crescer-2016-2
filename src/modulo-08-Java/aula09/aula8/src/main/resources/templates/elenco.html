@@ -18,22 +18,23 @@
 
                             <form action="#" th:action="@{/elenco}" th:object="${elenco}" method="POST">
 
-                                <article class="form-group">
+                                <article th:classappend="${#fields.hasErrors('descricao')} ? has-error" class="form-group" >
                                     <label for="descricao" th:text="#{elenco.descricao}"></label>
                                     <input class="form-control" type="text" th:field="*{descricao}" autofocus="true" />
-                                    
-                                    <span class="help-block"></span>
+
+                                    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="help-block"></span>
                                 </article>
+
                                 <article class="form-group">
                                     <label for="atores" th:text="#{elenco.atores}"></label>
-                                    <select class="form-control" th:field="${elenco}" multiple="multiple">
-                                        
-                                        <option value="0" th:text="Selecione.." ></option>
+
+                                    <select class="form-control" th:field="*{atores}" multiple="multiple">
+
                                         <option th:each="ator : ${atores}" th:value="${ator.id}" th:text="${ator.nome}">
                                         </option>
-                                        
+
                                     </select>
-                                    
+
                                     <span class="help-block"></span>
                                 </article>
 
@@ -41,6 +42,7 @@
                                     <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
                                     <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
                                 </div>
+
 
                             </form>
                         </div>
@@ -58,14 +60,23 @@
                             <tr th:each="elenco : ${elencos}">
                                 <td th:text="${elenco.id}">ID</td>
                                 <td th:text="${elenco.descricao}">NOME</td>
-                                <td th:text="${elenco.atores}">Atores
+                                <td>
+                                    <ul th:each="ator :${elenco.atores}">
+                                        <li th:text="${ator.nome}"></li> 
+                                    </ul>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="alert alert-success" th:if="${msg}">
+                        <strong>Sucess!</strong> <span th:text="${msg}"></span>
+                    </div>
+
                     <div th:replace="fragments :: paginator(${elencos}, '/elenco')">
 
                     </div>
+
                 </article>
             </section>
         </section>

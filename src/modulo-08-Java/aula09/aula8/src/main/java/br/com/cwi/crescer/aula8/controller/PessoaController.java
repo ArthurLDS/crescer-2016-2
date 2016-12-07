@@ -28,9 +28,10 @@ public class PessoaController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model, @RequestParam(required = false) Long id, Pageable p) {
+        
         Pageable pageable = new PageRequest(p.getPageNumber(), 5, p.getSort());
-
         Pessoa pessoa = new Pessoa();
+        
         if (id != null) {
             pessoa = service.findOne(id);
             pageable = null;
@@ -41,6 +42,7 @@ public class PessoaController {
         model.addAttribute("pessoa", pessoa);
         Iterable<Pessoa> pessoas = service.findAll(pageable);
         model.addAttribute("pessoas", pessoas);
+        
         return "pessoa";
     }
     
