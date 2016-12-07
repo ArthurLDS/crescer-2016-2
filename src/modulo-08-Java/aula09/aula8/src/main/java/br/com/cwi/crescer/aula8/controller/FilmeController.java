@@ -32,11 +32,18 @@ public class FilmeController {
     AtorService atorService;
     
     @RequestMapping(value = "/filmes")
-    public String filmes(Model model, Pageable p){
+    public String filmes(Model model, @RequestParam(required = false) Long id, Pageable p){
         
         Pageable pageable = new PageRequest(p.getPageNumber(), 5, p.getSort());
-        
         Ator ator = new Ator();
+        
+        if (id != null) {
+            ator = atorService.findOne(id);
+            pageable = null;
+        }
+        if (pageable == null) {
+            pageable = new PageRequest(0, 10);
+        }
         
         model.addAttribute("ator", ator);
         Iterable<Ator> atores =  atorService.findAll(pageable);

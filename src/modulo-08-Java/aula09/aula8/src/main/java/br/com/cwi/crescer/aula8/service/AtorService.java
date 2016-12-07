@@ -38,5 +38,7 @@ public class AtorService {
         repository.delete(id);
     }
     
-    
+    public Ator findOne(Long id){
+        return repository.findOne(id);
+    }
 }
