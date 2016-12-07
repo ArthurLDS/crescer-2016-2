@@ -26,7 +26,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author Arthur
  */
 @Controller
-public class FilmeController {
+public class AtorController {
     
     @Autowired
     AtorService atorService;

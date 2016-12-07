@@ -26,7 +26,7 @@ public class AtorService {
         return repository.findAll(pgbl);
     }
 
-    public Iterable<Ator> findAll() {
+    public Iterable<Ator> list() {
         return repository.findAll();
     }
 
