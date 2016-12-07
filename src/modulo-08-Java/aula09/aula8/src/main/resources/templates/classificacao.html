@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head th:replace="fragments :: head('Classificacao')">
+
+    </head>
+    <body>
+        <div th:replace="fragments ::navbar">
+            <!-- pega do templates/fragments.html o frament:navbar -->
+        </div>
+
+        <section class="container">
+            <section class="row" style="margin-top: 40px;">
+                <article class="col-md-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Classificação</div>
+                        <div class="panel-body">
+
+                            <form action="#" th:action="@{/classificacao}" th:object="${classificacao}" method="POST">
+
+                                <article class="form-group">
+                                    <label for="nome" th:text="#{classificacao.descricao}"></label>
+                                    <input class="form-control" type="text" th:field="*{descricao}" autofocus="true" />
+                                    
+                                    <span class="help-block"></span>
+                                </article>
+                                <article class="form-group">
+                                    <label for="nome" th:text="#{classificacao.idade}"></label>
+                                    <input class="form-control" type="text" th:field="*{idade}" autofocus="true" />
+                                    
+                                    <span class="help-block"></span>
+                                </article>
+
+                                <div class="form-group">
+                                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th th:text="#{classificacao.id}" />
+                                <th th:text="#{classificacao.descricao}" />
+                                <th th:text="#{classificacao.idade}" />
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="classificacao : ${classificacoes}">
+                                <td th:text="${classificacao.id}">ID</td>
+                                <td th:text="${classificacao.descricao}">NOME</td>
+                                <td th:text="${classificacao.idade}">IDADE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div th:replace="fragments :: paginator(${classificacoes}, '/classificacao')">
+
+                    </div>
+                </article>
+            </section>
+        </section>
+    </body>
+</html>
