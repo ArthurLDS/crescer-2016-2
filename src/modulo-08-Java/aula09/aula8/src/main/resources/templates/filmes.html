@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head th:replace="fragments :: head('Gerenciar Filmes')">
+
+    </head>
+    <body>
+        <div th:replace="fragments ::navbar">
+            <!-- pega do templates/fragments.html o frament:navbar -->
+        </div>
+
+        <section class="container">
+            <section class="row" style="margin-top: 40px;">
+                <article class="col-md-12">
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Ator</div>
+                        <div class="panel-body">
+
+                            <form action="#" th:action="@{/ator}" th:object="${ator}" method="POST">
+
+                                <article class="form-group">
+                                    <label for="nome" th:text="#{ator.nome}"></label>
+                                    <input class="form-control" type="text" th:field="*{nome}" autofocus="true" />
+                                    <span class="help-block"></span>
+                                </article>
+
+                                <div class="form-group">
+                                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" />
+                                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th th:text="#{ator.id}" />
+                                <th th:text="#{ator.nome}" />
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="ator : ${atores}">
+                                <td th:text="${ator.id}">ID</td>
+                                <td th:text="${ator.nome}">NOME</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div th:replace="fragments :: paginator(${atores}, '/ator')">
+
+                    </div>
+                </article>
+            </section>
+        </section>
+    </body>
+</html>
